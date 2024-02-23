@@ -1,5 +1,5 @@
 ﻿using Bhaptics.SDK2;
-using Il2CppSystem.Collections.Generic;
+using MelonLoader;
 using Photon.Pun;
 using RUMBLE.Combat;
 using RUMBLE.Combat.ShiftStones.UI;
@@ -16,71 +16,74 @@ using RUMBLE.Social.Phone;
 using RUMBLE.Tutorial.MoveLearning;
 using RUMBLE.Utilities;
 using SteamAudio;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RumbleModdingAPI
 {
-    public class Calls
+    public class Calls : MelonMod
     {
+        #region Variables
         private bool sceneChanged = false;
-        private bool sceneChangedPassed = false;
-        private string currentScene = "";
-        private bool init = false;
-        private Game gameManager;
-        private NetworkManager networkManager;
-        private PlayerManager playerManager;
-        private InputManager inputManager;
-        private SceneManager sceneManager;
-        private NotificationManager notificationManager;
-        private StackManager stackManager;
-        private QualityManager qualityManager;
-        private SocialHandler socialHandler;
-        private SlabManager slabManager;
-        private RecordingCamera recordingCamera;
-        private CombatManager combatManager;
-        private PoolManager poolManager;
-        private BhapticsSDK2 bHapticsManager;
-        private PhotonHandler photonHandler;
-        private AudioManager audioManager;
-        private SteamAudioManager steamAudioManager;
-        private GameObject uIGameObject;
-        private GameObject gymHeinhouserProductsGameObject;
-        private MailTube mailTube;
-        private MatchmakeConsole matchConsole;
-        private GameObject regionSelectorGameObject;
-        private BeltRack beltRack;
-        private PhoneHandler gymFriendBoard;
-        private ParkBoard parkBoardBasicGymVariant;
-        private ParkBoardGymVariant parkBoardGymVariant;
-        private Howard howard;
-        private MoveLearnHandler poseGhostHandler;
-        private Leaderboard dailyLeaderboard;
-        private GameObject rankStatusSlabGameObject;
-        private GameObject communitySlabGameObject;
-        private ShiftstoneQuickswapper gymShiftstoneQuickswapper;
-        private ShiftstoneCabinet shiftstoneCabinet;
-        private GameObject gymGondolaGameObject;
-        private GameObject ranksGameObject;
-        private SpawnPointHandler gymSpawnPointHandler;
-        private MatchmakingHandler matchmakingHandler;
-        private RewardHandler rewardHandler;
-        private SpawnPointHandler parkSpawnPointHandler;
-        private PhoneHandler parkFriendBoard;
-        private ParkBoard parkBoardBasicParkVariant;
-        private ParkBoardParkVariant parkBoardParkVariant;
-        private ShiftstoneQuickswapper parkShiftstoneQuickswapper;
-        private ParkInstance parkInstance;
-        private GameObject localHealthbarGameObject;
+        private static bool sceneChangedPassed = false;
+        private static string currentScene = "";
+        private static bool init = false;
+        private static Game gameManager;
+        private static NetworkManager networkManager;
+        private static PlayerManager playerManager;
+        private static InputManager inputManager;
+        private static SceneManager sceneManager;
+        private static NotificationManager notificationManager;
+        private static StackManager stackManager;
+        private static QualityManager qualityManager;
+        private static SocialHandler socialHandler;
+        private static SlabManager slabManager;
+        private static RecordingCamera recordingCamera;
+        private static CombatManager combatManager;
+        private static PoolManager poolManager;
+        private static BhapticsSDK2 bHapticsManager;
+        private static PhotonHandler photonHandler;
+        private static AudioManager audioManager;
+        private static SteamAudioManager steamAudioManager;
+        private static GameObject uIGameObject;
+        private static GameObject gymHeinhouserProductsGameObject;
+        private static MailTube mailTube;
+        private static MatchmakeConsole matchConsole;
+        private static GameObject regionSelectorGameObject;
+        private static BeltRack beltRack;
+        private static PhoneHandler gymFriendBoard;
+        private static ParkBoard parkBoardBasicGymVariant;
+        private static ParkBoardGymVariant parkBoardGymVariant;
+        private static Howard howard;
+        private static MoveLearnHandler poseGhostHandler;
+        private static Leaderboard dailyLeaderboard;
+        private static GameObject rankStatusSlabGameObject;
+        private static GameObject communitySlabGameObject;
+        private static ShiftstoneQuickswapper gymShiftstoneQuickswapper;
+        private static ShiftstoneCabinet shiftstoneCabinet;
+        private static GameObject gymGondolaGameObject;
+        private static GameObject ranksGameObject;
+        private static SpawnPointHandler gymSpawnPointHandler;
+        private static MatchmakingHandler matchmakingHandler;
+        private static RewardHandler rewardHandler;
+        private static SpawnPointHandler parkSpawnPointHandler;
+        private static PhoneHandler parkFriendBoard;
+        private static ParkBoard parkBoardBasicParkVariant;
+        private static ParkBoardParkVariant parkBoardParkVariant;
+        private static ShiftstoneQuickswapper parkShiftstoneQuickswapper;
+        private static ParkInstance parkInstance;
+        private static GameObject localHealthbarGameObject;
+        #endregion
 
-        public void OnSceneWasLoaded(int buildIndex, string sceneName)
+        #region API Initialization
+
+        public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
             currentScene = sceneName;
             sceneChanged = true;
             sceneChangedPassed = true;
         }
 
-        public void OnFixedUpdate()
+        public override void OnFixedUpdate()
         {
             if (sceneChanged)
             {
@@ -109,6 +112,7 @@ namespace RumbleModdingAPI
                             combatManager = GameObject.Find("Game Instance/Other/CombatManager").GetComponent<CombatManager>();
                             uIGameObject = GameObject.Find("Game Instance/UI");
                             init = true;
+                            MelonLogger.Msg("API Initialized");
                         }
                     }
                     else if (currentScene == "Gym")
@@ -155,370 +159,427 @@ namespace RumbleModdingAPI
                 sceneChanged = false;
             }
         }
+        #endregion
+        
+        #region API Calls
 
-        public bool IsInitialized()
+        public static bool IsInitialized()
         {
             return init;
         }
 
-        public bool SceneChangeStarted()
+        public class Scene
         {
-            return sceneChangedPassed;
-        }
-
-        public void SceneChangeDone()
-        {
-            sceneChangedPassed = false;
-        }
-
-        public string GetSceneName()
-        {
-            return currentScene;
-        }
-
-        public Game GetGameManager()
-        {
-            return gameManager;
-        }
-
-        public NetworkManager GetNetworkManager()
-        {
-            return networkManager;
-        }
-
-        public PlayerManager GetPlayerManager()
-        {
-            return playerManager;
-        }
-
-        public InputManager GetInputManager()
-        {
-            return inputManager;
-        }
-
-        public SceneManager GetSceneManager()
-        {
-            return sceneManager;
-        }
-
-        public NotificationManager GetNotificationManager()
-        {
-            return notificationManager;
-        }
-
-        public StackManager GetStackManager()
-        {
-            return stackManager;
-        }
-
-        public QualityManager GetQualityManager()
-        {
-            return qualityManager;
-        }
-
-        public SocialHandler GetSocialHandler()
-        {
-            return socialHandler;
-        }
-
-        public SlabManager GetSlabManager()
-        {
-            return slabManager;
-        }
-
-        public RecordingCamera GetRecordingCamera()
-        {
-            return recordingCamera;
-        }
-
-        public CombatManager GetCombatManager()
-        {
-            return combatManager;
-        }
-
-        public BhapticsSDK2 GetBHapticsManager()
-        {
-            return bHapticsManager;
-        }
-
-        public PhotonHandler GetPhotonHandler()
-        {
-            return photonHandler;
-        }
-
-        public AudioManager GetAudioManager()
-        {
-            return audioManager;
-        }
-
-        public SteamAudioManager GetSteamAudioManager()
-        {
-            return steamAudioManager;
-        }
-
-        public PoolManager GetPoolManager()
-        {
-            return poolManager;
-        }
-
-        public GameObject GetPoolDisc()
-        {
-            return poolManager.transform.GetChild(43).gameObject;
-        }
-
-        public GameObject GetPoolPillar()
-        {
-            return poolManager.transform.GetChild(42).gameObject;
-        }
-
-        public GameObject GetPoolBall()
-        {
-            return poolManager.transform.GetChild(51).gameObject;
-        }
-
-        public GameObject GetPoolCube()
-        {
-            return poolManager.transform.GetChild(50).gameObject;
-        }
-
-        public GameObject GetPoolWall()
-        {
-            return poolManager.transform.GetChild(49).gameObject;
-        }
-
-        public GameObject GetPoolSmallRock()
-        {
-            return poolManager.transform.GetChild(16).gameObject;
-        }
-
-        public GameObject GetPoolLargeRock()
-        {
-            return poolManager.transform.GetChild(17).gameObject;
-        }
-
-        public GameObject GetPoolBoulderBall()
-        {
-            return poolManager.transform.GetChild(1).gameObject;
-        }
-
-        public GameObject GetPoolVolatileStone()
-        {
-            return poolManager.transform.GetChild(3).gameObject;
-        }
-
-        public GameObject GetPoolChargeStone()
-        {
-            return poolManager.transform.GetChild(4).gameObject;
-        }
-
-        public GameObject GetPoolSurgeStone()
-        {
-            return poolManager.transform.GetChild(5).gameObject;
-        }
-
-        public GameObject GetPoolFlowStone()
-        {
-            return poolManager.transform.GetChild(6).gameObject;
-        }
-
-        public GameObject GetPoolGuardStone()
-        {
-            return poolManager.transform.GetChild(7).gameObject;
-        }
-
-        public GameObject GetPoolStubbornStone()
-        {
-            return poolManager.transform.GetChild(8).gameObject;
-        }
-
-        public GameObject GetPoolAdamantStone()
-        {
-            return poolManager.transform.GetChild(9).gameObject;
-        }
-
-        public GameObject GetPoolVigorStone()
-        {
-            return poolManager.transform.GetChild(10).gameObject;
-        }
-
-        public GameObject GetUIGameObject()
-        {
-            return uIGameObject;
-        }
-
-        public Il2CppSystem.Collections.Generic.List<Player> GetAllPlayers()
-        {
-            return playerManager.AllPlayers;
-        }
-
-        public Player GetLocalPlayer()
-        {
-            return playerManager.localPlayer;
-        }
-
-        public PlayerController GetPlayerController()
-        {
-            return playerManager.localPlayer.Controller;
-        }
-
-        public System.Collections.Generic.List<Player> GetEnemyPlayers()
-        {
-            System.Collections.Generic.List<Player> enemies = new System.Collections.Generic.List<Player>();
-            for(int i = 1; i < playerManager.AllPlayers.Capacity; i++)
+            public static bool SceneChangeStarted()
             {
-                enemies.Add(playerManager.AllPlayers[i]);
+                return sceneChangedPassed;
             }
-            return enemies;
-        }
 
-        public Player GetClosestPlayer(UnityEngine.Vector3 pos, bool ignoreLocalController)
-        {
-            return playerManager.GetClosestPlayer(pos, ignoreLocalController);
-        }
+            public static void SceneChangeDone()
+            {
+                sceneChangedPassed = false;
+            }
 
-        public Player GetClosestPlayer(UnityEngine.Vector3 pos, PlayerController ignoreController)
-        {
-            return playerManager.GetClosestPlayer(pos, ignoreController);
-        }
-
-        public Player GetPlayerByControllerType(RUMBLE.Players.ControllerType controllerType)
-        {
-            return playerManager.GetPlayer(controllerType);
-        }
-
-        public Player GetPlayerByActorNo(int actorNumber)
-        {
-            return playerManager.GetPlayerByActorNo(actorNumber);
-        }
-
-        public MailTube GetGymMailTube()
-        {
-            return mailTube;
-        }
-
-        public MatchmakeConsole GetGymMatchConsole()
-        {
-            return matchConsole;
-        }
-
-        public GameObject GetGymRegionSelectorGameObject()
-        {
-            return regionSelectorGameObject;
-        }
-
-        public BeltRack GetGymBeltRack()
-        {
-            return beltRack;
+            public static string GetSceneName()
+            {
+                return currentScene;
+            }
         }
         
-        public PhoneHandler GetGymFriendBoard()
+        public class Managers
         {
-            return gymFriendBoard;
+            public static Game GetGameManager()
+            {
+                return gameManager;
+            }
+
+            public static NetworkManager GetNetworkManager()
+            {
+                return networkManager;
+            }
+
+            public static PlayerManager GetPlayerManager()
+            {
+                return playerManager;
+            }
+
+            public static InputManager GetInputManager()
+            {
+                return inputManager;
+            }
+
+            public static SceneManager GetSceneManager()
+            {
+                return sceneManager;
+            }
+
+            public static NotificationManager GetNotificationManager()
+            {
+                return notificationManager;
+            }
+
+            public static StackManager GetStackManager()
+            {
+                return stackManager;
+            }
+
+            public static QualityManager GetQualityManager()
+            {
+                return qualityManager;
+            }
+
+            public static SocialHandler GetSocialHandler()
+            {
+                return socialHandler;
+            }
+
+            public static SlabManager GetSlabManager()
+            {
+                return slabManager;
+            }
+
+            public static RecordingCamera GetRecordingCamera()
+            {
+                return recordingCamera;
+            }
+
+            public static CombatManager GetCombatManager()
+            {
+                return combatManager;
+            }
+
+            public static BhapticsSDK2 GetBHapticsManager()
+            {
+                return bHapticsManager;
+            }
+
+            public static PhotonHandler GetPhotonHandler()
+            {
+                return photonHandler;
+            }
+
+            public static AudioManager GetAudioManager()
+            {
+                return audioManager;
+            }
+
+            public static SteamAudioManager GetSteamAudioManager()
+            {
+                return steamAudioManager;
+            }
+
+            public static GameObject GetUIGameObject()
+            {
+                return uIGameObject;
+            }
+
+            public static PoolManager GetPoolManager()
+            {
+                return poolManager;
+            }
         }
 
-        public ParkBoard GetParkBoardBasicGymVariant()
+        public class Gym
         {
-            return parkBoardBasicGymVariant;
+            public static MailTube GetGymMailTube()
+            {
+                return mailTube;
+            }
+
+            public static MatchmakeConsole GetGymMatchConsole()
+            {
+                return matchConsole;
+            }
+
+            public static GameObject GetGymRegionSelectorGameObject()
+            {
+                return regionSelectorGameObject;
+            }
+
+            public static BeltRack GetGymBeltRack()
+            {
+                return beltRack;
+            }
+
+            public static PhoneHandler GetGymFriendBoard()
+            {
+                return gymFriendBoard;
+            }
+
+            public static ParkBoard GetParkBoardBasicGymVariant()
+            {
+                return parkBoardBasicGymVariant;
+            }
+
+            public static ParkBoardGymVariant GetGymParkBoardGymVariant()
+            {
+                return parkBoardGymVariant;
+            }
+
+            public static Howard GetGymHoward()
+            {
+                return howard;
+            }
+
+            public static MoveLearnHandler GetGymPoseGhostHandler()
+            {
+                return poseGhostHandler;
+            }
+
+            public static Leaderboard GetGymDailyLeaderboard()
+            {
+                return dailyLeaderboard;
+            }
+
+            public static GameObject GetGymRankStatusSlabGameObject()
+            {
+                return rankStatusSlabGameObject;
+            }
+
+            public static GameObject GetGymCommunitySlabGameObject()
+            {
+                return communitySlabGameObject;
+            }
+
+            public static ShiftstoneQuickswapper GetGymShiftstoneQuickswapper()
+            {
+                return gymShiftstoneQuickswapper;
+            }
+
+            public static ShiftstoneCabinet GetGymShiftstoneCabinet()
+            {
+                return shiftstoneCabinet;
+            }
+
+            public static GameObject GetGymGondolaGameObject()
+            {
+                return gymGondolaGameObject;
+            }
+
+            public static GameObject GetGymRanksGameObject()
+            {
+                return ranksGameObject;
+            }
+
+            public static SpawnPointHandler GetGymSpawnPointHandler()
+            {
+                return gymSpawnPointHandler;
+            }
+
+            public static MatchmakingHandler GetGymMatchmakingHandler()
+            {
+                return matchmakingHandler;
+            }
+
+            public static RewardHandler GetGymRewardHandler()
+            {
+                return rewardHandler;
+            }
         }
 
-        public ParkBoardGymVariant GetGymParkBoardGymVariant()
+        public class Park
         {
-            return parkBoardGymVariant;
+            public static SpawnPointHandler GetParkSpawnPointHandler()
+            {
+                return parkSpawnPointHandler;
+            }
+
+            public static ParkInstance GetParkInstance()
+            {
+                return parkInstance;
+            }
+
+            public static PhoneHandler GetParkFriendBoard()
+            {
+                return parkFriendBoard;
+            }
+
+            public static ParkBoard GetParkBoardBasicParkVariant()
+            {
+                return parkBoardBasicParkVariant;
+            }
+
+            public static ParkBoardParkVariant GetParkBoardParkVariant()
+            {
+                return parkBoardParkVariant;
+            }
+
+            public static ShiftstoneQuickswapper GetParkShiftstoneQuickswapper()
+            {
+                return parkShiftstoneQuickswapper;
+            }
         }
 
-        public Howard GetGymHoward()
+        public class Pools
         {
-            return howard;
+
+            public class Structures
+            {
+                public static GameObject GetPoolDisc()
+                {
+                    return poolManager.transform.GetChild(43).gameObject;
+                }
+
+                public static GameObject GetPoolPillar()
+                {
+                    return poolManager.transform.GetChild(42).gameObject;
+                }
+
+                public static GameObject GetPoolBall()
+                {
+                    return poolManager.transform.GetChild(51).gameObject;
+                }
+
+                public static GameObject GetPoolCube()
+                {
+                    return poolManager.transform.GetChild(50).gameObject;
+                }
+
+                public static GameObject GetPoolWall()
+                {
+                    return poolManager.transform.GetChild(49).gameObject;
+                }
+
+                public static GameObject GetPoolSmallRock()
+                {
+                    return poolManager.transform.GetChild(16).gameObject;
+                }
+
+                public static GameObject GetPoolLargeRock()
+                {
+                    return poolManager.transform.GetChild(17).gameObject;
+                }
+
+                public static GameObject GetPoolBoulderBall()
+                {
+                    return poolManager.transform.GetChild(1).gameObject;
+                }
+            }
+
+            public class ShiftStones
+            {
+                public static GameObject GetPoolVolatileStone()
+                {
+                    return poolManager.transform.GetChild(3).gameObject;
+                }
+
+                public static GameObject GetPoolChargeStone()
+                {
+                    return poolManager.transform.GetChild(4).gameObject;
+                }
+
+                public static GameObject GetPoolSurgeStone()
+                {
+                    return poolManager.transform.GetChild(5).gameObject;
+                }
+
+                public static GameObject GetPoolFlowStone()
+                {
+                    return poolManager.transform.GetChild(6).gameObject;
+                }
+
+                public static GameObject GetPoolGuardStone()
+                {
+                    return poolManager.transform.GetChild(7).gameObject;
+                }
+
+                public static GameObject GetPoolStubbornStone()
+                {
+                    return poolManager.transform.GetChild(8).gameObject;
+                }
+
+                public static GameObject GetPoolAdamantStone()
+                {
+                    return poolManager.transform.GetChild(9).gameObject;
+                }
+
+                public static GameObject GetPoolVigorStone()
+                {
+                    return poolManager.transform.GetChild(10).gameObject;
+                }
+            }
         }
 
-        public MoveLearnHandler GetGymPoseGhostHandler()
+        public class Players
         {
-            return poseGhostHandler;
-        }
+            public static bool IsHost()
+            {
+                if (playerManager.AllPlayers.Count < 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return (playerManager.AllPlayers[0].Data.GeneralData.ActorNo < playerManager.AllPlayers[1].Data.GeneralData.ActorNo);
+                }
+            }
 
-        public Leaderboard GetGymDailyLeaderboard()
-        {
-            return dailyLeaderboard;
-        }
+            public static Il2CppSystem.Collections.Generic.List<Player> GetAllPlayers()
+            {
+                return playerManager.AllPlayers;
+            }
 
-        public GameObject GetGymRankStatusSlabGameObject()
-        {
-            return rankStatusSlabGameObject;
-        }
+            public static Player GetLocalPlayer()
+            {
+                return playerManager.localPlayer;
+            }
 
-        public GameObject GetGymCommunitySlabGameObject()
-        {
-            return communitySlabGameObject;
-        }
+            public static PlayerController GetPlayerController()
+            {
+                return playerManager.localPlayer.Controller;
+            }
 
-        public ShiftstoneQuickswapper GetGymShiftstoneQuickswapper()
-        {
-            return gymShiftstoneQuickswapper;
-        }
+            public static System.Collections.Generic.List<Player> GetEnemyPlayers()
+            {
+                System.Collections.Generic.List<Player> enemies = new System.Collections.Generic.List<Player>();
+                for (int i = 1; i < playerManager.AllPlayers.Capacity; i++)
+                {
+                    enemies.Add(playerManager.AllPlayers[i]);
+                }
+                return enemies;
+            }
 
-        public ShiftstoneCabinet GetGymShiftstoneCabinet()
-        {
-            return shiftstoneCabinet;
-        }
+            public static Player GetClosestPlayer(UnityEngine.Vector3 pos, bool ignoreLocalController)
+            {
+                return playerManager.GetClosestPlayer(pos, ignoreLocalController);
+            }
 
-        public GameObject GetGymGondolaGameObject()
-        {
-            return gymGondolaGameObject;
-        }
+            public static Player GetClosestPlayer(UnityEngine.Vector3 pos, PlayerController ignoreController)
+            {
+                return playerManager.GetClosestPlayer(pos, ignoreController);
+            }
 
-        public GameObject GetGymRanksGameObject()
-        {
-            return ranksGameObject;
-        }
+            public static Player GetPlayerByControllerType(RUMBLE.Players.ControllerType controllerType)
+            {
+                return playerManager.GetPlayer(controllerType);
+            }
 
-        public SpawnPointHandler GetGymSpawnPointHandler()
-        {
-            return gymSpawnPointHandler;
-        }
+            public static Player GetPlayerByActorNo(int actorNumber)
+            {
+                return playerManager.GetPlayerByActorNo(actorNumber);
+            }
 
-        public MatchmakingHandler GetGymMatchmakingHandler()
-        {
-            return matchmakingHandler;
-        }
+            public static System.Collections.Generic.List<Player> GetPlayersInActorNoOrder()
+            {
+                bool spotFound = false;
+                System.Collections.Generic.List<Player> players = new System.Collections.Generic.List<Player>();
+                for (int i = 1; i < playerManager.AllPlayers.Capacity; i++)
+                {
+                    if ((!spotFound) && (playerManager.AllPlayers[0].Data.GeneralData.ActorNo < playerManager.AllPlayers[i].Data.GeneralData.ActorNo))
+                    {
+                        players.Add(playerManager.AllPlayers[0]);
+                        spotFound = true;
+                    }
+                    players.Add(playerManager.AllPlayers[i]);
+                }
+                return players;
+            }
 
-        public RewardHandler GetGymRewardHandler()
-        {
-            return rewardHandler;
+            public static GameObject GetLocalHealthbarGameObject()
+            {
+                return localHealthbarGameObject;
+            }
         }
-
-        public SpawnPointHandler GetParkSpawnPointHandler()
-        {
-            return parkSpawnPointHandler;
-        }
-
-        public ParkInstance GetParkInstance()
-        {
-            return parkInstance;
-        }
-
-        public PhoneHandler GetParkFriendBoard()
-        {
-            return parkFriendBoard;
-        }
-
-        public ParkBoard GetParkBoardBasicParkVariant()
-        {
-            return parkBoardBasicParkVariant;
-        }
-
-        public ParkBoardParkVariant GetParkBoardParkVariant()
-        {
-            return parkBoardParkVariant;
-        }
-
-        public ShiftstoneQuickswapper GetParkShiftstoneQuickswapper()
-        {
-            return parkShiftstoneQuickswapper;
-        }
-
-        public GameObject GetLocalHealthbarGameObject()
-        {
-            return localHealthbarGameObject;
-        }
+        #endregion
     }
 }
