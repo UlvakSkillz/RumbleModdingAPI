@@ -19,6 +19,7 @@ using SteamAudio;
 using System;
 using UnityEngine;
 
+
 namespace RumbleModdingAPI
 {
     public class Calls : MelonMod
@@ -27,7 +28,9 @@ namespace RumbleModdingAPI
         private bool sceneChanged = false;
         private static DateTime whenSceneChanged = DateTime.Now;
         private static string currentScene = "";
+        private static string lastScene = "";
         private static bool init = false;
+        private static bool mapInit = false;
         private static System.Collections.Generic.List<GameObject> allBaseDDOLGameObjects = new System.Collections.Generic.List<GameObject>();
         private static System.Collections.Generic.List<GameObject> allBaseGymGameObjects = new System.Collections.Generic.List<GameObject>();
         private static System.Collections.Generic.List<GameObject> allBaseParkGameObjects = new System.Collections.Generic.List<GameObject>();
@@ -51,7 +54,6 @@ namespace RumbleModdingAPI
         private static AudioManager audioManager;
         private static SteamAudioManager steamAudioManager;
         private static GameObject uIGameObject;
-        private static GameObject gymHeinhouserProductsGameObject;
         private static MailTube mailTube;
         private static MatchmakeConsole matchConsole;
         private static GameObject regionSelectorGameObject;
@@ -84,9 +86,11 @@ namespace RumbleModdingAPI
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
+            lastScene = currentScene;
             currentScene = sceneName;
             sceneChanged = true;
             whenSceneChanged = DateTime.Now;
+            mapInit = false;
         }
 
         public override void OnFixedUpdate()
@@ -130,7 +134,7 @@ namespace RumbleModdingAPI
                             MelonLogger.Msg("API Initialized");
                         }
                     }
-                    else if (currentScene == "Gym")
+                    else if ((currentScene == "Gym") && (!mapInit))
                     {
                         allBaseGymGameObjects.Clear();
                         allBaseGymGameObjects.Add(GameObject.Find("GymPostEffects"));
@@ -141,7 +145,6 @@ namespace RumbleModdingAPI
                         allBaseGymGameObjects.Add(GameObject.Find("Lighting and effects"));
                         allBaseGymGameObjects.Add(GameObject.Find("Steam Audio Manager Settings"));
                         allBaseGymGameObjects.Add(GameObject.Find("--------------LOGIC--------------"));
-                        gymHeinhouserProductsGameObject = GameObject.Find("--------------LOGIC--------------/Heinhouser products");
                         mailTube = GameObjects.Gym.Logic.HeinhouserProducts.MailTube.GetGameObject().GetComponent<MailTube>();
                         matchConsole = GameObjects.Gym.Logic.HeinhouserProducts.MatchConsole.GetGameObject().GetComponent<MatchmakeConsole>();
                         regionSelectorGameObject = GameObjects.Gym.Logic.HeinhouserProducts.RegionSelector.GetGameObject();
@@ -161,8 +164,9 @@ namespace RumbleModdingAPI
                         gymSpawnPointHandler = GameObjects.Gym.Logic.Handlers.SpawnPointHandler.GetGameObject().GetComponent<SpawnPointHandler>();
                         matchmakingHandler = GameObjects.Gym.Logic.Handlers.MatchmakingHandler.GetGameObject().GetComponent<MatchmakingHandler>();
                         rewardHandler = GameObjects.Gym.Logic.Handlers.RewardHandler.GetGameObject().GetComponent<RewardHandler>();
+                        mapInit = true;
                     }
-                    else if (currentScene == "Park")
+                    else if ((currentScene == "Park") && (!mapInit))
                     {
                         allBaseParkGameObjects.Clear();
                         allBaseParkGameObjects.Add(GameObject.Find("________________LOGIC__________________ "));
@@ -177,8 +181,9 @@ namespace RumbleModdingAPI
                         parkBoardBasicParkVariant = GameObjects.Park.Logic.HeinhouserProducts.Parkboard.GetGameObject().GetComponent<ParkBoard>();
                         parkBoardParkVariant = GameObjects.Park.Logic.HeinhouserProducts.Parkboard.GetGameObject().GetComponent<ParkBoardParkVariant>();
                         parkShiftstoneQuickswapper = GameObjects.Park.Logic.ShiftstoneQuickswapper.GetGameObject().GetComponent<ShiftstoneQuickswapper>();
+                        mapInit = true;
                     }
-                    else if (currentScene == "Map0")
+                    else if ((currentScene == "Map0") && (!mapInit))
                     {
                         allBaseMap0GameObjects.Clear();
                         allBaseMap0GameObjects.Add(GameObject.Find("SceneProcessor"));
@@ -187,8 +192,9 @@ namespace RumbleModdingAPI
                         allBaseMap0GameObjects.Add(GameObject.Find("Lighting & Effects"));
                         allBaseMap0GameObjects.Add(GameObject.Find("Map0_production"));
                         allBaseMap0GameObjects.Add(GameObject.Find("VoiceLogger"));
+                        mapInit = true;
                     }
-                    else if (currentScene == "Map1")
+                    else if ((currentScene == "Map1") && (!mapInit))
                     {
                         allBaseMap1GameObjects.Clear();
                         allBaseMap1GameObjects.Add(GameObject.Find("!ftraceLightmaps"));
@@ -196,21 +202,22 @@ namespace RumbleModdingAPI
                         allBaseMap1GameObjects.Add(GameObject.Find("Logic"));
                         allBaseMap1GameObjects.Add(GameObject.Find("Map1_production"));
                         allBaseMap1GameObjects.Add(GameObject.Find("VoiceLogger"));
+                        mapInit = true;
                     }
-                    if ((currentScene != "") && (currentScene != "Loader"))
-                    {
-                        localHealthbarGameObject = GameObject.Find("Health");
-                    }
+                    if ((currentScene != "") && (currentScene != "Loader") && mapInit) { localHealthbarGameObject = GameObject.Find("Health"); }
                 }
                 catch { return; }
                 sceneChanged = false;
             }
         }
+
         #endregion
 
         #region API Calls
 
         public static bool IsInitialized() { return init; }
+
+        public static bool IsMapInitialized() { return mapInit; }
 
         public class GameObjects
         {
@@ -1062,7 +1069,7 @@ namespace RumbleModdingAPI
             public class Gym
             {
                 public static System.Collections.Generic.List<GameObject> GetBaseDDOLGameObjects() { return allBaseGymGameObjects; }
-
+                
                 public class GymPostEffects
                 {
                     public static GameObject GetGameObject() { return allBaseGymGameObjects[0]; }
@@ -9255,7 +9262,7 @@ namespace RumbleModdingAPI
 
                             public class SlabBuddyMatchVariant
                             {
-                                public static GameObject GetGameObject() { return MatchSlabOne.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return MatchSlab.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class MatchForm
                                 {
@@ -9667,7 +9674,7 @@ namespace RumbleModdingAPI
 
                             public class SlabBuddyMatchVariant
                             {
-                                public static GameObject GetGameObject() { return MatchSlabTwo.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return MatchSlab.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class MatchForm
                                 {
@@ -10519,7 +10526,7 @@ namespace RumbleModdingAPI
 
                             public class SlabBuddyMatchVariant
                             {
-                                public static GameObject GetGameObject() { return MatchSlabOne.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return MatchSlab.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class MatchForm
                                 {
@@ -10931,7 +10938,7 @@ namespace RumbleModdingAPI
 
                             public class SlabBuddyMatchVariant
                             {
-                                public static GameObject GetGameObject() { return MatchSlabTwo.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return MatchSlab.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class MatchForm
                                 {
@@ -11467,6 +11474,8 @@ namespace RumbleModdingAPI
             public static DateTime WhenSceneChanged() { return whenSceneChanged; }
 
             public static string GetSceneName() { return currentScene; }
+
+            public static string GetLastSceneName() { return lastScene; }
         }
 
         public class Managers
@@ -11608,11 +11617,7 @@ namespace RumbleModdingAPI
 
         public class Players
         {
-            public static bool IsHost()
-            {
-                if (playerManager.AllPlayers.Count < 2) { return true; }
-                else { return (playerManager.AllPlayers[0].Data.GeneralData.ActorNo < playerManager.AllPlayers[1].Data.GeneralData.ActorNo); }
-            }
+            public static bool IsHost() { return PhotonNetwork.IsMasterClient; }
 
             public static Il2CppSystem.Collections.Generic.List<Player> GetAllPlayers() { return playerManager.AllPlayers; }
 
@@ -11623,7 +11628,7 @@ namespace RumbleModdingAPI
             public static System.Collections.Generic.List<Player> GetEnemyPlayers()
             {
                 System.Collections.Generic.List<Player> enemies = new System.Collections.Generic.List<Player>();
-                for (int i = 1; i < playerManager.AllPlayers.Capacity; i++) { enemies.Add(playerManager.AllPlayers[i]); }
+                for (int i = 1; i < playerManager.AllPlayers.Count; i++) { enemies.Add(playerManager.AllPlayers[i]); }
                 return enemies;
             }
 
@@ -11639,7 +11644,7 @@ namespace RumbleModdingAPI
             {
                 bool spotFound = false;
                 System.Collections.Generic.List<Player> players = new System.Collections.Generic.List<Player>();
-                for (int i = 1; i < playerManager.AllPlayers.Capacity; i++)
+                for (int i = 1; i < playerManager.AllPlayers.Count; i++)
                 {
                     if ((!spotFound) && (playerManager.AllPlayers[0].Data.GeneralData.ActorNo < playerManager.AllPlayers[i].Data.GeneralData.ActorNo))
                     {

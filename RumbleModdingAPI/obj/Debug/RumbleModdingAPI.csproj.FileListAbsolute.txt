@@ -124,4 +124,3 @@ C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\obj\Debug\RumbleMo
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\PhotonUtilities.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\FloatCrusher.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\QuatCompress.dll
-C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\obj\Debug\RumbleModdingAPI.csproj.AssemblyReference.cache
