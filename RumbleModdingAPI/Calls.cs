@@ -260,7 +260,7 @@ namespace RumbleModdingAPI
 
                         public class PoolManager
                         {
-                            public static GameObject GetGameObject() { return GameInstance.GetGameObject().transform.GetChild(1).gameObject; }
+                            public static GameObject GetGameObject() { return PreInitializable.GetGameObject().transform.GetChild(1).gameObject; }
 
                             public class VigorstoneBurstVFX
                             {
