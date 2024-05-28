@@ -6,7 +6,7 @@ using RUMBLE.Combat.ShiftStones.UI;
 using RUMBLE.Environment;
 using RUMBLE.Environment.Howard;
 using RUMBLE.Environment.Matchmaking;
-using RUMBLE.Input;
+using RUMBLE.Interactions.InteractionBase;
 using RUMBLE.Managers;
 using RUMBLE.MoveSystem;
 using RUMBLE.Players;
@@ -17,8 +17,10 @@ using RUMBLE.Tutorial.MoveLearning;
 using RUMBLE.Utilities;
 using SteamAudio;
 using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 namespace RumbleModdingAPI
 {
@@ -39,7 +41,7 @@ namespace RumbleModdingAPI
         private static Game gameManager;
         private static NetworkManager networkManager;
         private static PlayerManager playerManager;
-        private static InputManager inputManager;
+        private static RUMBLE.Input.InputManager inputManager;
         private static SceneManager sceneManager;
         private static NotificationManager notificationManager;
         private static StackManager stackManager;
@@ -80,9 +82,45 @@ namespace RumbleModdingAPI
         private static ShiftstoneQuickswapper parkShiftstoneQuickswapper;
         private static ParkInstance parkInstance;
         private static GameObject localHealthbarGameObject;
+        private object localHealthCoroutine;
+        public static event System.Action onMapInitialized; //action to add listener to for map initialization
+        private static GameObject newTextGameObject;
+        private static GameObject newButtonGameObject;
+        private static GameObject parentAPIItems;
+
+        private static InputActionMap map = new InputActionMap("InputMap");
+        private static InputAction rightTrigger = map.AddAction("Right Trigger");
+        private static InputAction rightPrimary = map.AddAction("Right Primary");
+        private static InputAction rightSecondary = map.AddAction("Right Secondary");
+        private static InputAction rightGrip = map.AddAction("Right Grip");
+        private static InputAction rightJoystick = map.AddAction("Right Joystick");
+        private static InputAction rightJoystickClick = map.AddAction("Right Joystick Click");
+        private static InputAction leftTrigger = map.AddAction("Left Trigger");
+        private static InputAction leftPrimary = map.AddAction("Left Primary");
+        private static InputAction leftSecondary = map.AddAction("Left Secondary");
+        private static InputAction leftGrip = map.AddAction("Left Grip");
+        private static InputAction leftJoystick = map.AddAction("Left Joystick");
+        private static InputAction leftJoystickClick = map.AddAction("Left Joystick Click");
         #endregion
 
         #region API Initialization
+
+        public override void OnLateInitializeMelon()
+        {
+            rightTrigger.AddBinding("<XRController>{RightHand}/trigger");
+            rightPrimary.AddBinding("<XRController>{RightHand}/primaryButton");
+            rightSecondary.AddBinding("<XRController>{RightHand}/secondaryButton");
+            rightGrip.AddBinding("<XRController>{RightHand}/Grip");
+            rightJoystick.AddBinding("<XRController>{RightHand}/primary2DAxis");
+            rightJoystickClick.AddBinding("<XRController>{RightHand}/joystickClicked");
+            leftTrigger.AddBinding("<XRController>{LeftHand}/trigger");
+            leftPrimary.AddBinding("<XRController>{LeftHand}/primaryButton");
+            leftSecondary.AddBinding("<XRController>{LeftHand}/secondaryButton");
+            leftGrip.AddBinding("<XRController>{LeftHand}/Grip");
+            leftJoystick.AddBinding("<XRController>{LeftHand}/primary2DAxis");
+            leftJoystickClick.AddBinding("<XRController>{LeftHand}/joystickClicked");
+            map.Enable();
+        }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
@@ -112,23 +150,23 @@ namespace RumbleModdingAPI
                             allBaseDDOLGameObjects.Add(GameObject.Find("SteamManager"));
                             allBaseDDOLGameObjects.Add(GameObject.Find("AnalyticsContainer"));
                             allBaseDDOLGameObjects.Add(GameObject.Find("PlayFabHttp"));
-                            bHapticsManager = GameObjects.DDOL.BHaptics.GetGameObject().GetComponent<BhapticsSDK2>();
-                            photonHandler = GameObjects.DDOL.PhotonMono.GetGameObject().GetComponent<PhotonHandler>();
-                            gameManager = GameObjects.DDOL.GameInstance.GetGameObject().GetComponent<Game>();
-                            audioManager = GameObjects.DDOL.GameInstance.PreInitializable.AudioManager.GetGameObject().GetComponent<AudioManager>();
+                            bHapticsManager = BhapticsSDK2.instance;
+                            photonHandler = PhotonHandler.instance;
+                            gameManager = Game.instance;
+                            audioManager = AudioManager.instance;
                             steamAudioManager = GameObjects.DDOL.GameInstance.PreInitializable.AudioManager.SteamAudioManagerSettings.GetGameObject().GetComponent<SteamAudioManager>();
-                            poolManager = GameObjects.DDOL.GameInstance.PreInitializable.PoolManager.GetGameObject().GetComponent<PoolManager>();
-                            networkManager = GameObjects.DDOL.GameInstance.Initializable.NetworkManager.GetGameObject().GetComponent<NetworkManager>();
-                            playerManager = GameObjects.DDOL.GameInstance.Initializable.PlayerManager.GetGameObject().GetComponent<PlayerManager>();
-                            inputManager = GameObjects.DDOL.GameInstance.Initializable.InputManager.GetGameObject().GetComponent<InputManager>();
-                            sceneManager = GameObjects.DDOL.GameInstance.Initializable.SceneManager.GetGameObject().GetComponent<SceneManager>();
-                            notificationManager = GameObjects.DDOL.GameInstance.Initializable.NotificationManager.GetGameObject().GetComponent<NotificationManager>();
-                            stackManager = GameObjects.DDOL.GameInstance.Initializable.StackManager.GetGameObject().GetComponent<StackManager>();
-                            qualityManager = GameObjects.DDOL.GameInstance.Initializable.QualityManager.GetGameObject().GetComponent<QualityManager>();
-                            socialHandler = GameObjects.DDOL.GameInstance.Initializable.SocialHandler.GetGameObject().GetComponent<SocialHandler>();
-                            slabManager = GameObjects.DDOL.GameInstance.Initializable.SlabManager.GetGameObject().GetComponent<SlabManager>();
-                            recordingCamera = GameObjects.DDOL.GameInstance.Initializable.RecordingCamera.GetGameObject().GetComponent<RecordingCamera>();
-                            combatManager = GameObjects.DDOL.GameInstance.Other.CombatManager.GetGameObject().GetComponent<CombatManager>();
+                            poolManager = PoolManager.instance;
+                            networkManager = NetworkManager.instance;
+                            playerManager = PlayerManager.instance;
+                            inputManager = RUMBLE.Input.InputManager.instance;
+                            sceneManager = SceneManager.instance;
+                            notificationManager = NotificationManager.instance;
+                            stackManager = StackManager.instance;
+                            qualityManager = QualityManager.instance;
+                            socialHandler = SocialHandler.instance;
+                            slabManager = SlabManager.instance;
+                            recordingCamera = RecordingCamera.instance;
+                            combatManager = CombatManager.instance;
                             uIGameObject = GameObjects.DDOL.GameInstance.UI.GetGameObject();
                             init = true;
                             MelonLogger.Msg("API Initialized");
@@ -153,7 +191,7 @@ namespace RumbleModdingAPI
                         parkBoardBasicGymVariant = GameObjects.Gym.Logic.HeinhouserProducts.Parkboard.GetGameObject().GetComponent<ParkBoard>();
                         parkBoardGymVariant = GameObjects.Gym.Logic.HeinhouserProducts.Parkboard.GetGameObject().GetComponent<ParkBoardGymVariant>();
                         howard = GameObjects.Gym.Logic.HeinhouserProducts.HowardRoot.GetGameObject().GetComponent<Howard>();
-                        poseGhostHandler = GameObjects.Gym.Logic.HeinhouserProducts.MoveLearning.GetGameObject().GetComponent<MoveLearnHandler>();
+                        poseGhostHandler = MoveLearnHandler.instance;
                         dailyLeaderboard = GameObjects.Gym.Logic.HeinhouserProducts.Leaderboard.GetGameObject().GetComponent<Leaderboard>();
                         rankStatusSlabGameObject = GameObjects.Gym.Logic.HeinhouserProducts.RankStatusSlab.GetGameObject();
                         communitySlabGameObject = GameObjects.Gym.Logic.HeinhouserProducts.CommunitySlab.GetGameObject();
@@ -162,8 +200,30 @@ namespace RumbleModdingAPI
                         gymGondolaGameObject = GameObjects.Gym.Logic.HeinhouserProducts.Gondola.GetGameObject();
                         ranksGameObject = GameObjects.Gym.Logic.HeinhouserProducts.RankBoard.GetGameObject();
                         gymSpawnPointHandler = GameObjects.Gym.Logic.Handlers.SpawnPointHandler.GetGameObject().GetComponent<SpawnPointHandler>();
-                        matchmakingHandler = GameObjects.Gym.Logic.Handlers.MatchmakingHandler.GetGameObject().GetComponent<MatchmakingHandler>();
-                        rewardHandler = GameObjects.Gym.Logic.Handlers.RewardHandler.GetGameObject().GetComponent<RewardHandler>();
+                        matchmakingHandler = MatchmakingHandler.instance;
+                        rewardHandler = RewardHandler.instance;
+                        if (parentAPIItems == null)
+                        {
+                            parentAPIItems = new GameObject("APIItems");
+                            GameObject.DontDestroyOnLoad(parentAPIItems);
+                        }
+                        if (newTextGameObject == null)
+                        {
+                            newTextGameObject = GameObject.Instantiate(GameObjects.Gym.Logic.HeinhouserProducts.Leaderboard.PlayerTags.HighscoreTag0.Nr.GetGameObject());
+                            TextMeshPro tmp = newTextGameObject.GetComponent<TextMeshPro>();
+                            newTextGameObject.name = "NewTextGameObject";
+                            tmp.text = "new Text";
+                            tmp.color = Color.black;
+                            newTextGameObject.SetActive(false);
+                            newTextGameObject.transform.parent = parentAPIItems.transform;
+                        }
+                        if (newButtonGameObject == null)
+                        {
+                            newButtonGameObject = GameObject.Instantiate(GameObjects.Gym.Tutorial.StaticTutorials.RUMBLEStarterGuide.NextPageButton.InteractionButton.GetGameObject());
+                            newButtonGameObject.name = "newButton";
+                            newButtonGameObject.SetActive(false);
+                            newButtonGameObject.transform.parent = parentAPIItems.transform;
+                        }
                         mapInit = true;
                     }
                     else if ((currentScene == "Park") && (!mapInit))
@@ -204,10 +264,30 @@ namespace RumbleModdingAPI
                         allBaseMap1GameObjects.Add(GameObject.Find("VoiceLogger"));
                         mapInit = true;
                     }
-                    if ((currentScene != "") && (currentScene != "Loader") && mapInit) { localHealthbarGameObject = GameObject.Find("Health"); }
+                    if ((currentScene != "") && (currentScene != "Loader") && mapInit && localHealthCoroutine == null) { localHealthCoroutine = MelonCoroutines.Start(GetHealth()); }
+                    if (mapInit)
+                    {
+                        onMapInitialized?.Invoke();
+                    }
                 }
                 catch { return; }
                 sceneChanged = false;
+            }
+        }
+
+        private IEnumerator GetHealth()
+        {
+            bool gotHealth = false;
+            while (!gotHealth)
+            {
+                localHealthbarGameObject = GameObject.Find("Health");
+                if (localHealthbarGameObject != null)
+                {
+                    MelonLogger.Msg(localHealthbarGameObject.name);
+                    gotHealth = true;
+                    yield return new WaitForFixedUpdate();
+                    MelonCoroutines.Stop(localHealthCoroutine);
+                }
             }
         }
 
@@ -218,6 +298,134 @@ namespace RumbleModdingAPI
         public static bool IsInitialized() { return init; }
 
         public static bool IsMapInitialized() { return mapInit; }
+
+        public class ControllerMap
+        {
+            public class RightController
+            {
+                public static float GetTrigger()
+                {
+                    return rightTrigger.ReadValue<float>();
+                }
+
+                public static float GetGrip()
+                {
+                    return rightGrip.ReadValue<float>();
+                }
+
+                public static float GetPrimary()
+                {
+                    return rightPrimary.ReadValue<float>();
+                }
+
+                public static float GetSecondary()
+                {
+                    return rightSecondary.ReadValue<float>();
+                }
+
+                public static Vector2 GetJoystick()
+                {
+                    return rightJoystick.ReadValue<Vector2>();
+                }
+
+                public static float GetJoystickClick()
+                {
+                    return rightJoystickClick.ReadValue<float>();
+                }
+            }
+
+            public class LeftController
+            {
+                public static float GetTrigger()
+                {
+                    return leftTrigger.ReadValue<float>();
+                }
+
+                public static float GetGrip()
+                {
+                    return leftGrip.ReadValue<float>();
+                }
+
+                public static float GetPrimary()
+                {
+                    return leftPrimary.ReadValue<float>();
+                }
+
+                public static float GetSecondary()
+                {
+                    return leftSecondary.ReadValue<float>();
+                }
+
+                public static Vector2 GetJoystick()
+                {
+                    return leftJoystick.ReadValue<Vector2>();
+                }
+
+                public static float GetJoystickClick()
+                {
+                    return leftJoystickClick.ReadValue<float>();
+                }
+            }
+        }
+
+        public class Create
+        {
+            public static GameObject NewText()
+            {
+                GameObject newTextGO = GameObject.Instantiate(newTextGameObject);
+                newTextGO.SetActive(true);
+                newTextGO.GetComponent<TextMeshPro>().autoSizeTextContainer = true;
+                return newTextGO;
+            }
+
+            public static GameObject NewText(string text, float textSize, Color textColor, UnityEngine.Vector3 textPosition, Quaternion textRotation)
+            {
+                GameObject newTextGO = GameObject.Instantiate(newTextGameObject);
+                newTextGO.SetActive(true);
+                TextMeshPro tmp = newTextGO.GetComponent<TextMeshPro>();
+                tmp.text = text;
+                tmp.fontSize = textSize;
+                tmp.color = textColor;
+                tmp.autoSizeTextContainer = true;
+                newTextGameObject.transform.position = textPosition;
+                newTextGameObject.transform.rotation = textRotation;
+                return newTextGO;
+            }
+
+            public static GameObject NewButton()
+            {
+                GameObject newButtonGO = GameObject.Instantiate(newButtonGameObject);
+                newButtonGO.SetActive(true);
+                return newButtonGO;
+            }
+
+            public static GameObject NewButton(UnityEngine.Vector3 buttonPosition, Quaternion buttonRotation)
+            {
+                GameObject newButtonGO = GameObject.Instantiate(newButtonGameObject);
+                newButtonGO.transform.position = buttonPosition;
+                newButtonGO.transform.rotation = buttonRotation;
+                newButtonGO.SetActive(true);
+                return newButtonGO;
+            }
+
+            public static GameObject NewButton(Action action)
+            {
+                GameObject newButtonGO = GameObject.Instantiate(newButtonGameObject);
+                newButtonGO.SetActive(true);
+                newButtonGO.transform.GetChild(0).gameObject.GetComponent<InteractionButton>().onPressed.AddListener(action);
+                return newButtonGO;
+            }
+
+            public static GameObject NewButton(UnityEngine.Vector3 buttonPosition, Quaternion buttonRotation, Action action)
+            {
+                GameObject newButtonGO = GameObject.Instantiate(newButtonGameObject);
+                newButtonGO.transform.position = buttonPosition;
+                newButtonGO.transform.rotation = buttonRotation;
+                newButtonGO.SetActive(true);
+                newButtonGO.transform.GetChild(0).gameObject.GetComponent<InteractionButton>().onPressed.AddListener(action);
+                return newButtonGO;
+            }
+        }
 
         public class GameObjects
         {
@@ -11486,7 +11694,7 @@ namespace RumbleModdingAPI
 
             public static PlayerManager GetPlayerManager() { return playerManager; }
 
-            public static InputManager GetInputManager() { return inputManager; }
+            public static RUMBLE.Input.InputManager GetInputManager() { return inputManager; }
 
             public static SceneManager GetSceneManager() { return sceneManager; }
 
