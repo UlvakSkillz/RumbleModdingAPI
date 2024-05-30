@@ -35,7 +35,6 @@ C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\UnityEng
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\UnityEngine.AudioModule.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\UnityEngine.ParticleSystemModule.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\RUMBLE.Plugins.dll
-C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Unity.InputSystem.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Unity.RenderPipelines.Universal.Runtime.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Il2CppSystem.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\SmartLocalization.dll
@@ -124,7 +123,6 @@ C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\obj\Debug\RumbleMo
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\PhotonUtilities.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\FloatCrusher.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\QuatCompress.dll
-C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\obj\Debug\RumbleModdingAPI.csproj.AssemblyReference.cache
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Unity.Burst.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Unity.Services.Analytics.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Unity.Services.Core.Configuration.dll
@@ -147,3 +145,4 @@ C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Il2CppNe
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Il2CppSystem.Runtime.Serialization.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Il2CppSystem.Data.dll
 C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\bin\Debug\Il2CppSystem.Xml.Linq.dll
+C:\Users\austi\source\repos\RumbleModdingAPI\RumbleModdingAPI\obj\Debug\RumbleModdingAPI.csproj.AssemblyReference.cache

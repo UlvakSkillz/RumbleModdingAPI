@@ -204,7 +204,8 @@ namespace RumbleModdingAPI
                         rewardHandler = RewardHandler.instance;
                         if (parentAPIItems == null)
                         {
-                            parentAPIItems = new GameObject("APIItems");
+                            parentAPIItems = new GameObject();
+                            parentAPIItems.name = "APIItems";
                             GameObject.DontDestroyOnLoad(parentAPIItems);
                         }
                         if (newTextGameObject == null)
@@ -283,10 +284,13 @@ namespace RumbleModdingAPI
                 localHealthbarGameObject = GameObject.Find("Health");
                 if (localHealthbarGameObject != null)
                 {
-                    MelonLogger.Msg(localHealthbarGameObject.name);
                     gotHealth = true;
                     yield return new WaitForFixedUpdate();
                     MelonCoroutines.Stop(localHealthCoroutine);
+                }
+                else
+                {
+                    yield return new WaitForFixedUpdate();
                 }
             }
         }
