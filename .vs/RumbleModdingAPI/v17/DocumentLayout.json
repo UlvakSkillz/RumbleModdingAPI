@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BAEDCD9-CE91-4224-8A88-AEB27AC61B5D}|RumbleModdingAPI\\RumbleModdingAPI.csproj|c:\\users\\austi\\source\\repos\\rumblemoddingapinew\\rumblemoddingapi\\calls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BAEDCD9-CE91-4224-8A88-AEB27AC61B5D}|RumbleModdingAPI\\RumbleModdingAPI.csproj|solutionrelative:rumblemoddingapi\\calls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BAEDCD9-CE91-4224-8A88-AEB27AC61B5D}|RumbleModdingAPI\\RumbleModdingAPI.csproj|c:\\users\\austi\\source\\repos\\rumblemoddingapinew\\rumblemoddingapi\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BAEDCD9-CE91-4224-8A88-AEB27AC61B5D}|RumbleModdingAPI\\RumbleModdingAPI.csproj|solutionrelative:rumblemoddingapi\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BAEDCD9-CE91-4224-8A88-AEB27AC61B5D}|RumbleModdingAPI\\RumbleModdingAPI.csproj|c:\\users\\austi\\source\\repos\\rumblemoddingapinew\\rumblemoddingapi\\rumblemoddingapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1BAEDCD9-CE91-4224-8A88-AEB27AC61B5D}|RumbleModdingAPI\\RumbleModdingAPI.csproj|solutionrelative:rumblemoddingapi\\rumblemoddingapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RumbleModdingAPI",
+              "DocumentMoniker": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\RumbleModdingAPI.csproj",
+              "RelativeDocumentMoniker": "RumbleModdingAPI\\RumbleModdingAPI.csproj",
+              "ToolTip": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\RumbleModdingAPI.csproj",
+              "RelativeToolTip": "RumbleModdingAPI\\RumbleModdingAPI.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-04T01:18:42.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Calls.cs",
+              "DocumentMoniker": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\Calls.cs",
+              "RelativeDocumentMoniker": "RumbleModdingAPI\\Calls.cs",
+              "ToolTip": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\Calls.cs",
+              "RelativeToolTip": "RumbleModdingAPI\\Calls.cs",
+              "ViewState": "AQIAAIYCAAAAAAAAAAApwLQCAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T02:23:59.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "RumbleModdingAPI\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\AssemblyInfo.cs",
+              "RelativeToolTip": "RumbleModdingAPI\\AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T02:23:57.766Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

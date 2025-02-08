@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "3SLPO+u8kyLGyfjrSnvm1GsbiFiUJzNSKvKA4EAtnMe05dtokBzce8DWyozDu6IoO1MjZNhyXD40++762cuXBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\RumbleModdingAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\austi\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.100-preview.7.24407.12\\microsoft.net.sdk.compilers.toolset.9.0.100-preview.7.24407.12.nupkg.sha512",
+    "C:\\Users\\austi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.32\\microsoft.windowsdesktop.app.ref.6.0.32.nupkg.sha512",
+    "C:\\Users\\austi\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.32\\microsoft.netcore.app.ref.6.0.32.nupkg.sha512",
+    "C:\\Users\\austi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.32\\microsoft.aspnetcore.app.ref.6.0.32.nupkg.sha512"
+  ],
+  "logs": []
+}
