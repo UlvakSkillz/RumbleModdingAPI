@@ -201,3 +201,5 @@ C:\Users\austi\source\repos\.Done\RumbleModdingAPInew\RumbleModdingAPI\obj\Debug
 C:\Users\austi\source\repos\.Done\RumbleModdingAPInew\RumbleModdingAPI\obj\Debug\net6.0\refint\RumbleModdingAPI.dll
 C:\Users\austi\source\repos\.Done\RumbleModdingAPInew\RumbleModdingAPI\obj\Debug\net6.0\RumbleModdingAPI.pdb
 C:\Users\austi\source\repos\.Done\RumbleModdingAPInew\RumbleModdingAPI\obj\Debug\net6.0\ref\RumbleModdingAPI.dll
+C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\UnityEngine.Il2CppAssetBundleManager.pdb
+C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\obj\Debug\net6.0\RumbleModdingAPI.sourcelink.json

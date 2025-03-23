@@ -18,12 +18,12 @@
           "Il2CppPhotonUtilities": "0.0.0.0",
           "Il2CppRUMBLE.Plugins": "0.0.0.0",
           "Il2CppRUMBLE.Runtime": "0.0.0.0",
-          "MelonLoader": "0.6.6.0",
+          "MelonLoader": "0.7.0.0",
           "Unity.InputSystem": "1.7.0.0",
           "Unity.TextMeshPro": "0.0.0.0",
           "UnityEngine.CoreModule": "0.0.0.0",
           "UnityEngine": "0.0.0.0",
-          "UnityEngine.Il2CppAssetBundleManager": "0.6.4.0",
+          "UnityEngine.Il2CppAssetBundleManager": "0.7.0.0",
           "UnityEngine.InputLegacyModule": "0.0.0.0"
         },
         "runtime": {
@@ -110,11 +110,11 @@
           }
         }
       },
-      "MelonLoader/0.6.6.0": {
+      "MelonLoader/0.7.0.0": {
         "runtime": {
           "MelonLoader.dll": {
-            "assemblyVersion": "0.6.6.0",
-            "fileVersion": "0.6.6.0"
+            "assemblyVersion": "0.7.0.0",
+            "fileVersion": "0.7.0.0"
           }
         }
       },
@@ -150,11 +150,11 @@
           }
         }
       },
-      "UnityEngine.Il2CppAssetBundleManager/0.6.4.0": {
+      "UnityEngine.Il2CppAssetBundleManager/0.7.0.0": {
         "runtime": {
           "UnityEngine.Il2CppAssetBundleManager.dll": {
-            "assemblyVersion": "0.6.4.0",
-            "fileVersion": "0.6.4.0"
+            "assemblyVersion": "0.7.0.0",
+            "fileVersion": "0.7.0.0"
           }
         }
       },
@@ -358,14 +358,6 @@
           }
         }
       },
-      "Il2CppPhotonVoice.API/0.0.0.0": {
-        "runtime": {
-          "Il2CppPhotonVoice.API.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
       "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
         "runtime": {
           "Unity.RenderPipelines.Universal.Runtime.dll": {
@@ -374,17 +366,17 @@
           }
         }
       },
-      "Il2CppLIV/0.0.0.0": {
+      "Il2CppPhotonVoice.API/0.0.0.0": {
         "runtime": {
-          "Il2CppLIV.dll": {
+          "Il2CppPhotonVoice.API.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
         }
       },
-      "Il2CppRUMBLE.Rendering/0.0.0.0": {
+      "Il2CppLIV/0.0.0.0": {
         "runtime": {
-          "Il2CppRUMBLE.Rendering.dll": {
+          "Il2CppLIV.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "0.0.0.0"
           }
@@ -478,19 +470,19 @@
           }
         }
       },
-      "AssetsTools.NET/3.0.0.0": {
-        "runtime": {
-          "AssetsTools.NET.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
       "Tomlet/5.4.0.0": {
         "runtime": {
           "Tomlet.dll": {
             "assemblyVersion": "5.4.0.0",
             "fileVersion": "5.4.0.0"
+          }
+        }
+      },
+      "AssetsTools.NET/3.0.0.0": {
+        "runtime": {
+          "AssetsTools.NET.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
           }
         }
       },
@@ -792,7 +784,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MelonLoader/0.6.6.0": {
+    "MelonLoader/0.7.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -817,7 +809,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UnityEngine.Il2CppAssetBundleManager/0.6.4.0": {
+    "UnityEngine.Il2CppAssetBundleManager/0.7.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -947,22 +939,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppPhotonVoice.API/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Unity.RenderPipelines.Universal.Runtime/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppLIV/0.0.0.0": {
+    "Il2CppPhotonVoice.API/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Il2CppRUMBLE.Rendering/0.0.0.0": {
+    "Il2CppLIV/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -1022,12 +1009,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AssetsTools.NET/3.0.0.0": {
+    "Tomlet/5.4.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "Tomlet/5.4.0.0": {
+    "AssetsTools.NET/3.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

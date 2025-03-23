@@ -453,14 +453,21 @@ namespace RumbleModdingAPI
             {
                 if (player.Data.GeneralData.PlayFabMasterId == "5832566FD2375E31")
                 {
+                    if (player.Controller.controllerType != ControllerType.Local)
+                    {
+                        GameObject cat = GameObject.Instantiate(catEars);
+                        cat.transform.parent = player.Controller.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                        cat.transform.localPosition = new Vector3(0, 0.15f, 0);
+                        cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
+                        cat.transform.localScale = new Vector3(50, 50, 50);
+                        cat.SetActive(true);
+                    }
+                    else if (currentScene == "Gym")
+                    {
+                        MelonCoroutines.Start(SetDressingRoomObjects());
+                    }
                     GameObject poke = GameObject.Instantiate(pokeBalls);
-                    GameObject cat = GameObject.Instantiate(catEars);
-                    cat.transform.parent = player.Controller.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
-                    cat.transform.localPosition = new Vector3(0, 0.15f, 0);
-                    cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
-                    cat.transform.localScale = new Vector3(50, 50, 50);
-                    cat.SetActive(true);
-                    poke.transform.parent = player.Controller.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/");
+                    poke.transform.parent = player.Controller.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
                     poke.transform.localPosition = new Vector3(-0.01f, 0, 0);
                     poke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
                     poke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
@@ -472,6 +479,28 @@ namespace RumbleModdingAPI
                 }
                 onPlayerSpawned?.Invoke();
             }
+        }
+
+        private static IEnumerator SetDressingRoomObjects()
+        {
+            yield return new WaitForSeconds(1);
+            try
+            {
+                GameObject dressingRoomCat = GameObject.Instantiate(catEars);
+                dressingRoomCat.transform.parent = Calls.GameObjects.Gym.Scene.GymProduction.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                dressingRoomCat.transform.localPosition = new Vector3(0, 0.15f, 0);
+                dressingRoomCat.transform.localRotation = Quaternion.Euler(270, 0, 0);
+                dressingRoomCat.transform.localScale = new Vector3(50, 50, 50);
+                dressingRoomCat.SetActive(true);
+                GameObject dressingRoomPoke = GameObject.Instantiate(pokeBalls);
+                dressingRoomPoke.transform.parent = Calls.GameObjects.Gym.Scene.GymProduction.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
+                dressingRoomPoke.transform.localPosition = new Vector3(-0.01f, 0, 0);
+                dressingRoomPoke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
+                dressingRoomPoke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
+                dressingRoomPoke.SetActive(true);
+            }
+            catch { }
+            yield break;
         }
 
         private static IEnumerator WaitForTitleLoad(Il2CppRUMBLE.Players.Player player)
