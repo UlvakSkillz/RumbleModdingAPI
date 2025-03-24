@@ -30,7 +30,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.3.1";
+        public const string Version = "3.3.2";
     }
 
     public class ModInfo
@@ -379,8 +379,11 @@ namespace RumbleModdingAPI
                                 matchSlab = Calls.GameObjects.Map1.Logic.MatchSlabOne.MatchSlab.SlabBuddyMatchVariant.MatchForm.MatchFormCanvas.GetGameObject();
                             }
                             matchStarted = true;
-                            onMatchStarted?.Invoke();
-                            onRoundStarted?.Invoke();
+                            if ((currentScene == "Map0") || (currentScene == "Map1"))
+                            {
+                                onMatchStarted?.Invoke();
+                                onRoundStarted?.Invoke();
+                            }
                         }
                         MelonCoroutines.Start(HealthWatcher(sceneCount));
                     }
