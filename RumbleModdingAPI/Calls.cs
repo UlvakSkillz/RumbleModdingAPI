@@ -30,7 +30,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.3.2";
+        public const string Version = "3.3.4";
     }
 
     public class ModInfo
@@ -153,16 +153,6 @@ namespace RumbleModdingAPI
         public static void Log(string msg)
         {
             MelonLogger.Msg(msg);
-        }
-
-        [HarmonyPatch("Il2CppInterop.HarmonySupport.Il2CppDetourMethodPatcher", "ReportException")]
-        public static class Patch_Il2CppDetourMethodPatcher
-        {
-            public static bool Prefix(System.Exception ex)
-            {
-                MelonLogger.Error("During invoking native->managed trampoline", ex);
-                return false;
-            }
         }
 
         public override void OnLateInitializeMelon()
@@ -456,21 +446,33 @@ namespace RumbleModdingAPI
             {
                 if (player.Data.GeneralData.PlayFabMasterId == "5832566FD2375E31")
                 {
-                    if (player.Controller.controllerType != ControllerType.Local)
+                    try
+                    {
+                        if (player.Controller.controllerType != ControllerType.Local)
+                        {
+                            GameObject cat = GameObject.Instantiate(catEars);
+                            cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                            cat.transform.localPosition = new Vector3(0, 0.15f, 0);
+                            cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
+                            cat.transform.localScale = new Vector3(50, 50, 50);
+                            cat.SetActive(true);
+                        }
+                        else if (currentScene == "Gym")
+                        {
+                            MelonCoroutines.Start(SetDressingRoomObjects());
+                        }
+                    }
+                    catch
                     {
                         GameObject cat = GameObject.Instantiate(catEars);
-                        cat.transform.parent = player.Controller.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                        cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
                         cat.transform.localPosition = new Vector3(0, 0.15f, 0);
                         cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
                         cat.transform.localScale = new Vector3(50, 50, 50);
                         cat.SetActive(true);
                     }
-                    else if (currentScene == "Gym")
-                    {
-                        MelonCoroutines.Start(SetDressingRoomObjects());
-                    }
                     GameObject poke = GameObject.Instantiate(pokeBalls);
-                    poke.transform.parent = player.Controller.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
+                    poke.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
                     poke.transform.localPosition = new Vector3(-0.01f, 0, 0);
                     poke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
                     poke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
@@ -484,9 +486,14 @@ namespace RumbleModdingAPI
             }
         }
 
+        private static bool dressingRoomObjectsCreated = false;
         private static IEnumerator SetDressingRoomObjects()
         {
             yield return new WaitForSeconds(1);
+            if (dressingRoomObjectsCreated)
+            {
+                yield break;
+            }
             try
             {
                 GameObject dressingRoomCat = GameObject.Instantiate(catEars);
@@ -501,6 +508,7 @@ namespace RumbleModdingAPI
                 dressingRoomPoke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
                 dressingRoomPoke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
                 dressingRoomPoke.SetActive(true);
+                dressingRoomObjectsCreated = true;
             }
             catch { }
             yield break;
@@ -508,12 +516,21 @@ namespace RumbleModdingAPI
 
         private static IEnumerator WaitForTitleLoad(Il2CppRUMBLE.Players.Player player)
         {
-            TextMeshPro titleTextMeshPro = player.Controller.gameObject.transform.GetChild(9).GetChild(2).GetComponent<TextMeshPro>();
-            while (titleTextMeshPro.text == "Player Title")
+            bool worked = true;
+            TextMeshPro titleTextMeshPro = null;
+            try
             {
-                yield return new WaitForFixedUpdate();
+                titleTextMeshPro = player.Controller.gameObject.transform.GetChild(9).GetChild(2).GetComponent<TextMeshPro>();
             }
-            titleTextMeshPro.text = "GrassBender";
+            catch { worked = false; }
+            if (worked)
+            {
+                while (titleTextMeshPro.text == "Player Title")
+                {
+                    yield return new WaitForFixedUpdate();
+                }
+                titleTextMeshPro.text = "GrassBender";
+            }
             yield break;
         }
 
@@ -536,7 +553,7 @@ namespace RumbleModdingAPI
                         if (playerCount != PlayerManager.instance.AllPlayers.Count)
                         {
                             playerCount = PlayerManager.instance.AllPlayers.Count;
-                            if (matchStarted && (playerCount == 1))
+                            if (matchStarted && (playerCount == 1) && ((currentScene == "Map0") || (currentScene == "Map1")))
                             {
                                 onRoundEnded?.Invoke();
                                 onMatchEnded?.Invoke();
@@ -601,7 +618,7 @@ namespace RumbleModdingAPI
                             onRoundStarted?.Invoke();
                         }
                     }
-                    if ((PlayerManager.instance.AllPlayers.Count > 1) && !matchEnded && (matchSlab.active))
+                    if ((PlayerManager.instance.AllPlayers.Count > 1) && ((currentScene == "Map0") || (currentScene == "Map1")) && !matchEnded && (matchSlab.active))
                     {
                         matchEnded = true;
                         matchStarted = false;
