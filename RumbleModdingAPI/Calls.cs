@@ -25,12 +25,14 @@ using Il2CppPhoton.Realtime;
 using Il2CppExitGames.Client.Photon;
 using HarmonyLib;
 using Il2CppRUMBLE.Slabs.Forms;
+using Il2CppRUMBLE.Players.Subsystems;
+using static MelonLoader.MelonLogger;
 
 namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.3.4";
+        public const string Version = "3.3.7";
     }
 
     public class ModInfo
@@ -48,7 +50,7 @@ namespace RumbleModdingAPI
     public class Calls : MelonMod
     {
         #region Variables
-        public byte myEventCode = 68;
+        public byte myEventCode = 15;
         public static RaiseEventOptions eventOptions = new RaiseEventOptions() { Receivers = ReceiverGroup.Others, CachingOption = EventCaching.AddToRoomCache };
         public bool EventSent = false;
         public static List<ModInfo> myMods = new List<ModInfo>();
@@ -457,7 +459,7 @@ namespace RumbleModdingAPI
                             cat.transform.localScale = new Vector3(50, 50, 50);
                             cat.SetActive(true);
                         }
-                        else if (currentScene == "Gym")
+                        else
                         {
                             MelonCoroutines.Start(SetDressingRoomObjects());
                         }
@@ -486,10 +488,36 @@ namespace RumbleModdingAPI
             }
         }
 
+        [HarmonyPatch(typeof(PlayerNameTag), "FadePlayerNameTag", new Type[] { typeof(bool) })]
+        public static class UpdatePlayerTitleText
+        {
+            private static void Postfix(ref PlayerNameTag __instance, ref bool on)
+            {
+                if (!on) { return; }
+                MelonCoroutines.Start(UpdateTitle(__instance));
+            }
+        }
+
+        private static IEnumerator UpdateTitle(PlayerNameTag __instance)
+        {
+            yield return new WaitForSeconds(0.25f);
+            try
+            {
+                if (__instance.transform.parent.GetComponent<PlayerController>().AssignedPlayer.Data.GeneralData.PlayFabMasterId == "5832566FD2375E31")
+                {
+                    TMP_Text titleTextMeshPro = __instance.playerTitleText;
+                    titleTextMeshPro.text = "GrassBender";
+                }
+            }
+            catch { }
+            yield break;
+        }
+
         private static bool dressingRoomObjectsCreated = false;
         private static IEnumerator SetDressingRoomObjects()
         {
             yield return new WaitForSeconds(1);
+            if (currentScene != "Gym") { yield break; }
             if (dressingRoomObjectsCreated)
             {
                 yield break;
@@ -510,17 +538,18 @@ namespace RumbleModdingAPI
                 dressingRoomPoke.SetActive(true);
                 dressingRoomObjectsCreated = true;
             }
-            catch { }
+            catch (Exception e) { MelonLogger.Error(e); }
             yield break;
         }
 
         private static IEnumerator WaitForTitleLoad(Il2CppRUMBLE.Players.Player player)
         {
+            PlayerNameTag playerNameTag = player.Controller.transform.GetChild(9).GetComponent<PlayerNameTag>();
             bool worked = true;
-            TextMeshPro titleTextMeshPro = null;
+            TMP_Text titleTextMeshPro = null;
             try
             {
-                titleTextMeshPro = player.Controller.gameObject.transform.GetChild(9).GetChild(2).GetComponent<TextMeshPro>();
+                titleTextMeshPro = playerNameTag.playerTitleText;
             }
             catch { worked = false; }
             if (worked)
