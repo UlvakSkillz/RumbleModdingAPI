@@ -1,8 +1,12 @@
-﻿using Il2CppBhaptics.SDK2;
-using MelonLoader;
+﻿using HarmonyLib;
+using Il2CppBhaptics.SDK2;
+using Il2CppExitGames.Client.Photon;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using Il2CppPhoton.Pun;
+using Il2CppPhoton.Realtime;
 using Il2CppRUMBLE.Combat;
 using Il2CppRUMBLE.Combat.ShiftStones.UI;
+using Il2CppRUMBLE.Economy;
 using Il2CppRUMBLE.Environment;
 using Il2CppRUMBLE.Environment.Howard;
 using Il2CppRUMBLE.Environment.Matchmaking;
@@ -10,29 +14,26 @@ using Il2CppRUMBLE.Interactions.InteractionBase;
 using Il2CppRUMBLE.Managers;
 using Il2CppRUMBLE.MoveSystem;
 using Il2CppRUMBLE.Players;
-using Il2CppRUMBLE.Economy;
+using Il2CppRUMBLE.Players.Subsystems;
+using Il2CppRUMBLE.Slabs.Forms;
 using Il2CppRUMBLE.Social;
 using Il2CppRUMBLE.Social.Phone;
 using Il2CppRUMBLE.Tutorial.MoveLearning;
 using Il2CppRUMBLE.Utilities;
+using Il2CppTMPro;
+using MelonLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Il2CppTMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Il2CppPhoton.Realtime;
-using Il2CppExitGames.Client.Photon;
-using HarmonyLib;
-using Il2CppRUMBLE.Slabs.Forms;
-using Il2CppRUMBLE.Players.Subsystems;
-using static MelonLoader.MelonLogger;
+using static RumbleModdingAPI.Calls.GameObjects.Gym.Scene;
 
 namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.3.7";
+        public const string Version = "3.5.0";
     }
 
     public class ModInfo
@@ -157,6 +158,112 @@ namespace RumbleModdingAPI
             MelonLogger.Msg(msg);
         }
 
+        private static Il2CppSystem.IO.Stream ConvertToIl2CppStream(System.IO.Stream stream)
+        {
+            Il2CppSystem.IO.MemoryStream Il2CppStream = new Il2CppSystem.IO.MemoryStream();
+
+            const int bufferSize = 4096;
+            byte[] managedBuffer = new byte[bufferSize];
+            Il2CppStructArray<byte> Il2CppBuffer = new(managedBuffer);
+
+            int bytesRead;
+            while ((bytesRead = stream.Read(managedBuffer, 0, managedBuffer.Length)) > 0)
+            {
+                Il2CppBuffer = managedBuffer;
+                Il2CppStream.Write(Il2CppBuffer, 0, bytesRead);
+            }
+            Il2CppStream.Flush();
+            return Il2CppStream;
+        }
+
+        private static System.IO.MemoryStream StreamFromFile(string path)
+        {
+            byte[] fileBytes = File.ReadAllBytes(path);
+            return new MemoryStream(fileBytes);
+        }
+
+        public static GameObject LoadAssetBundleGameObjectFromFile(string filePath, string assetName)
+        {
+            System.IO.Stream stream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream il2CppStream = ConvertToIl2CppStream(stream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(il2CppStream);
+            GameObject bundleObject = UnityEngine.Object.Instantiate(bundle.LoadAsset<GameObject>(assetName));
+            stream.Close();
+            il2CppStream.Close();
+            bundle.Unload(false);
+            return bundleObject;
+        }
+
+        public static AssetBundle LoadAssetBundleFromFile(string filePath)
+        {
+            System.IO.Stream stream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream il2CppStream = ConvertToIl2CppStream(stream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(il2CppStream);
+            stream.Close();
+            il2CppStream.Close();
+            return bundle;
+        }
+
+        public static T LoadAssetFromFile<T>(string filePath, string assetName) where T : UnityEngine.Object
+        {
+            System.IO.Stream managedStream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(managedStream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+            T asset = bundle.LoadAsset<T>(assetName);
+            managedStream.Close();
+            Il2CppStream.Close();
+            bundle.Unload(false);
+            return asset;
+        }
+
+        public static AssetBundle LoadAssetBundleFromStream(string modName, string modAuthor, string assetPath, string assetName)
+        {
+            using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                return bundle;
+            }
+        }
+
+        public static AssetBundle LoadAssetBundleFromStream(MelonMod instance, string assetPath, string assetName)
+        {
+            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                return bundle;
+            }
+        }
+
+        public static T LoadAssetFromStream<T>(MelonMod instance, string path, string assetName) where T : UnityEngine.Object
+        {
+            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(path))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                T asset = bundle.LoadAsset<T>(assetName);
+                bundle.Unload(false);
+                return asset;
+            }
+        }
+
+        public static T LoadAssetFromStream<T>(string modName, string modAuthor, string path, string assetName) where T : UnityEngine.Object
+        {
+            using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(path))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                T asset = bundle.LoadAsset<T>(assetName);
+                bundle.Unload(false);
+                return asset;
+            }
+        }
+
         public override void OnLateInitializeMelon()
         {
             rightTrigger.AddBinding("<XRController>{RightHand}/trigger");
@@ -173,8 +280,8 @@ namespace RumbleModdingAPI
             leftJoystickClick.AddBinding("<XRController>{LeftHand}/joystickClicked");
             map.Enable();
             CreateMyModString();
-            pokeBalls = LoadAssetBundle("RumbleModdingAPI.pokeballs", "Pokeball");
-            catEars = LoadAssetBundle("RumbleModdingAPI.catears", "Ears");
+            pokeBalls = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.pokeballs", "Pokeball"));
+            catEars = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.catears", "Ears"));
             GameObject.DontDestroyOnLoad(pokeBalls);
             GameObject.DontDestroyOnLoad(catEars);
             pokeBalls.SetActive(false);
@@ -243,6 +350,7 @@ namespace RumbleModdingAPI
                             init = true;
                             Log("API Initialized");
                             Log("API By UlvakSkillz. Consider Donating to Their KoFi: https://ko-fi.com/ulvakskillz");
+                            Log("onMyModsGathered Running");
                             onMyModsGathered?.Invoke();
                         }
                     }
@@ -341,7 +449,7 @@ namespace RumbleModdingAPI
                         MelonCoroutines.Start(GetHealth());
                     }
                 }
-                catch (Exception e) { MelonLogger.Error(e); return; }
+                catch (Exception e) { /*MelonLogger.Error(e);*/ return; }
                 sceneChanged = false;
             }
         }
@@ -351,13 +459,14 @@ namespace RumbleModdingAPI
             bool gotHealth = false;
             while (!gotHealth)
             {
-                localHealthbarGameObject = GameObject.Find("/Health");
+                localHealthbarGameObject = PlayerManager.instance.localPlayer.Controller.gameObject.transform.GetChild(6).GetChild(0).gameObject;
                 if (localHealthbarGameObject != null)
                 {
                     gotHealth = true;
                     yield return new WaitForFixedUpdate();
                     try
                     {
+                        Log("onMapInitialized Running");
                         onMapInitialized?.Invoke();
                         GetMods();
                         if (PlayerManager.instance.AllPlayers.Count > 1)
@@ -373,7 +482,9 @@ namespace RumbleModdingAPI
                             matchStarted = true;
                             if ((currentScene == "Map0") || (currentScene == "Map1"))
                             {
+                                Log("onMatchStarted Running");
                                 onMatchStarted?.Invoke();
+                                Log("onRoundStarted Running");
                                 onRoundStarted?.Invoke();
                             }
                         }
@@ -421,6 +532,7 @@ namespace RumbleModdingAPI
                 }
                 Log($"Player: {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PublicUsername} / {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PlayFabMasterId}");
                 Log($"Mods: {recievedString}");
+                Log("onModStringRecieved Running");
                 onModStringRecieved?.Invoke();
             }
         }
@@ -429,14 +541,14 @@ namespace RumbleModdingAPI
 
         #region Actions
 
-        [HarmonyPatch(typeof(Il2CppRUMBLE.Environment.Matchmaking.MatchmakeConsole), "MatchmakeStatusUpdated", new Type[] { typeof(MatchmakingHandler.MatchmakeStatus), typeof(bool) })]
+        [HarmonyPatch(typeof(Il2CppRUMBLE.Environment.Matchmaking.MatchmakeConsole), "MatchmakeStatusUpdated", new Type[] { typeof(MatchmakingHandler.MatchmakeStatus) })]
         public static class MatchmakingType
         {
-            private static void Prefix(GameObject __instance, MatchmakingHandler.MatchmakeStatus status, bool instantLeverStep)
+            private static void Prefix(GameObject __instance, MatchmakingHandler.MatchmakeStatus status)
             {
                 if (status == MatchmakingHandler.MatchmakeStatus.Success)
                 {
-                    Calls.matchmakingType = GameObjects.Gym.Logic.HeinhouserProducts.MatchConsole.RankRelaxControls.GetGameObject().transform.GetChild(8).gameObject.GetComponent<InteractionSlider>().snappedStep;
+                    Calls.matchmakingType = GameObjects.Gym.Logic.HeinhouserProducts.MatchConsole.MatchmakingSettings.GetGameObject().transform.GetChild(0).GetChild(8).gameObject.GetComponent<InteractionSlider>().snappedStep;
                 }
             }
         }
@@ -484,6 +596,7 @@ namespace RumbleModdingAPI
                         MelonCoroutines.Start(WaitForTitleLoad(player));
                     }
                 }
+                Log("onPlayerSpawned Running");
                 onPlayerSpawned?.Invoke();
             }
         }
@@ -512,7 +625,7 @@ namespace RumbleModdingAPI
             catch { }
             yield break;
         }
-
+        
         private static bool dressingRoomObjectsCreated = false;
         private static IEnumerator SetDressingRoomObjects()
         {
@@ -525,13 +638,13 @@ namespace RumbleModdingAPI
             try
             {
                 GameObject dressingRoomCat = GameObject.Instantiate(catEars);
-                dressingRoomCat.transform.parent = Calls.GameObjects.Gym.Scene.GymProduction.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                dressingRoomCat.transform.parent = Calls.GameObjects.Gym.Logic.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
                 dressingRoomCat.transform.localPosition = new Vector3(0, 0.15f, 0);
                 dressingRoomCat.transform.localRotation = Quaternion.Euler(270, 0, 0);
                 dressingRoomCat.transform.localScale = new Vector3(50, 50, 50);
                 dressingRoomCat.SetActive(true);
                 GameObject dressingRoomPoke = GameObject.Instantiate(pokeBalls);
-                dressingRoomPoke.transform.parent = Calls.GameObjects.Gym.Scene.GymProduction.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
+                dressingRoomPoke.transform.parent = Calls.GameObjects.Gym.Logic.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
                 dressingRoomPoke.transform.localPosition = new Vector3(-0.01f, 0, 0);
                 dressingRoomPoke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
                 dressingRoomPoke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
@@ -584,7 +697,9 @@ namespace RumbleModdingAPI
                             playerCount = PlayerManager.instance.AllPlayers.Count;
                             if (matchStarted && (playerCount == 1) && ((currentScene == "Map0") || (currentScene == "Map1")))
                             {
+                                Log("onRoundEnded Running");
                                 onRoundEnded?.Invoke();
+                                Log("onMatchEnded Running");
                                 onMatchEnded?.Invoke();
                                 matchStarted = false;
                                 break;
@@ -601,10 +716,12 @@ namespace RumbleModdingAPI
                             {
                                 if (i == 0)
                                 {
+                                    Log("onLocalPlayerHealthChanged Running (" + (PlayerManager.instance.AllPlayers[i].Data.HealthPoints - healths[i]) + ")");
                                     onLocalPlayerHealthChanged?.Invoke();
                                 }
                                 else
                                 {
+                                    Log("onRemotePlayerHealthChanged Running (" + (PlayerManager.instance.AllPlayers[i].Data.HealthPoints - healths[i]) + ")");
                                     onRemotePlayerHealthChanged?.Invoke();
                                 }
                                 healths[i] = PlayerManager.instance.AllPlayers[i].Data.HealthPoints;
@@ -612,6 +729,7 @@ namespace RumbleModdingAPI
                                 {
                                     if (PlayerManager.instance.AllPlayers.Count > 1)
                                     {
+                                        Log("onRoundEnded Running (2)");
                                         onRoundEnded?.Invoke();
                                     }
                                     MelonCoroutines.Start(WaitForRoundStart(i, sceneNumber));
@@ -628,7 +746,9 @@ namespace RumbleModdingAPI
 
         private IEnumerator WaitForRoundStart(int playerNumber, int sceneNumber)
         {
+            Log("Waiting for Round to Start");
             yield return new WaitForSeconds(0.5f);
+            Log("WaitForSeconds(0.5f) Finished");
             waitForMatchStart = true;
             bool matchEnded = false;
             while (waitForMatchStart && (sceneCount == sceneNumber) && (playerNumber < PlayerManager.instance.AllPlayers.Count))
@@ -644,6 +764,7 @@ namespace RumbleModdingAPI
                         waitForMatchStart = false;
                         if ((PlayerManager.instance.AllPlayers.Count > 1) && ((currentScene == "Map0") || (currentScene == "Map1")))
                         {
+                            Log("onRoundStarted Running");
                             onRoundStarted?.Invoke();
                         }
                     }
@@ -651,6 +772,7 @@ namespace RumbleModdingAPI
                     {
                         matchEnded = true;
                         matchStarted = false;
+                        Log("onMatchEnded Running (2)");
                         onMatchEnded?.Invoke();
                     }
                 }
@@ -697,18 +819,6 @@ namespace RumbleModdingAPI
                         returnText = "Any Rank";
                         break;
                     case 1:
-                        returnText = "Same Rank";
-                        break;
-                    case 2:
-                        returnText = "1 Rank Difference";
-                        break;
-                    case 3:
-                        returnText = "2 Ranks Difference";
-                        break;
-                    case 4:
-                        returnText = "3 Ranks Difference";
-                        break;
-                    case 5:
                         returnText = "Friends Only";
                         break;
                 }
@@ -1745,7 +1855,7 @@ namespace RumbleModdingAPI
 
             public class Gym
             {
-                public static System.Collections.Generic.List<GameObject> GetBaseDDOLGameObjects() { return allBaseGymGameObjects; }
+                public static System.Collections.Generic.List<GameObject> GetBaseGymGameObjects() { return allBaseGymGameObjects; }
 
                 public class FTraceLightmaps
                 {
@@ -2779,9 +2889,204 @@ namespace RumbleModdingAPI
                         {
                             public static GameObject GetGameObject() { return WorldTutorials.GetGameObject().transform.GetChild(1).gameObject; }
 
-                            public class Structures
+                            public class Posture
                             {
                                 public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class CarvingFoot
+                                {
+                                    public static GameObject GetGameObject() { return Posture.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class WoodCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class MetalCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class RockCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class CarvingHeadParent
+                                {
+                                    public static GameObject GetGameObject() { return Posture.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                    public class StructureCarvingHead
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingHeadParent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class StructureCube
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class StructureWall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class StructureBall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class CarvingName
+                                {
+                                    public static GameObject GetGameObject() { return Posture.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class StructureWall
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class NameCanvas
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class Poses
+                            {
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                public class CarvingFoot
+                                {
+                                    public static GameObject GetGameObject() { return Poses.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class WoodCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class MetalCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class RockCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class CarvingHeadParent
+                                {
+                                    public static GameObject GetGameObject() { return Poses.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                    public class StructureCarvingHead
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingHeadParent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class StructureCube
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class StructureWall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class StructureBall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class CarvingName
+                                {
+                                    public static GameObject GetGameObject() { return Poses.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class StructureWall
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class NameCanvas
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class Moves
+                            {
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                public class CarvingFoot
+                                {
+                                    public static GameObject GetGameObject() { return Moves.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class WoodCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class MetalCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class RockCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class CarvingHeadParent
+                                {
+                                    public static GameObject GetGameObject() { return Moves.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                    public class StructureCarvingHead
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingHeadParent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class StructureCube
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class StructureWall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class StructureBall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class CarvingName
+                                {
+                                    public static GameObject GetGameObject() { return Moves.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class StructureWall
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class NameCanvas
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class Structures
+                            {
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -2846,7 +3151,7 @@ namespace RumbleModdingAPI
 
                             public class Modifiers
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(1).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(4).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -2909,9 +3214,74 @@ namespace RumbleModdingAPI
                                 }
                             }
 
+                            public class Combos
+                            {
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                public class CarvingFoot
+                                {
+                                    public static GameObject GetGameObject() { return Combos.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class WoodCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class MetalCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class RockCollider
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingFoot.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class CarvingHeadParent
+                                {
+                                    public static GameObject GetGameObject() { return Combos.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                    public class StructureCarvingHead
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingHeadParent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class StructureCube
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class StructureWall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class StructureBall
+                                        {
+                                            public static GameObject GetGameObject() { return StructureCarvingHead.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class CarvingName
+                                {
+                                    public static GameObject GetGameObject() { return Combos.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class StructureWall
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class NameCanvas
+                                    {
+                                        public static GameObject GetGameObject() { return CarvingName.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+                                }
+                            }
+
                             public class Hits
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(2).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(6).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -2976,7 +3346,7 @@ namespace RumbleModdingAPI
 
                             public class Collisions
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(3).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(7).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -3041,7 +3411,7 @@ namespace RumbleModdingAPI
 
                             public class Ricochets
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(8).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -3106,7 +3476,7 @@ namespace RumbleModdingAPI
 
                             public class States
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(9).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -3171,7 +3541,7 @@ namespace RumbleModdingAPI
 
                             public class Launches
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(6).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(10).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -3236,7 +3606,7 @@ namespace RumbleModdingAPI
 
                             public class Explosions
                             {
-                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(7).gameObject; }
+                                public static GameObject GetGameObject() { return CombatCarvings.GetGameObject().transform.GetChild(11).gameObject; }
 
                                 public class CarvingFoot
                                 {
@@ -4285,36 +4655,6 @@ namespace RumbleModdingAPI
                                 public static GameObject GetGameObject() { return Vista.GetGameObject().transform.GetChild(1).gameObject; }
                             }
                         }
-
-                        public class DressingRoom
-                        {
-                            public static GameObject GetGameObject() { return GymProduction.GetGameObject().transform.GetChild(5).gameObject; }
-
-                            public class DyeSink
-                            {
-                                public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(0).gameObject; }
-                            }
-
-                            public class GearCabinet
-                            {
-                                public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(1).gameObject; }
-                            }
-
-                            public class ControlPanel
-                            {
-                                public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(2).gameObject; }
-                            }
-
-                            public class PreviewPlayerController
-                            {
-                                public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
-                            public class FirstTimeSexSelect
-                            {
-                                public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-                        }
                     }
 
                     private class FloorCollision
@@ -4942,39 +5282,39 @@ namespace RumbleModdingAPI
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(7).gameObject; }
                             }
 
-                            public class ConsoleTape
+                            public class MatchmakingSettings
                             {
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(8).gameObject; }
                             }
 
-                            public class Bell
+                            public class ConsoleTape
                             {
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(9).gameObject; }
                             }
 
-                            public class MatchConsoleColiders
+                            public class Bell
                             {
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(10).gameObject; }
                             }
 
-                            public class Screen
+                            public class MatchConsoleColiders
                             {
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(11).gameObject; }
                             }
 
-                            public class TutorialChecklist
+                            public class Screen
                             {
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(12).gameObject; }
                             }
 
-                            public class RankRelaxControls
+                            public class TutorialChecklist
                             {
                                 public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(13).gameObject; }
                             }
 
                             public class MatchmakeConsoleTrigger
                             {
-                                public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(14).gameObject; }
+                                public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(15).gameObject; }
                             }
                         }
 
@@ -5272,14 +5612,9 @@ namespace RumbleModdingAPI
                         {
                             public static GameObject GetGameObject() { return HeinhouserProducts.GetGameObject().transform.GetChild(6).gameObject; }
 
-                            public class GhostPosition
-                            {
-                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(0).gameObject; }
-                            }
-
                             public class Ghost
                             {
-                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(1).gameObject; }
+                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class Visuals
                                 {
@@ -5304,12 +5639,12 @@ namespace RumbleModdingAPI
 
                             public class Timer
                             {
-                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(2).gameObject; }
+                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
                             public class MoveLearnSelector
                             {
-                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(3).gameObject; }
+                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(2).gameObject; }
 
                                 public class PosesChangedNotification
                                 {
@@ -5349,7 +5684,7 @@ namespace RumbleModdingAPI
 
                             public class TutorialChecklist
                             {
-                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return MoveLearning.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class Canvas
                                 {
@@ -7553,11 +7888,61 @@ namespace RumbleModdingAPI
                                 public static GameObject GetGameObject() { return RankBoard.GetGameObject().transform.GetChild(5).gameObject; }
                             }
                         }
+
+                        public class GearMarket
+                        {
+                            public static GameObject GetGameObject() { return HeinhouserProducts.GetGameObject().transform.GetChild(14).gameObject; }
+                        }
+
+                        public class ProgressTracker
+                        {
+                            public static GameObject GetGameObject() { return HeinhouserProducts.GetGameObject().transform.GetChild(15).gameObject; }
+                        }
+
+                        public class Drapes
+                        {
+                            public static GameObject GetGameObject() { return HeinhouserProducts.GetGameObject().transform.GetChild(16).gameObject; }
+                        }
+
+                        public class RockCamStand
+                        {
+                            public static GameObject GetGameObject() { return HeinhouserProducts.GetGameObject().transform.GetChild(17).gameObject; }
+                        }
+                    }
+
+                    public class DressingRoom
+                    {
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(4).gameObject; }
+
+                        public class DyeSink
+                        {
+                            public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(0).gameObject; }
+                        }
+
+                        public class GearCabinet
+                        {
+                            public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(1).gameObject; }
+                        }
+
+                        public class ControlPanel
+                        {
+                            public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(2).gameObject; }
+                        }
+
+                        public class PreviewPlayerController
+                        {
+                            public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(3).gameObject; }
+                        }
+
+                        public class FirstTimeSexSelect
+                        {
+                            public static GameObject GetGameObject() { return DressingRoom.GetGameObject().transform.GetChild(4).gameObject; }
+                        }
                     }
 
                     public class Toys
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(4).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(5).gameObject; }
 
                         public class Bag
                         {
@@ -7667,7 +8052,7 @@ namespace RumbleModdingAPI
 
                     public class Handlers
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(5).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(6).gameObject; }
 
                         public class SpawnPointHandler
                         {
@@ -7687,7 +8072,7 @@ namespace RumbleModdingAPI
 
                     public class Notifications
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(6).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(7).gameObject; }
 
                         public class NotificationSlabGondola
                         {
@@ -7767,7 +8152,7 @@ namespace RumbleModdingAPI
 
                     public class Locations
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(7).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(8).gameObject; }
 
                         public class Gym
                         {
@@ -7792,7 +8177,7 @@ namespace RumbleModdingAPI
 
                     public class PoseGhostArea
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(8).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(9).gameObject; }
 
                         public class ForbiddenArea
                         {
@@ -7802,7 +8187,7 @@ namespace RumbleModdingAPI
 
                     public class Bounds
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(9).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(10).gameObject; }
 
                         public class SceneBoundaryPlayer
                         {
@@ -7817,49 +8202,49 @@ namespace RumbleModdingAPI
 
                     public class AutoShowNotification
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(10).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(11).gameObject; }
                     }
 
                     public class AutoFade
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(11).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(12).gameObject; }
                     }
 
                     public class BGM
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(12).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(13).gameObject; }
                     }
 
                     public class Ambience
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(13).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(14).gameObject; }
                     }
 
                     public class Analytics
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(14).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(15).gameObject; }
                     }
 
                     public class FriendHandler
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(15).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(16).gameObject; }
                     }
 
                     public class GymPostEffects
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(16).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(17).gameObject; }
                     }
 
                     public class VoiceLogger
                     {
-                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(17).gameObject; }
+                        public static GameObject GetGameObject() { return Logic.GetGameObject().transform.GetChild(18).gameObject; }
                     }
                 }
             }
 
             public class Park
             {
-                public static System.Collections.Generic.List<GameObject> GetBaseDDOLGameObjects() { return allBaseParkGameObjects; }
+                public static System.Collections.Generic.List<GameObject> GetBaseParkGameObjects() { return allBaseParkGameObjects; }
 
                 public class Logic
                 {
@@ -10009,7 +10394,7 @@ namespace RumbleModdingAPI
 
             public class Map0
             {
-                public static System.Collections.Generic.List<GameObject> GetBaseDDOLGameObjects() { return allBaseMap0GameObjects; }
+                public static System.Collections.Generic.List<GameObject> GetBaseMap0GameObjects() { return allBaseMap0GameObjects; }
 
                 public class SceneProcessor
                 {
@@ -11273,7 +11658,7 @@ namespace RumbleModdingAPI
 
             public class Map1
             {
-                public static System.Collections.Generic.List<GameObject> GetBaseDDOLGameObjects() { return allBaseMap1GameObjects; }
+                public static System.Collections.Generic.List<GameObject> GetBaseMap1GameObjects() { return allBaseMap1GameObjects; }
 
                 public class FTraceLightMaps
                 {
