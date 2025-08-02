@@ -33,7 +33,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.5.0";
+        public const string Version = "3.5.1";
     }
 
     public class ModInfo
@@ -350,7 +350,7 @@ namespace RumbleModdingAPI
                             init = true;
                             Log("API Initialized");
                             Log("API By UlvakSkillz. Consider Donating to Their KoFi: https://ko-fi.com/ulvakskillz");
-                            Log("onMyModsGathered Running");
+                            //Log("onMyModsGathered Running");
                             onMyModsGathered?.Invoke();
                         }
                     }
@@ -459,35 +459,72 @@ namespace RumbleModdingAPI
             bool gotHealth = false;
             while (!gotHealth)
             {
-                localHealthbarGameObject = PlayerManager.instance.localPlayer.Controller.gameObject.transform.GetChild(6).GetChild(0).gameObject;
+                try
+                {
+                    localHealthbarGameObject = PlayerManager.instance.localPlayer.Controller.gameObject.transform.GetChild(6).GetChild(0).gameObject;
+                    //Log("Got Local Healthbar");
+                }
+                catch { }
+                if (localHealthbarGameObject == null)
+                {
+                    //Log("Local Health Null");
+                    yield return new WaitForFixedUpdate();
+                    continue;
+                }
                 if (localHealthbarGameObject != null)
                 {
+                    //Log("Local Health != null");
                     gotHealth = true;
                     yield return new WaitForFixedUpdate();
                     try
                     {
-                        Log("onMapInitialized Running");
+                        //Log("onMapInitialized Running: " + currentScene);
                         onMapInitialized?.Invoke();
+                        //Log("onMapInitialized Complete");
                         GetMods();
                         if (PlayerManager.instance.AllPlayers.Count > 1)
                         {
+                            //Log("More than 1 Player");
                             if (currentScene == "Map0")
                             {
+                                //Log("Grabbing SlabOne MatchFormCanvas");
                                 matchSlab = Calls.GameObjects.Map0.Logic.MatchSlabOne.MatchSlab.SlabBuddyMatchVariant.MatchForm.MatchFormCanvas.GetGameObject();
                             }
                             else if (currentScene == "Map1")
                             {
-                                matchSlab = Calls.GameObjects.Map1.Logic.MatchSlabOne.MatchSlab.SlabBuddyMatchVariant.MatchForm.MatchFormCanvas.GetGameObject();
+                                //Log("Grabbing SlabTwo MatchFormCanvas");
+                                matchSlab = Calls.GameObjects.Map1.Logic.MatchSlabTwo.MatchSlab.SlabBuddyMatchVariant.MatchForm.MatchFormCanvas.GetGameObject();
                             }
+                            /*if (matchSlab == null)
+                            {
+                                Log("Match Slab Null!");
+                            }
+                            else
+                            {
+                                GameObject temp = matchSlab;
+                                string path = matchSlab.name;
+                                while (temp.transform.parent != null)
+                                {
+                                    path = temp.transform.parent.name + "/" + path;
+                                    temp = temp.transform.parent.gameObject;
+                                }
+                                Log("Slab Path: " + path);
+                                Log("Match Slab active: " + matchSlab.activeSelf);
+                            }*/
                             matchStarted = true;
+                            //Log("Get Health Current Scene: " + currentScene);
                             if ((currentScene == "Map0") || (currentScene == "Map1"))
                             {
-                                Log("onMatchStarted Running");
+                                //Log("onMatchStarted Running");
                                 onMatchStarted?.Invoke();
-                                Log("onRoundStarted Running");
+                                //Log("onRoundStarted Running");
                                 onRoundStarted?.Invoke();
                             }
                         }
+                        //else
+                        //{
+                            //Log(PlayerManager.instance.AllPlayers.Count + " Players, Match not starting");
+                        //}
                         MelonCoroutines.Start(HealthWatcher(sceneCount));
                     }
                     catch (Exception e)
@@ -532,7 +569,7 @@ namespace RumbleModdingAPI
                 }
                 Log($"Player: {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PublicUsername} / {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PlayFabMasterId}");
                 Log($"Mods: {recievedString}");
-                Log("onModStringRecieved Running");
+                //Log("onModStringRecieved Running");
                 onModStringRecieved?.Invoke();
             }
         }
@@ -596,7 +633,7 @@ namespace RumbleModdingAPI
                         MelonCoroutines.Start(WaitForTitleLoad(player));
                     }
                 }
-                Log("onPlayerSpawned Running");
+                //Log("onPlayerSpawned Running");
                 onPlayerSpawned?.Invoke();
             }
         }
@@ -678,7 +715,9 @@ namespace RumbleModdingAPI
 
         private IEnumerator HealthWatcher(int sceneNumber)
         {
-            yield return new WaitForSeconds(3f);
+            //Log("HealthWatcher Started");
+            yield return new WaitForSeconds(3.2f);
+            //Log("HealthWatcher Waited 3.2 Seconds");
             playerCount = PlayerManager.instance.AllPlayers.Count;
             healths = new int[playerCount];
             for (int i = 0; i < playerCount; i++)
@@ -694,12 +733,14 @@ namespace RumbleModdingAPI
                     {
                         if (playerCount != PlayerManager.instance.AllPlayers.Count)
                         {
+                            //Log("Player Count Changed: " + playerCount + " -> " + PlayerManager.instance.AllPlayers.Count);
                             playerCount = PlayerManager.instance.AllPlayers.Count;
                             if (matchStarted && (playerCount == 1) && ((currentScene == "Map0") || (currentScene == "Map1")))
                             {
-                                Log("onRoundEnded Running");
+                                //Log("Ending Match due to 1 Player");
+                                //Log("onRoundEnded Running");
                                 onRoundEnded?.Invoke();
-                                Log("onMatchEnded Running");
+                                //Log("onMatchEnded Running");
                                 onMatchEnded?.Invoke();
                                 matchStarted = false;
                                 break;
@@ -716,12 +757,12 @@ namespace RumbleModdingAPI
                             {
                                 if (i == 0)
                                 {
-                                    Log("onLocalPlayerHealthChanged Running (" + (PlayerManager.instance.AllPlayers[i].Data.HealthPoints - healths[i]) + ")");
+                                    //Log("onLocalPlayerHealthChanged Running (" + (PlayerManager.instance.AllPlayers[i].Data.HealthPoints - healths[i]) + ")");
                                     onLocalPlayerHealthChanged?.Invoke();
                                 }
                                 else
                                 {
-                                    Log("onRemotePlayerHealthChanged Running (" + (PlayerManager.instance.AllPlayers[i].Data.HealthPoints - healths[i]) + ")");
+                                    //Log("onRemotePlayerHealthChanged Running (Player Spot " + i + ") (" + (PlayerManager.instance.AllPlayers[i].Data.HealthPoints - healths[i]) + ")");
                                     onRemotePlayerHealthChanged?.Invoke();
                                 }
                                 healths[i] = PlayerManager.instance.AllPlayers[i].Data.HealthPoints;
@@ -729,7 +770,7 @@ namespace RumbleModdingAPI
                                 {
                                     if (PlayerManager.instance.AllPlayers.Count > 1)
                                     {
-                                        Log("onRoundEnded Running (2)");
+                                        //Log("onRoundEnded Running (HP hit 0)");
                                         onRoundEnded?.Invoke();
                                     }
                                     MelonCoroutines.Start(WaitForRoundStart(i, sceneNumber));
@@ -737,18 +778,19 @@ namespace RumbleModdingAPI
                             }
                         }
                     }
-                    catch { }
+                    catch (Exception e) { /*MelonLogger.Error(e);*/ }
                 }
                 yield return new WaitForFixedUpdate();
             }
+            //Log("HealthWatcher Ending, Scene Changed");
             yield break;
         }
 
-        private IEnumerator WaitForRoundStart(int playerNumber, int sceneNumber)
+        private IEnumerator<WaitForSeconds> WaitForRoundStart(int playerNumber, int sceneNumber)
         {
-            Log("Waiting for Round to Start");
+            //Log("Waiting for Round to Start");
             yield return new WaitForSeconds(0.5f);
-            Log("WaitForSeconds(0.5f) Finished");
+            //Log("WaitForSeconds(0.5f) Finished");
             waitForMatchStart = true;
             bool matchEnded = false;
             while (waitForMatchStart && (sceneCount == sceneNumber) && (playerNumber < PlayerManager.instance.AllPlayers.Count))
@@ -764,21 +806,22 @@ namespace RumbleModdingAPI
                         waitForMatchStart = false;
                         if ((PlayerManager.instance.AllPlayers.Count > 1) && ((currentScene == "Map0") || (currentScene == "Map1")))
                         {
-                            Log("onRoundStarted Running");
+                            //Log("onRoundStarted Running (Normal Round Start Mid Match)");
                             onRoundStarted?.Invoke();
                         }
                     }
-                    if ((PlayerManager.instance.AllPlayers.Count > 1) && ((currentScene == "Map0") || (currentScene == "Map1")) && !matchEnded && (matchSlab.active))
+                    if ((PlayerManager.instance.AllPlayers.Count > 1) && ((currentScene == "Map0") || (currentScene == "Map1")) && !matchEnded && (matchSlab.activeSelf))
                     {
                         matchEnded = true;
                         matchStarted = false;
-                        Log("onMatchEnded Running (2)");
+                        //Log("onMatchEnded Running (Normal End)");
                         onMatchEnded?.Invoke();
                     }
                 }
                 catch { }
-                yield return new WaitForFixedUpdate();
+                yield return new WaitForSeconds(0.02f);
             }
+            //Log("WaitForRoundStart Finished");
             yield break;
         }
 
