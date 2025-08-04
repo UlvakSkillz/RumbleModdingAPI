@@ -26,6 +26,9 @@
     <Reference Include="Il2CppInterop.Runtime">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Il2CppLIV">
+      <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\Il2CppAssemblies\Il2CppLIV.dll</HintPath>
+    </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
     </Reference>

@@ -27,6 +27,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Il2CppLIV.SDK.Unity;
 
 namespace RumbleModdingAPI
 {
@@ -596,19 +597,17 @@ namespace RumbleModdingAPI
                 {
                     try
                     {
+                        GameObject cat = GameObject.Instantiate(catEars);
+                        cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                        cat.transform.localPosition = new Vector3(0, 0.15f, 0);
+                        cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
+                        cat.transform.localScale = new Vector3(50, 50, 50);
+                        cat.SetActive(true);
                         if (player.Controller.controllerType == ControllerType.Local)
                         {
-                            //cat.transform.GetComponent<SkinnedMeshRenderer>().sharedMesh.colors32 = Enumerable.Repeat<Color32>(new Color32(byte.MaxValue, 0, 0, byte.MaxValue), (cat.transform.GetComponent<SkinnedMeshRenderer>().sharedMesh.colors32).Length).ToArray();
+                            cat.layer = 3;
+                            (new LIV()).render.cameraInstance.nearClipPlane = 0.19f;
                             MelonCoroutines.Start(SetDressingRoomObjects());
-                        }
-                        else
-                        {
-                            GameObject cat = GameObject.Instantiate(catEars);
-                            cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
-                            cat.transform.localPosition = new Vector3(0, 0.15f, 0);
-                            cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
-                            cat.transform.localScale = new Vector3(50, 50, 50);
-                            cat.SetActive(true);
                         }
                     }
                     catch
