@@ -2,6 +2,7 @@
 using Il2CppBhaptics.SDK2;
 using Il2CppExitGames.Client.Photon;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using Il2CppLIV.SDK.Unity;
 using Il2CppPhoton.Pun;
 using Il2CppPhoton.Realtime;
 using Il2CppRUMBLE.Combat;
@@ -27,13 +28,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Il2CppLIV.SDK.Unity;
+using static Il2CppRUMBLE.Networking.GameState;
+using static MelonLoader.MelonLogger;
+using static RumbleModdingAPI.Calls.GameObjects.Gym.LOGIC.Heinhouserproducts.RegionSelector.Model.WorldMap.Regions;
 
 namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.6.1";
+        public const string Version = "3.7.2";
     }
 
     public class ModInfo
@@ -111,6 +114,7 @@ namespace RumbleModdingAPI
         private static ShiftstoneQuickswapper parkShiftstoneQuickswapper;
         private static ParkInstance parkInstance;
         private static GameObject localHealthbarGameObject;
+        private static GameObject localLCKTablet;
         public static event System.Action onModStringRecieved;
         public static event System.Action onMyModsGathered;
         public static event System.Action onMapInitialized;
@@ -139,7 +143,7 @@ namespace RumbleModdingAPI
         private static InputAction leftJoystick = map.AddAction("Left Joystick");
         private static InputAction leftJoystickClick = map.AddAction("Left Joystick Click");
 
-        private static GameObject pokeBalls, catEars;
+        private static GameObject pokeBalls, catEars, tail;
 
         private int sceneCount = 0;
         private int[] healths;
@@ -216,7 +220,7 @@ namespace RumbleModdingAPI
             return asset;
         }
 
-        public static AssetBundle LoadAssetBundleFromStream(string modName, string modAuthor, string assetPath, string assetName)
+        public static AssetBundle LoadAssetBundleFromStream(string modName, string modAuthor, string assetPath)
         {
             using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
             {
@@ -227,7 +231,7 @@ namespace RumbleModdingAPI
             }
         }
 
-        public static AssetBundle LoadAssetBundleFromStream(MelonMod instance, string assetPath, string assetName)
+        public static AssetBundle LoadAssetBundleFromStream(MelonMod instance, string assetPath)
         {
             using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
             {
@@ -282,10 +286,13 @@ namespace RumbleModdingAPI
             CreateMyModString();
             pokeBalls = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.pokeballs", "Pokeball"));
             catEars = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.catears", "Ears"));
+            tail = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.tail", "Tail"));
             GameObject.DontDestroyOnLoad(pokeBalls);
             GameObject.DontDestroyOnLoad(catEars);
+            GameObject.DontDestroyOnLoad(tail);
             pokeBalls.SetActive(false);
             catEars.SetActive(false);
+            tail.SetActive(false);
         }
 
         private void CreateMyModString()
@@ -312,6 +319,7 @@ namespace RumbleModdingAPI
             whenSceneChanged = DateTime.Now;
             mapInit = false;
             EventSent = false;
+            dressingRoomObjectsCreated = false;
         }
 
         public override void OnFixedUpdate()
@@ -493,22 +501,6 @@ namespace RumbleModdingAPI
                                 //Log("Grabbing SlabTwo MatchFormCanvas");
                                 matchSlab = Calls.GameObjects.Map1.Logic.MatchSlabTwo.MatchSlab.Slabbuddymatchvariant.MatchForm.MatchFormCanvas.GetGameObject();
                             }
-                            /*if (matchSlab == null)
-                            {
-                                Log("Match Slab Null!");
-                            }
-                            else
-                            {
-                                GameObject temp = matchSlab;
-                                string path = matchSlab.name;
-                                while (temp.transform.parent != null)
-                                {
-                                    path = temp.transform.parent.name + "/" + path;
-                                    temp = temp.transform.parent.gameObject;
-                                }
-                                Log("Slab Path: " + path);
-                                Log("Match Slab active: " + matchSlab.activeSelf);
-                            }*/
                             matchStarted = true;
                             //Log("Get Health Current Scene: " + currentScene);
                             if ((currentScene == "Map0") || (currentScene == "Map1"))
@@ -597,38 +589,44 @@ namespace RumbleModdingAPI
                 {
                     try
                     {
+                        PlayerVisuals playerVisuals = __instance.gameObject.transform.FindChild("Visuals").GetComponent<PlayerVisuals>();
                         GameObject cat = GameObject.Instantiate(catEars);
                         cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
                         cat.transform.localPosition = new Vector3(0, 0.15f, 0);
                         cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
                         cat.transform.localScale = new Vector3(50, 50, 50);
                         cat.SetActive(true);
+                        GameObject poke = GameObject.Instantiate(pokeBalls);
+                        poke.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
+                        poke.transform.localPosition = new Vector3(-0.01f, 0, 0);
+                        poke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
+                        poke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
+                        poke.SetActive(true);
+                        GameObject thisTail = GameObject.Instantiate(tail);
+                        Transform boneSpine = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
+                        thisTail.transform.position = boneSpine.position;
+                        thisTail.transform.rotation = boneSpine.rotation;
+                        thisTail.transform.GetChild(1).GetChild(0).parent = boneSpine;
+                        thisTail.SetActive(true);
                         if (player.Controller.controllerType == ControllerType.Local)
                         {
-                            cat.layer = 3;
-                            (new LIV()).render.cameraInstance.nearClipPlane = 0.19f;
+                            __instance.transform.FindChild("VR/Headset Offset/Headset").GetComponent<Camera>().nearClipPlane = 0.14f;
+                            //MelonCoroutines.Start(ChangeEarMaterial(__instance, cat));
                             MelonCoroutines.Start(SetDressingRoomObjects());
                         }
                     }
-                    catch
+                    catch (Exception e)
                     {
-                        GameObject cat = GameObject.Instantiate(catEars);
-                        cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
-                        cat.transform.localPosition = new Vector3(0, 0.15f, 0);
-                        cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
-                        cat.transform.localScale = new Vector3(50, 50, 50);
-                        cat.SetActive(true);
+                        MelonLogger.Error(e);
                     }
-                    GameObject poke = GameObject.Instantiate(pokeBalls);
-                    poke.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
-                    poke.transform.localPosition = new Vector3(-0.01f, 0, 0);
-                    poke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
-                    poke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
-                    poke.SetActive(true);
                     if (PlayerManager.instance.localPlayer != player)
                     {
                         MelonCoroutines.Start(WaitForTitleLoad(player));
                     }
+                }
+                if (__instance.controllerType == ControllerType.Local)
+                {
+                    localLCKTablet = __instance.transform.FindChild("LIV/LCK Tablet").gameObject;
                 }
                 //Log("onPlayerSpawned Running");
                 onPlayerSpawned?.Invoke();
@@ -659,6 +657,14 @@ namespace RumbleModdingAPI
             catch { }
             yield break;
         }
+
+        private static IEnumerator ChangeEarMaterial(PlayerController __instance, GameObject cat)
+        {
+            yield return new WaitForSeconds(1f);
+            Material playerMat = new Material(__instance.transform.FindChild("Visuals/Renderer").GetComponent<SkinnedMeshRenderer>().material);
+            playerMat.SetTexture("_ColorAtlas", cat.GetComponent<SkinnedMeshRenderer>().material.GetTexture("_BaseMap"));
+            cat.GetComponent<SkinnedMeshRenderer>().material = playerMat;
+        }
         
         private static bool dressingRoomObjectsCreated = false;
         private static IEnumerator SetDressingRoomObjects()
@@ -671,18 +677,24 @@ namespace RumbleModdingAPI
             }
             try
             {
+                Transform boneSpine = Calls.GameObjects.Gym.LOGIC.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
                 GameObject dressingRoomCat = GameObject.Instantiate(catEars);
-                dressingRoomCat.transform.parent = Calls.GameObjects.Gym.LOGIC.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
+                dressingRoomCat.transform.parent = boneSpine.FindChild("Bone_Chest/Bone_Neck/Bone_Head");
                 dressingRoomCat.transform.localPosition = new Vector3(0, 0.15f, 0);
                 dressingRoomCat.transform.localRotation = Quaternion.Euler(270, 0, 0);
                 dressingRoomCat.transform.localScale = new Vector3(50, 50, 50);
                 dressingRoomCat.SetActive(true);
                 GameObject dressingRoomPoke = GameObject.Instantiate(pokeBalls);
-                dressingRoomPoke.transform.parent = Calls.GameObjects.Gym.LOGIC.DressingRoom.PreviewPlayerController.GetGameObject().transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
+                dressingRoomPoke.transform.parent = boneSpine;
                 dressingRoomPoke.transform.localPosition = new Vector3(-0.01f, 0, 0);
                 dressingRoomPoke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
                 dressingRoomPoke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
                 dressingRoomPoke.SetActive(true);
+                GameObject thisTail = GameObject.Instantiate(tail);
+                thisTail.transform.position = boneSpine.position;
+                thisTail.transform.rotation = boneSpine.rotation;
+                thisTail.transform.GetChild(1).GetChild(0).parent = boneSpine;
+                thisTail.SetActive(true);
                 dressingRoomObjectsCreated = true;
             }
             catch (Exception e) { MelonLogger.Error(e); }
@@ -44516,6 +44528,8 @@ namespace RumbleModdingAPI
 
             public static Il2CppRUMBLE.Players.Player GetLocalPlayer() { return playerManager.localPlayer; }
 
+            public static GameObject GetLocalLCKTablet() { return localLCKTablet; }
+            
             public static PlayerController GetPlayerController() { return playerManager.localPlayer.Controller; }
 
             public static System.Collections.Generic.List<Il2CppRUMBLE.Players.Player> GetEnemyPlayers()
