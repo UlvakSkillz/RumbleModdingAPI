@@ -36,7 +36,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.7.2";
+        public const string Version = "3.7.5";
     }
 
     public class ModInfo
@@ -285,8 +285,11 @@ namespace RumbleModdingAPI
             map.Enable();
             CreateMyModString();
             pokeBalls = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.pokeballs", "Pokeball"));
+            pokeBalls.name = pokeBalls.name.Replace("(Clone)", "");
             catEars = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.catears", "Ears"));
-            tail = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.tail", "Tail"));
+            catEars.name = catEars.name.Replace("(Clone)", "");
+            tail = GameObject.Instantiate(LoadAssetFromStream<GameObject>(this, "RumbleModdingAPI.rainbowtail", "RainbowTail"));
+            tail.name = tail.name.Replace("(Clone)", "");
             GameObject.DontDestroyOnLoad(pokeBalls);
             GameObject.DontDestroyOnLoad(catEars);
             GameObject.DontDestroyOnLoad(tail);
@@ -397,6 +400,7 @@ namespace RumbleModdingAPI
                             GameObject.DontDestroyOnLoad(parentAPIItems);
                             pokeBalls.transform.parent = parentAPIItems.transform;
                             catEars.transform.parent = parentAPIItems.transform;
+                            tail.transform.parent = parentAPIItems.transform;
                         }
                         if (newTextGameObject == null)
                         {
@@ -591,27 +595,31 @@ namespace RumbleModdingAPI
                     {
                         PlayerVisuals playerVisuals = __instance.gameObject.transform.FindChild("Visuals").GetComponent<PlayerVisuals>();
                         GameObject cat = GameObject.Instantiate(catEars);
+                        cat.name = cat.name.Replace("(Clone)", "");
                         cat.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A/Bone_Chest/Bone_Neck/Bone_Head");
                         cat.transform.localPosition = new Vector3(0, 0.15f, 0);
                         cat.transform.localRotation = Quaternion.Euler(270, 0, 0);
                         cat.transform.localScale = new Vector3(50, 50, 50);
                         cat.SetActive(true);
                         GameObject poke = GameObject.Instantiate(pokeBalls);
+                        poke.name = poke.name.Replace("(Clone)", "");
                         poke.transform.parent = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
                         poke.transform.localPosition = new Vector3(-0.01f, 0, 0);
                         poke.transform.localRotation = Quaternion.Euler(0.4877f, 359.2524f, 8.7574f);
                         poke.transform.localScale = new Vector3(0.9128f, 0.9128f, 0.9128f);
                         poke.SetActive(true);
                         GameObject thisTail = GameObject.Instantiate(tail);
+                        thisTail.name = thisTail.name.Replace("(Clone)", "");
                         Transform boneSpine = __instance.gameObject.transform.FindChild("Visuals/Skelington/Bone_Pelvis/Bone_Spine_A");
                         thisTail.transform.position = boneSpine.position;
                         thisTail.transform.rotation = boneSpine.rotation;
-                        thisTail.transform.GetChild(1).GetChild(0).parent = boneSpine;
+                        GameObject tailBase = thisTail.transform.GetChild(1).GetChild(0).gameObject;
+                        tailBase.transform.parent = boneSpine;
                         thisTail.SetActive(true);
+                        MelonCoroutines.Start(WatchForNeedingToDestroyTail(tailBase, thisTail));
                         if (player.Controller.controllerType == ControllerType.Local)
                         {
-                            __instance.transform.FindChild("VR/Headset Offset/Headset").GetComponent<Camera>().nearClipPlane = 0.14f;
-                            //MelonCoroutines.Start(ChangeEarMaterial(__instance, cat));
+                            cat.layer = 17;
                             MelonCoroutines.Start(SetDressingRoomObjects());
                         }
                     }
@@ -631,6 +639,16 @@ namespace RumbleModdingAPI
                 //Log("onPlayerSpawned Running");
                 onPlayerSpawned?.Invoke();
             }
+        }
+
+        private static IEnumerator WatchForNeedingToDestroyTail(GameObject watchedObject, GameObject destroyObject)
+        {
+            while (watchedObject != null)
+            {
+                yield return new WaitForFixedUpdate();
+            }
+            GameObject.Destroy(destroyObject);
+            yield break;
         }
 
         [HarmonyPatch(typeof(PlayerNameTag), "FadePlayerNameTag", new Type[] { typeof(bool) })]

@@ -9,13 +9,13 @@
   <ItemGroup>
     <None Remove="catears" />
     <None Remove="pokeballs" />
-    <None Remove="tail" />
+    <None Remove="rainbowtail" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="catears" />
     <EmbeddedResource Include="pokeballs" />
-    <EmbeddedResource Include="tail" />
+    <EmbeddedResource Include="rainbowtail" />
   </ItemGroup>
 
   <ItemGroup>
