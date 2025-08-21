@@ -36,7 +36,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "4.0.1";
+        public const string Version = "4.0.2";
     }
 
     public class ModInfo
@@ -219,14 +219,26 @@ namespace RumbleModdingAPI
             dressingRoomObjectsCreated = false;
         }
 
-        public IEnumerator AddModsToLocalProps() // adds the player's mods to their custom props
+        public static IEnumerator AddModsToLocalProps() // adds the player's mods to their custom props
         {
             string sceneName = Scene.GetSceneName();
             if (sceneName == "Gym" || sceneName == "Loader")
             {
                 yield break; // photon player does not exist in the loader or gym, since they're not networked
             }
-            Il2CppPhoton.Realtime.Player local = PlayerManager.instance.localPlayer.Controller.gameObject.GetComponent<PhotonView>().Owner;
+            Il2CppPhoton.Realtime.Player local = null;
+            while(local == null)
+            {
+                try
+                {
+                    local = PlayerManager.instance.localPlayer.Controller.gameObject.GetComponent<PhotonView>().Owner;
+                }
+                catch { }
+                if (local == null)
+                {
+                    yield return new WaitForFixedUpdate();
+                }
+            }
             Il2CppExitGames.Client.Photon.Hashtable table = new();
             foreach (MelonMod mod in RegisteredMelons)
             {
@@ -398,7 +410,6 @@ namespace RumbleModdingAPI
                     yield return new WaitForFixedUpdate();
                     try
                     {
-                        MelonCoroutines.Start(AddModsToLocalProps());
                         //Log("onMapInitialized Running: " + currentScene);
                         onMapInitialized?.Invoke();
                         //Log("onMapInitialized Complete");
@@ -546,6 +557,7 @@ namespace RumbleModdingAPI
                 if (__instance.controllerType == ControllerType.Local)
                 {
                     localLCKTablet = __instance.transform.FindChild("LIV/LCK Tablet").gameObject;
+                    MelonCoroutines.Start(AddModsToLocalProps());
                 }
                 //Log("onPlayerSpawned Running");
                 onPlayerSpawned?.Invoke();
