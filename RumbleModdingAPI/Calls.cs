@@ -36,7 +36,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "3.7.5";
+        public const string Version = "4.0.1";
     }
 
     public class ModInfo
@@ -162,112 +162,6 @@ namespace RumbleModdingAPI
             MelonLogger.Msg(msg);
         }
 
-        private static Il2CppSystem.IO.Stream ConvertToIl2CppStream(System.IO.Stream stream)
-        {
-            Il2CppSystem.IO.MemoryStream Il2CppStream = new Il2CppSystem.IO.MemoryStream();
-
-            const int bufferSize = 4096;
-            byte[] managedBuffer = new byte[bufferSize];
-            Il2CppStructArray<byte> Il2CppBuffer = new(managedBuffer);
-
-            int bytesRead;
-            while ((bytesRead = stream.Read(managedBuffer, 0, managedBuffer.Length)) > 0)
-            {
-                Il2CppBuffer = managedBuffer;
-                Il2CppStream.Write(Il2CppBuffer, 0, bytesRead);
-            }
-            Il2CppStream.Flush();
-            return Il2CppStream;
-        }
-
-        private static System.IO.MemoryStream StreamFromFile(string path)
-        {
-            byte[] fileBytes = File.ReadAllBytes(path);
-            return new MemoryStream(fileBytes);
-        }
-
-        public static GameObject LoadAssetBundleGameObjectFromFile(string filePath, string assetName)
-        {
-            System.IO.Stream stream = StreamFromFile(filePath);
-            Il2CppSystem.IO.Stream il2CppStream = ConvertToIl2CppStream(stream);
-            AssetBundle bundle = AssetBundle.LoadFromStream(il2CppStream);
-            GameObject bundleObject = UnityEngine.Object.Instantiate(bundle.LoadAsset<GameObject>(assetName));
-            stream.Close();
-            il2CppStream.Close();
-            bundle.Unload(false);
-            return bundleObject;
-        }
-
-        public static AssetBundle LoadAssetBundleFromFile(string filePath)
-        {
-            System.IO.Stream stream = StreamFromFile(filePath);
-            Il2CppSystem.IO.Stream il2CppStream = ConvertToIl2CppStream(stream);
-            AssetBundle bundle = AssetBundle.LoadFromStream(il2CppStream);
-            stream.Close();
-            il2CppStream.Close();
-            return bundle;
-        }
-
-        public static T LoadAssetFromFile<T>(string filePath, string assetName) where T : UnityEngine.Object
-        {
-            System.IO.Stream managedStream = StreamFromFile(filePath);
-            Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(managedStream);
-            AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
-            T asset = bundle.LoadAsset<T>(assetName);
-            managedStream.Close();
-            Il2CppStream.Close();
-            bundle.Unload(false);
-            return asset;
-        }
-
-        public static AssetBundle LoadAssetBundleFromStream(string modName, string modAuthor, string assetPath)
-        {
-            using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
-            {
-                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
-                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
-                Il2CppStream.Close();
-                return bundle;
-            }
-        }
-
-        public static AssetBundle LoadAssetBundleFromStream(MelonMod instance, string assetPath)
-        {
-            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
-            {
-                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
-                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
-                Il2CppStream.Close();
-                return bundle;
-            }
-        }
-
-        public static T LoadAssetFromStream<T>(MelonMod instance, string path, string assetName) where T : UnityEngine.Object
-        {
-            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(path))
-            {
-                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
-                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
-                Il2CppStream.Close();
-                T asset = bundle.LoadAsset<T>(assetName);
-                bundle.Unload(false);
-                return asset;
-            }
-        }
-
-        public static T LoadAssetFromStream<T>(string modName, string modAuthor, string path, string assetName) where T : UnityEngine.Object
-        {
-            using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(path))
-            {
-                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
-                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
-                Il2CppStream.Close();
-                T asset = bundle.LoadAsset<T>(assetName);
-                bundle.Unload(false);
-                return asset;
-            }
-        }
-
         public override void OnLateInitializeMelon()
         {
             rightTrigger.AddBinding("<XRController>{RightHand}/trigger");
@@ -323,6 +217,22 @@ namespace RumbleModdingAPI
             mapInit = false;
             EventSent = false;
             dressingRoomObjectsCreated = false;
+        }
+
+        public IEnumerator AddModsToLocalProps() // adds the player's mods to their custom props
+        {
+            string sceneName = Scene.GetSceneName();
+            if (sceneName == "Gym" || sceneName == "Loader")
+            {
+                yield break; // photon player does not exist in the loader or gym, since they're not networked
+            }
+            Il2CppPhoton.Realtime.Player local = PlayerManager.instance.localPlayer.Controller.gameObject.GetComponent<PhotonView>().Owner;
+            Il2CppExitGames.Client.Photon.Hashtable table = new();
+            foreach (MelonMod mod in RegisteredMelons)
+            {
+                table[mod.Info.Name] = mod.Info.Version;
+            }
+            local.SetCustomProperties(table); // this takes a bit to update tho, not sure how long
         }
 
         public override void OnFixedUpdate()
@@ -488,6 +398,7 @@ namespace RumbleModdingAPI
                     yield return new WaitForFixedUpdate();
                     try
                     {
+                        MelonCoroutines.Start(AddModsToLocalProps());
                         //Log("onMapInitialized Running: " + currentScene);
                         onMapInitialized?.Invoke();
                         //Log("onMapInitialized Complete");
@@ -866,6 +777,123 @@ namespace RumbleModdingAPI
                 return UnityEngine.Object.Instantiate(bundle.LoadAsset<GameObject>(objectName));
             }
         }
+
+        private static Il2CppSystem.IO.Stream ConvertToIl2CppStream(System.IO.Stream stream)
+        {
+            Il2CppSystem.IO.MemoryStream Il2CppStream = new Il2CppSystem.IO.MemoryStream();
+
+            const int bufferSize = 4096;
+            byte[] managedBuffer = new byte[bufferSize];
+            Il2CppStructArray<byte> Il2CppBuffer = new(managedBuffer);
+
+            int bytesRead;
+            while ((bytesRead = stream.Read(managedBuffer, 0, managedBuffer.Length)) > 0)
+            {
+                Il2CppBuffer = managedBuffer;
+                Il2CppStream.Write(Il2CppBuffer, 0, bytesRead);
+            }
+            Il2CppStream.Flush();
+            return Il2CppStream;
+        }
+
+        private static System.IO.MemoryStream StreamFromFile(string path)
+        {
+            byte[] fileBytes = File.ReadAllBytes(path);
+            return new MemoryStream(fileBytes);
+        }
+
+        public static GameObject LoadAssetBundleGameObjectFromFile(string filePath, string assetName)
+        {
+            System.IO.Stream stream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream il2CppStream = ConvertToIl2CppStream(stream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(il2CppStream);
+            GameObject bundleObject = UnityEngine.Object.Instantiate(bundle.LoadAsset<GameObject>(assetName));
+            stream.Close();
+            il2CppStream.Close();
+            bundle.Unload(false);
+            return bundleObject;
+        }
+
+        public static AssetBundle LoadAssetBundleFromFile(string filePath)
+        {
+            System.IO.Stream stream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream il2CppStream = ConvertToIl2CppStream(stream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(il2CppStream);
+            stream.Close();
+            il2CppStream.Close();
+            return bundle;
+        }
+
+        public static T LoadAssetFromFile<T>(string filePath, string assetName) where T : UnityEngine.Object
+        {
+            System.IO.Stream managedStream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(managedStream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+            T asset = bundle.LoadAsset<T>(assetName);
+            managedStream.Close();
+            Il2CppStream.Close();
+            bundle.Unload(false);
+            return asset;
+        }
+
+        public static AssetBundle LoadAssetBundleFromStream(string modName, string modAuthor, string assetPath)
+        {
+            using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                return bundle;
+            }
+        }
+
+        public static AssetBundle LoadAssetBundleFromStream(MelonMod instance, string assetPath)
+        {
+            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(assetPath))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                return bundle;
+            }
+        }
+
+        public static T LoadAssetFromStream<T>(MelonMod instance, string path, string assetName) where T : UnityEngine.Object
+        {
+            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(path))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                T asset = bundle.LoadAsset<T>(assetName);
+                bundle.Unload(false);
+                return asset;
+            }
+        }
+
+        public static T LoadAssetFromStream<T>(string modName, string modAuthor, string path, string assetName) where T : UnityEngine.Object
+        {
+            using (System.IO.Stream bundleStream = MelonMod.FindMelon(modName, modAuthor).MelonAssembly.Assembly.GetManifestResourceStream(path))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                Il2CppStream.Close();
+                T asset = bundle.LoadAsset<T>(assetName);
+                bundle.Unload(false);
+                return asset;
+            }
+        }
+
+        /*Stripped
+        public static IEnumerator LoadAssetBundleFromFileAsync(Action<AssetBundle> onComplete, string filePath)
+        {
+            Stream stream = Calls.StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream il2CppStream = Calls.ConvertToIl2CppStream(stream);
+            AssetBundleCreateRequest req = AssetBundle.LoadFromStreamAsync(il2CppStream);
+            yield return req;
+            AssetBundle bundle = req.assetBundle;
+            onComplete?.Invoke(bundle);
+        }*/
         #endregion
 
         #region API Calls
