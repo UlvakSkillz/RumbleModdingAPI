@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -37,28 +37,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Calls.cs",
-              "DocumentMoniker": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\Calls.cs",
-              "RelativeDocumentMoniker": "RumbleModdingAPI\\Calls.cs",
-              "ToolTip": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\Calls.cs",
-              "RelativeToolTip": "RumbleModdingAPI\\Calls.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAuwCsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T02:23:59.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "RumbleModdingAPI\\AssemblyInfo.cs",
               "ToolTip": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\AssemblyInfo.cs",
               "RelativeToolTip": "RumbleModdingAPI\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T02:23:57.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Calls.cs",
+              "DocumentMoniker": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\Calls.cs",
+              "RelativeDocumentMoniker": "RumbleModdingAPI\\Calls.cs",
+              "ToolTip": "C:\\Users\\austi\\source\\repos\\RumbleModdingAPInew\\RumbleModdingAPI\\Calls.cs",
+              "RelativeToolTip": "RumbleModdingAPI\\Calls.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAwwEQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T02:23:59.208Z",
+              "EditorCaption": ""
             }
           ]
         }

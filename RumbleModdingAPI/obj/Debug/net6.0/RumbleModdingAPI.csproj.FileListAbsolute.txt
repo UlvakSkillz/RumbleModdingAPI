@@ -51,7 +51,6 @@ C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\MonoMod.Utils.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\MonoMod.RuntimeDetour.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\bHapticsLib.dll
-C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\AssetRipper.VersionUtilities.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Mono.Cecil.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\AssetsTools.NET.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Tomlet.dll
@@ -220,3 +219,5 @@ C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppSystem.Xml.Linq.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\UnityEngine.TerrainModule.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Unity.Burst.dll
+C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\AssetRipper.Primitives.dll
+C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\MelonLoader.pdb
