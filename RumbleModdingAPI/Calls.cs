@@ -36,7 +36,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "4.1.1";
+        public const string Version = "4.1.2";
     }
 
     public class ModInfo
@@ -1126,6 +1126,22 @@ namespace RumbleModdingAPI
             bundle.Unload(false);
             return asset;
         }
+        /*
+        public static List<T> LoadAllOfTypeFromFile<T>(string filePath) where T : UnityEngine.Object
+        {
+            System.IO.Stream managedStream = StreamFromFile(filePath);
+            Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(managedStream);
+            AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+            List<T> assetsList = new List<T>();
+            foreach (T anAsset in bundle.LoadAll<T>())
+            {
+                assetsList.Add(anAsset);
+            }
+            managedStream.Close();
+            Il2CppStream.Close();
+            bundle.Unload(false);
+            return assetsList;
+        }*/
 
         public static AssetBundle LoadAssetBundleFromStream(string modName, string modAuthor, string assetPath)
         {
@@ -1161,6 +1177,25 @@ namespace RumbleModdingAPI
                 return asset;
             }
         }
+        /*
+        public static List<T> LoadAllOfTypeFromStream<T>(MelonMod instance, string path) where T : UnityEngine.Object
+        {
+            using (System.IO.Stream bundleStream = instance.MelonAssembly.Assembly.GetManifestResourceStream(path))
+            {
+                Il2CppSystem.IO.Stream Il2CppStream = ConvertToIl2CppStream(bundleStream);
+                AssetBundle bundle = AssetBundle.LoadFromStream(Il2CppStream);
+                List<T> assetsList = new List<T>();
+                Il2CppArrayBase<T> assets = bundle.LoadAll<T>();
+                foreach (T anAsset in assets)
+                {
+                    Log("Asset: " + anAsset.name);
+                    assetsList.Add(anAsset);
+                }
+                Il2CppStream.Close();
+                bundle.Unload(false);
+                return assetsList;
+            }
+        }*/
 
         public static T LoadAssetFromStream<T>(string modName, string modAuthor, string path, string assetName) where T : UnityEngine.Object
         {
