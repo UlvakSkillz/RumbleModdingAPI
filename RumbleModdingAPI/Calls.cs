@@ -26,6 +26,8 @@ using MelonLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static Il2CppRUMBLE.Networking.GameState;
@@ -36,7 +38,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "4.1.2";
+        public const string Version = "4.1.3";
     }
 
     public class ModInfo
@@ -1216,6 +1218,98 @@ namespace RumbleModdingAPI
         public static bool IsInitialized() { return init; }
 
         public static bool IsMapInitialized() { return mapInit; }
+
+        public class PhotonRPCs
+        {
+            [System.AttributeUsage(System.AttributeTargets.Method)]
+            public class PunRPC : System.Attribute
+            {
+            }
+
+            public static class PhotonRpcInjector
+            {
+                public static System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<System.Reflection.MethodInfo>> methodsInType = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<System.Reflection.MethodInfo>>();
+
+                public static void Initialize()
+                {
+                    MelonLogger.Msg("initializing RPC Manager");
+                    ReadOnlyCollection<MelonMod> registeredMelons = MelonTypeBase<MelonMod>.RegisteredMelons;
+                    foreach (MelonMod item in registeredMelons)
+                    {
+                        System.Reflection.Assembly assembly = item.MelonAssembly.Assembly;
+                        System.Type[] types = assembly.GetTypes();
+                        System.Type[] array = types;
+                        foreach (System.Type type in array)
+                        {
+                            System.Reflection.MethodInfo[] methods = type.GetMethods();
+                            foreach (System.Reflection.MethodInfo methodInfo in methods)
+                            {
+                                PunRPC customAttribute = methodInfo.GetCustomAttribute<PunRPC>();
+                                if (customAttribute != null)
+                                {
+                                    MelonLogger.Msg("found RPC attribute at " + methodInfo.Name);
+                                    RegisterMethod(type, methodInfo);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                public static void RegisterMethod(System.Type type, System.Reflection.MethodInfo method)
+                {
+                    string fullName = type.FullName;
+                    if (!methodsInType.ContainsKey(fullName))
+                    {
+                        methodsInType[fullName] = new System.Collections.Generic.List<System.Reflection.MethodInfo>();
+                    }
+                    methodsInType[fullName].Add(method);
+                    RegisterRpc(method.Name);
+                    MelonLogger.Msg($"Successfully registered: {fullName}.{method.Name} as an RPC");
+                }
+
+                public static void RegisterRpc(string methodName)
+                {
+                    Il2CppSystem.Collections.Generic.Dictionary<string, int> rpcShortcuts = PhotonNetwork.rpcShortcuts;
+                    Il2CppSystem.Collections.Generic.List<string> rpcList = PhotonNetwork.PhotonServerSettings.RpcList;
+                    if (!rpcShortcuts.ContainsKey(methodName) && !rpcList.Contains(methodName))
+                    {
+                        int count = rpcShortcuts.Count;
+                        rpcShortcuts.Add(methodName, count);
+                        rpcList.Add(methodName);
+                        MelonLogger.Msg($"Registered RPC '{methodName}' with shortcut ID {count}");
+                    }
+                    else
+                    {
+                        MelonLogger.Msg("RPC '" + methodName + "' already registered.");
+                    }
+                }
+            }
+
+            [HarmonyPatch(typeof(SupportClass), "GetMethods")]
+            public static class GetMethodsPatch
+            {
+                public static void Postfix(Il2CppSystem.Type type, ref Il2CppSystem.Collections.Generic.List<Il2CppSystem.Reflection.MethodInfo> __result)
+                {
+                    string fullName = type.FullName;
+                    if (!PhotonRpcInjector.methodsInType.ContainsKey(fullName))
+                    {
+                        return;
+                    }
+                    System.Collections.Generic.List<System.Reflection.MethodInfo> list = PhotonRpcInjector.methodsInType[fullName];
+                    Il2CppReferenceArray<Il2CppSystem.Reflection.MethodInfo> methods = type.GetMethods();
+                    foreach (Il2CppSystem.Reflection.MethodInfo item in methods)
+                    {
+                        foreach (System.Reflection.MethodInfo item2 in list)
+                        {
+                            if (item.Name == item2.Name)
+                            {
+                                __result.Add(item);
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         public class Matchmaking
         {
