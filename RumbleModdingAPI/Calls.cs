@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using Il2CppBhaptics.SDK2;
 using Il2CppExitGames.Client.Photon;
+using Il2CppInterop.Runtime.InteropTypes;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using Il2CppLIV.SDK.Unity;
 using Il2CppPhoton.Pun;
@@ -21,18 +22,23 @@ using Il2CppRUMBLE.Social;
 using Il2CppRUMBLE.Social.Phone;
 using Il2CppRUMBLE.Tutorial.MoveLearning;
 using Il2CppRUMBLE.Utilities;
+using Il2CppSystem.Buffers;
 using Il2CppTMPro;
 using MelonLoader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static Il2CppRUMBLE.Networking.GameState;
 using static MelonLoader.MelonLogger;
+using static RumbleModdingAPI.Calls.GameObjects.DDOL.GameInstance.UI.RecordingUI.Panel.RotationSmoothing.SliderOutline.HandleSlideArea.Handle;
 using static RumbleModdingAPI.Calls.GameObjects.Gym.LOGIC.Heinhouserproducts.RegionSelector.Model.WorldMap.Regions;
+using static RumbleModdingAPI.Calls.PhotonRPCs;
 
 namespace RumbleModdingAPI
 {
@@ -158,6 +164,7 @@ namespace RumbleModdingAPI
         private bool matchStarted = false;
         public static int matchmakingType = 0;
         private static Instance logger;
+        public GameObject manager;
 
         #endregion
 
@@ -197,6 +204,16 @@ namespace RumbleModdingAPI
             pokeBalls.SetActive(false);
             catEars.SetActive(false);
             tail.SetActive(false);
+            PhotonRPCs.PhotonRpcInjector.Initialize();
+
+            // RML merge things here
+            PhotonRpcInjector.Initialize();
+
+            manager = new GameObject("Manager component holder (Rumble Modding Library)");
+            manager.AddComponent<RaiseEventManager>();
+            manager.AddComponent<ControllerInputManager>();
+            manager.AddComponent<DoNotDisable>();
+            GameObject.DontDestroyOnLoad(manager);
         }
 
         private void CreateMyModString()
