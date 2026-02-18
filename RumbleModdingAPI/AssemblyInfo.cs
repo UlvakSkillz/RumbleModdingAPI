@@ -4,7 +4,7 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 // ...
-[assembly: MelonInfo(typeof(Calls), "RumbleModdingAPI", ModBuildInfo.Version, "UlvakSkillz")]
+[assembly: MelonInfo(typeof(RumbleModdingAPI.RumbleModdingAPI), "RumbleModdingAPI", ModBuildInfo.Version, "UlvakSkillz")]
 [assembly: MelonGame("Buckethead Entertainment", "RUMBLE")]
 [assembly: MelonColor(255, 195, 0, 255)]
 [assembly: MelonAuthorColor(255, 195, 0, 255)]

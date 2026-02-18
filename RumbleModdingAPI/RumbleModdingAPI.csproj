@@ -7,18 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="catears" />
-    <None Remove="pokeballs" />
-    <None Remove="rainbowtail" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="catears" />
-    <EmbeddedResource Include="pokeballs" />
-    <EmbeddedResource Include="rainbowtail" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\net6\0Harmony.dll</HintPath>
     </Reference>
@@ -27,9 +15,6 @@
     </Reference>
     <Reference Include="Il2CppInterop.Runtime">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2CppLIV">
-      <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\Il2CppAssemblies\Il2CppLIV.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
