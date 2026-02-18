@@ -431,6 +431,14 @@
           }
         }
       },
+      "Il2CppPhotonVoice.PUN/0.0.0.0": {
+        "runtime": {
+          "Il2CppPhotonVoice.PUN.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "MonoMod.Utils/22.7.31.1": {
         "runtime": {
           "MonoMod.Utils.dll": {
@@ -1101,6 +1109,11 @@
       "sha512": ""
     },
     "Il2CppRUMBLE.Platform.Info.Steam/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Il2CppPhotonVoice.PUN/0.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

@@ -9,8 +9,8 @@ using MelonLoader;
 using System.Reflection;
 using UnityEngine;
 using System.Collections;
-using RC = RumbleModdingAPI.RumbleModdingAPI.ControllerMap.RightController;
-using LC = RumbleModdingAPI.RumbleModdingAPI.ControllerMap.LeftController;
+using RC = RumbleModdingAPI.RMAPI.Calls.ControllerMap.RightController;
+using LC = RumbleModdingAPI.RMAPI.Calls.ControllerMap.LeftController;
 
 namespace RumbleModdingAPI.RMAPI
 {

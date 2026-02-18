@@ -1,15 +1,18 @@
-﻿//GameObject Class List File
-
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RumbleModdingAPI.RMAPI
 {
-
+    /// <summary>
+    /// Contains access to almost every GameObject in Rumble Maps
+    /// </summary>
     public class GameObjects
     {
+        /// <summary>
+        /// Contains access to almost every GameObject in DontDestroyOnLoad
+        /// </summary>
         public class DDOL
         {
-            public static System.Collections.Generic.List<GameObject> GetBaseDDOLGameObjects() { return RumbleModdingAPI.allBaseDDOLGameObjects; }
+            public static GameObject[] GetBaseDDOLGameObjects() { return RumbleModdingAPI.allBaseDDOLGameObjects; }
             public class LanguageManager
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseDDOLGameObjects[0]; }
@@ -805,26 +808,14 @@ namespace RumbleModdingAPI.RMAPI
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseDDOLGameObjects[3]; }
 
             }
-            public class SteamManager
-            {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseDDOLGameObjects[4]; }
-
-            }
-            public class NewGameObject
-            {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseDDOLGameObjects[5]; }
-
-            }
-            public class PlayFabHttp
-            {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseDDOLGameObjects[6]; }
-
-            }
         }
 
+        /// <summary>
+        /// Contains access to almost every GameObject in Gym Map
+        /// </summary>
         public class Gym
         {
-            public static System.Collections.Generic.List<GameObject> GetBaseGymGameObjects() { return RumbleModdingAPI.allBaseGymGameObjects; }
+            public static GameObject[] GetBaseGymGameObjects() { return RumbleModdingAPI.allBaseGymGameObjects; }
             public class ftraceLightmaps
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseGymGameObjects[0]; }
@@ -28637,9 +28628,12 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+        /// <summary>
+        /// Contains access to almost every GameObject in Map0/Ring Map
+        /// </summary>
         public class Map0
         {
-            public static System.Collections.Generic.List<GameObject> GetBaseMap0GameObjects() { return RumbleModdingAPI.allBaseMap0GameObjects; }
+            public static GameObject[] GetBaseMap0GameObjects() { return RumbleModdingAPI.allBaseMap0GameObjects; }
             public class Logic
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap0GameObjects[0]; }
@@ -30612,9 +30606,12 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+        /// <summary>
+        /// Contains access to almost every GameObject in Map1/Pit Map
+        /// </summary>
         public class Map1
         {
-            public static System.Collections.Generic.List<GameObject> GetBaseMap1GameObjects() { return RumbleModdingAPI.allBaseMap1GameObjects; }
+            public static GameObject[] GetBaseMap1GameObjects() { return RumbleModdingAPI.allBaseMap1GameObjects; }
             public class ftraceLightmaps
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
@@ -32517,9 +32514,12 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+        /// <summary>
+        /// Contains access to almost every GameObject in Park Map
+        /// </summary>
         public class Park
         {
-            public static System.Collections.Generic.List<GameObject> GetBaseParkGameObjects() { return RumbleModdingAPI.allBaseParkGameObjects; }
+            public static GameObject[] GetBaseParkGameObjects() { return RumbleModdingAPI.allBaseParkGameObjects; }
             public class LOGIC
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseParkGameObjects[0]; }

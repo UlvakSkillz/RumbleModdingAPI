@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RumbleModdingAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d0bcf261648604c6cd0f0774ed55aef7f48592d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af7403974eed7ecf966517c2e16f27634114e331")]
 [assembly: System.Reflection.AssemblyProductAttribute("RumbleModdingAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RumbleModdingAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
