@@ -196,7 +196,7 @@ namespace RumbleModdingAPI.RMAPI
                 try
                 {
                     localPlayerGameObject = PlayerManager.instance.localPlayer.Controller.gameObject;
-                    RumbleModdingAPI.Log("Got Local Player");
+                    RumbleModdingAPI.Log("grabbed Local Player", true);
                 }
                 catch { }
                 if (localPlayerGameObject == null)

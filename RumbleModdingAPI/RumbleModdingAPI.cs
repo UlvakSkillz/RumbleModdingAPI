@@ -38,7 +38,7 @@ namespace RumbleModdingAPI
     public class RumbleModdingAPI : MelonMod
     {
         #region Variables
-        readonly static bool debug = true;
+        readonly static bool debug = false;
 
         public static MelonMod instance;
         internal static byte myEventCode = 15;
@@ -151,7 +151,7 @@ namespace RumbleModdingAPI
                         Log("API Initialized");
                         Log("API By UlvakSkillz. Consider Donating to Their KoFi: https://ko-fi.com/ulvakskillz");
                         //Log("onMyModsGathered Running");
-                        RMAPI.Actions.TriggerOnMyModsGathered();
+                        MelonCoroutines.Start(WaitATickThemTriggerOnMyModsGathered());
                     }
                 }
                 else if ((currentScene == "Gym") && (!mapInit))
@@ -182,6 +182,13 @@ namespace RumbleModdingAPI
                 }
             }
             catch (Exception e) { Error(e); return; }
+        }
+
+        private IEnumerator WaitATickThemTriggerOnMyModsGathered()
+        {
+            //need to wait to give time for Mods to Hook into this in OnLateInitializeMelon/OnLevelWasLoaded
+            yield return new WaitForFixedUpdate();
+            RMAPI.Actions.TriggerOnMyModsGathered();
         }
 
         private static IEnumerator AddModsToLocalProps() // adds the player's mods to their custom props

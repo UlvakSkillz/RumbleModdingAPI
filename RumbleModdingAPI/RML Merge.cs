@@ -94,7 +94,7 @@ namespace RumbleModdingAPI.RMAPI
                 {
                     instance = this;
                     PhotonNetwork.NetworkingClient.EventReceived += (Action<EventData>)OnEvent;
-                    MelonLogger.Msg("RaiseEventManager initialized");
+                    RumbleModdingAPI.Log("RaiseEventManager initialized");
                 }
                 catch
                 {
@@ -113,7 +113,7 @@ namespace RumbleModdingAPI.RMAPI
                 {
                     var boxedData = eventData.CustomData;
                     var unboxedData = boxedData.Cast<Il2CppReferenceArray<Il2CppSystem.Object>>();
-                    MelonLogger.Msg($"unboxing data with length of {unboxedData.Length} - RaiseEventManager"); // TO  BE REMOVED
+                    RumbleModdingAPI.Log($"unboxing data with length of {unboxedData.Length} - RaiseEventManager"); // TO  BE REMOVED
                     List<Il2CppSystem.Object> unboxedList = new();
                     for (int i = 1; i < unboxedData.Count; i++)
                     {
@@ -121,7 +121,7 @@ namespace RumbleModdingAPI.RMAPI
                     }
                     string sender = unboxedData[0].ToString();
 
-                    MelonLogger.Msg($"RaiseEvent received and is being sent to '{sender}' - RaiseEventManager");
+                    RumbleModdingAPI.Log($"RaiseEvent received and is being sent to '{sender}' - RaiseEventManager");
                     RegisteredMods[sender].OnEvent(unboxedList);
                 }
             }
@@ -347,26 +347,26 @@ namespace RumbleModdingAPI.RMAPI
 
             public static void Initialize() // initializes the rpc manager
             {
-                MelonLogger.Msg("initializing RPC Manager");
+                RumbleModdingAPI.Log("initializing RPC Manager");
                 var loadedMods = MelonMod.RegisteredMelons;
                 foreach (MelonMod mod in loadedMods)
                 {
-                    //MelonLogger.Msg($"searching for RPCs in {mod.Info.Name}"); // spams logs
+                    //RumbleModdingAPI.Log($"searching for RPCs in {mod.Info.Name}"); // spams logs
                     var assembly = mod.MelonAssembly.Assembly;
 
                     Type[] types = assembly.GetTypes();
 
                     foreach (Type type in types)
                     {
-                        //MelonLogger.Msg($"searching for methods in {type.FullName}"); // also spams logs
+                        //RumbleModdingAPI.Log($"searching for methods in {type.FullName}"); // also spams logs
                         foreach (var method in type.GetMethods())
                         {
-                            //MelonLogger.Msg($"looking for attribute at {method.Name}"); // 54k lines later...
+                            //RumbleModdingAPI.Log($"looking for attribute at {method.Name}"); // 54k lines later...
                             var rpcAttribute = method.GetCustomAttribute<PunRPC>();
 
                             if (rpcAttribute != null)
                             {
-                                MelonLogger.Msg($"found RPC attribute at {method.Name}");
+                                RumbleModdingAPI.Log($"found RPC attribute at {method.Name}");
                                 PhotonRpcInjector.RegisterMethod(type, method);
                             }
                         }
@@ -386,7 +386,7 @@ namespace RumbleModdingAPI.RMAPI
                 methodsInType[typeName].Add(method);
                 RegisterRpc(method.Name);
 
-                MelonLogger.Msg($"Successfully registered: {typeName}.{method.Name} as an RPC");
+                RumbleModdingAPI.Log($"Successfully registered: {typeName}.{method.Name} as an RPC");
             }
 
             public static void RegisterRpc(string methodName) // adds the method name to the RPC Shortcuts and rpc list
@@ -400,11 +400,11 @@ namespace RumbleModdingAPI.RMAPI
                     int newId = rpcShortcuts.Count;
                     rpcShortcuts.Add(methodName, newId);
                     rpcList.Add(methodName);
-                    MelonLogger.Msg($"Registered RPC '{methodName}' with shortcut ID {newId}");
+                    RumbleModdingAPI.Log($"Registered RPC '{methodName}' with shortcut ID {newId}");
                 }
                 else
                 {
-                    MelonLogger.Msg($"RPC '{methodName}' already registered.");
+                    RumbleModdingAPI.Log($"RPC '{methodName}' already registered.");
                 }
             }
         }
