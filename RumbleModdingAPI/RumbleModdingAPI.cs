@@ -38,7 +38,7 @@ namespace RumbleModdingAPI
     public class RumbleModdingAPI : MelonMod
     {
         #region Variables
-        private static bool debug = true;
+        readonly static bool debug = true;
 
         public static MelonMod instance;
         internal static byte myEventCode = 15;
@@ -59,7 +59,7 @@ namespace RumbleModdingAPI
         internal static GameObject[] allBaseMap1GameObjects = new GameObject[4];
         internal static GameObject parentAPIItems;
 
-        private static InputActionMap map = new InputActionMap("InputMap");
+        readonly static InputActionMap map = new InputActionMap("InputMap");
         internal static InputAction rightTrigger = map.AddAction("Right Trigger");
         internal static InputAction rightPrimary = map.AddAction("Right Primary");
         internal static InputAction rightSecondary = map.AddAction("Right Secondary");
@@ -118,7 +118,7 @@ namespace RumbleModdingAPI
             GameObject.DontDestroyOnLoad(RMLManager);
         }
 
-        private void CreateMyModString()
+        private static void CreateMyModString()
         {
             myModString = "";
             for (int i = 0; i < MelonBase.RegisteredMelons.Count; i++)
@@ -212,7 +212,7 @@ namespace RumbleModdingAPI
             local.SetCustomProperties(table); // this takes a bit to update tho, not sure how long
         }
 
-        private void GrabBaseDDOLObjects()
+        private static void GrabBaseDDOLObjects()
         {
             List<string> ddolNamesToGrab = new List<string> { "LanguageManager", "PhotonMono", "Game Instance", "Timer Updater" };
             Il2CppReferenceArray<GameObject> ddolRootObjects = PlayerManager.instance.gameObject.scene.GetRootGameObjects();
@@ -232,7 +232,7 @@ namespace RumbleModdingAPI
             }
         }
 
-        private void GrabBaseGymObjects()
+        private static void GrabBaseGymObjects()
         {
             List<string> gymNamesToGrab = new List<string> { "!ftraceLightmaps", "ProbeVolumePerSceneData", "SCENE VFX/SFX", "SCENE", "INTERACTABLES", "TUTORIAL", "LIGHTING", "LOGIC" };
             Il2CppReferenceArray<GameObject> gymRootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
@@ -255,7 +255,7 @@ namespace RumbleModdingAPI
             }
         }
 
-        private void GrabBaseParkObjects()
+        private static void GrabBaseParkObjects()
         {
             List<string> parkNamesToGrab = new List<string> { "LOGIC", "!ftraceLightmaps", "ProbeVolumePerSceneData", "INTERACTABLES", "LIGHTING", "SCENE VFX/SFX", "SCENE" };
             Il2CppReferenceArray<GameObject> parkRootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
@@ -278,7 +278,7 @@ namespace RumbleModdingAPI
             }
         }
 
-        private void GrabBaseMap0Objects()
+        private static void GrabBaseMap0Objects()
         {
             List<string> map0NamesToGrab = new List<string> { "Logic", "Lighting & Effects", "Scene" };
             Il2CppReferenceArray<GameObject> map0RootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
@@ -301,9 +301,9 @@ namespace RumbleModdingAPI
             }
         }
 
-        private void GrabBaseMap1Objects()
+        private static void GrabBaseMap1Objects()
         {
-            List<string> map1NamesToGrab = new List<string> { "Logic", "Lighting & Effects", "Scene" };
+            List<string> map1NamesToGrab = new List<string> { "Lighting & Effects", "Logic", "Scene" };
             Il2CppReferenceArray<GameObject> map1RootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
             allBaseMap1GameObjects = new GameObject[] { null, null, null };
             foreach (GameObject gameObject in map1RootObjects)
@@ -359,8 +359,7 @@ namespace RumbleModdingAPI
 
         #endregion
 
-        #region Actions
-
+        #region Patches
         [HarmonyPatch(typeof(Il2CppRUMBLE.Environment.Matchmaking.MatchmakeConsole), "MatchmakeStatusUpdated", new Type[] { typeof(MatchmakingHandler.MatchmakeStatus) })]
         public static class MatchmakingType
         {
@@ -374,7 +373,7 @@ namespace RumbleModdingAPI
         }
 
         [HarmonyPatch(typeof(PlayerController), "Initialize", new Type[] { typeof(Il2CppRUMBLE.Players.Player) })]
-        public static class playerspawn
+        public static class PlayerSpawn
         {
             private static void Postfix(ref PlayerController __instance, ref Il2CppRUMBLE.Players.Player player)
             {

@@ -30612,14 +30612,9 @@ namespace RumbleModdingAPI.RMAPI
         public class Map1
         {
             public static GameObject[] GetBaseMap1GameObjects() { return RumbleModdingAPI.allBaseMap1GameObjects; }
-            public class ftraceLightmaps
-            {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
-
-            }
             public class LightingEffects
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
 
 
                 public class DirectionalLight
@@ -30644,7 +30639,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Logic
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
 
 
                 public class SpawnPointHandler
@@ -32444,7 +32439,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Scene
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[3]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
 
 
                 public class MAP1
