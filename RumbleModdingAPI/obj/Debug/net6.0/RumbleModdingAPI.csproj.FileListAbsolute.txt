@@ -214,10 +214,7 @@ C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\MelonLoader.pdb
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Unity.Profiling.Core.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Iced.dll
-C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Unity.XR.CompositionLayers.dll
-C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\UnityEngine.VideoModule.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppLIV.LCKCore.dll
-C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Unity.XR.CoreUtils.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppLIV.LCKCore.ThirdParty.MessagePack.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppPhotonVoice.PUN.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\RumbleModdingAPI.xml

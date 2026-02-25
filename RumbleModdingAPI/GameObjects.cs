@@ -21562,7 +21562,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class DummyRoot
                     {
-                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(2).gameObject; }
+                        public static GameObject GetGameObject() { return Gym.INTERACTABLES.Howard.GetGameObject().transform.GetChild(2).gameObject; }
 
                         public class Howard
                         {
