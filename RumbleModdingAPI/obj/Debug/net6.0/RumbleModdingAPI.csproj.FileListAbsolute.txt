@@ -216,6 +216,6 @@ C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Iced.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppLIV.LCKCore.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppLIV.LCKCore.ThirdParty.MessagePack.dll
-C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppPhotonVoice.PUN.dll
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\RumbleModdingAPI.xml
 C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\obj\Debug\net6.0\RumbleModdingAPI.xml
+C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\Il2CppSystem.Numerics.dll

@@ -17,7 +17,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "5.0.1";
+        public const string Version = "5.0.3";
     }
 
     public class ModInfo
@@ -374,7 +374,7 @@ namespace RumbleModdingAPI
             {
                 if (status == MatchmakingHandler.MatchmakeStatus.Success)
                 {
-                    RumbleModdingAPI.matchmakingType = RMAPI.GameObjects.Gym.INTERACTABLES.MatchConsole.MatchmakingSettings.InteractionSliderHorizontalGrip.Interactionslider.GetGameObject().GetComponent<InteractionSlider>().snappedStep;
+                    RumbleModdingAPI.matchmakingType = RMAPI.GameObjects.Gym.INTERACTABLES.MatchConsole.MatchmakingSettings.InteractionSliderHorizontalGrip.Sliderhandle.GetGameObject().GetComponent<InteractionSlider>().snappedStep;
                 }
             }
         }
@@ -406,6 +406,15 @@ namespace RumbleModdingAPI
             private static void Postfix(ref PlayerNameTag __instance, ref bool on)
             {
                 if (!on) { return; }
+                MelonCoroutines.Start(UpdateTitle(__instance));
+            }
+        }
+
+        [HarmonyPatch(typeof(PlayerNameTag), nameof(PlayerNameTag.UpdatePlayerTitleText), new Type[] { })]
+        public static class UpdatePlayerBPText
+        {
+            private static void Postfix(ref PlayerNameTag __instance)
+            {
                 MelonCoroutines.Start(UpdateTitle(__instance));
             }
         }
