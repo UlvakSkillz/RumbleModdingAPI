@@ -189,6 +189,7 @@ namespace RumbleModdingAPI.RMAPI
 
         internal static IEnumerator StartActionWatcher()
         {
+            yield return new WaitForFixedUpdate();
             bool gotPlayer = false;
             GameObject localPlayerGameObject = null;
             while (!gotPlayer)

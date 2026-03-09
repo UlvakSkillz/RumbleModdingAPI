@@ -124,6 +124,26 @@
             <param name="path"></param>
             <param name="assetName"></param>
         </member>
+        <member name="T:RumbleModdingAPI.RMAPI.AudioManager">
+            <summary>
+            Audio Manager to Create AudioCalls
+            </summary>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.AudioManager.LoadWavFile(System.String)">
+            <summary>
+            CreateAudioCalls Triggers this but leaving this visible for others if they want it
+            </summary>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.AudioManager.PlaySound(Il2CppRUMBLE.Audio.AudioCall,UnityEngine.Vector3,System.Boolean)">
+            <summary>
+            Plays a specified AudioCall at a Position
+            </summary>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.AudioManager.CreateAudioCalls(System.String,System.Single)">
+            <summary>
+            Creates an AudioCall and sets the clip to the file. Must be wav file. Sets the AudioCall/clip HideFlags to HideAndDontSave
+            </summary>
+        </member>
         <member name="T:RumbleModdingAPI.RMAPI.Calls">
             <summary>
             Contains Methods to get info about different stuff
