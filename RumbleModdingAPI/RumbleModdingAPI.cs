@@ -17,7 +17,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "5.1.0";
+        public const string Version = "5.1.1";
     }
 
     public class ModInfo

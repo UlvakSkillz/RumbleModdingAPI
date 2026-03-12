@@ -139,9 +139,14 @@
             Plays a specified AudioCall at a Position
             </summary>
         </member>
-        <member name="M:RumbleModdingAPI.RMAPI.AudioManager.CreateAudioCalls(System.String,System.Single)">
+        <member name="M:RumbleModdingAPI.RMAPI.AudioManager.CreateAudioCall(System.String,System.Single)">
             <summary>
             Creates an AudioCall and sets the clip to the file. Must be wav file. Sets the AudioCall/clip HideFlags to HideAndDontSave
+            </summary>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.AudioManager.CreateAudioCalls(System.String[],System.Single)">
+            <summary>
+            Creates a list of AudioCalls and sets the clips to the files. Must be wav files. Sets the AudioCalls/clips HideFlags to HideAndDontSave
             </summary>
         </member>
         <member name="T:RumbleModdingAPI.RMAPI.Calls">

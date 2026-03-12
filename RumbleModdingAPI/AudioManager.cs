@@ -79,7 +79,7 @@ namespace RumbleModdingAPI.RMAPI
         /// <summary>
         /// Creates an AudioCall and sets the clip to the file. Must be wav file. Sets the AudioCall/clip HideFlags to HideAndDontSave
         /// </summary>
-        public static AudioCall CreateAudioCalls(string filePath, float volume)
+        public static AudioCall CreateAudioCall(string filePath, float volume)
         {
             string[] filePathSplit = filePath.Replace(".wav", "").Split('\\');
             string name = filePathSplit[filePathSplit.Length - 1];
@@ -129,6 +129,68 @@ namespace RumbleModdingAPI.RMAPI
             {
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Creates a list of AudioCalls and sets the clips to the files. Must be wav files. Sets the AudioCalls/clips HideFlags to HideAndDontSave
+        /// </summary>
+        public static AudioCall[] CreateAudioCalls(string[] filePaths, float volume)
+        {
+            AudioCall[] results = new AudioCall[filePaths.Length];
+            for (int i = 0; i < filePaths.Length; i++)
+            {
+                string[] filePathSplit = filePaths[i].Replace(".wav", "").Split('\\');
+                string name = filePathSplit[filePathSplit.Length - 1];
+                bool fileExists = File.Exists(filePaths[i]);
+                if (fileExists)
+                {
+                    AudioCall audioCall = ScriptableObject.CreateInstance<AudioCall>();
+                    audioCall.name = name;
+
+                    GeneralAudioSettings generalSettings = new GeneralAudioSettings();
+                    generalSettings.SetVolume(volume);
+                    generalSettings.Pitch = 1;
+                    audioCall.generalSettings = generalSettings;
+
+                    SpatialAudioSettings spatialSettings = new SpatialAudioSettings();
+                    spatialSettings.CustomReverbZoneMixCurve = new AnimationCurve();
+                    spatialSettings.CustomRolloffCurve = new AnimationCurve();
+                    spatialSettings.CustomSpatialBlendCurve = new AnimationCurve();
+                    spatialSettings.CustomSpreadCurve = new AnimationCurve();
+                    audioCall.spatialSettings = spatialSettings;
+
+                    AudioCall.WeightedClip weightedClip = new AudioCall.WeightedClip();
+                    AudioClip clip = AudioManager.LoadWavFile(filePaths[i]);
+
+                    if (clip == null)
+                    {
+                        results[i] = null;
+                        continue;
+                    }
+
+                    clip.name = name;
+                    clip.hideFlags = HideFlags.HideAndDontSave;
+                    clip.LoadAudioData();
+                    weightedClip.Clip = clip;
+
+                    AudioCall.WeightedClip[] weightedClips = new AudioCall.WeightedClip[1] { weightedClip };
+                    weightedClips[0].Weight = 1;
+                    audioCall.clips = weightedClips;
+                    audioCall.clips[0] = audioCall.GetRandomClip();
+                    audioCall.clips[0].Clip = clip;
+
+                    audioCall.hideFlags = HideFlags.HideAndDontSave;
+                    audioCall.clips[0].Clip.hideFlags = HideFlags.HideAndDontSave;
+                    results[i] = audioCall;
+                    continue;
+                }
+                else
+                {
+                    results[i] = null;
+                    continue;
+                }
+            }
+            return results;
         }
     }
 }
