@@ -53,7 +53,7 @@ namespace RumbleModdingAPI.RMAPI
             int channels = fileBytes[22];
             int sampleRate = BitConverter.ToInt32(fileBytes, 24);
 
-            int sampleCount = dataSize / 2 / channels;
+            int sampleCount = (channels == 0 ? 0 : dataSize / 2 / channels);
             float[] samples = new float[sampleCount * channels];
 
             for (int i = 0; i < sampleCount * channels; i++)

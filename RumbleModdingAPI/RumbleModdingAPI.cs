@@ -17,7 +17,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "5.1.1";
+        public const string Version = "5.1.2";
     }
 
     public class ModInfo
@@ -139,6 +139,8 @@ namespace RumbleModdingAPI
             currentScene = sceneName;
             mapInit = false;
             EventSent = false;
+            RMAPI.Actions.modsSentThisScene = false;
+            RMAPI.Actions.modsRecievedThisScene = false;
             RMAPI.Actions.sceneCount++;
             try
             {
@@ -333,10 +335,16 @@ namespace RumbleModdingAPI
 
         internal static void GetMods()
         {
-            if (!EventSent && (!PhotonNetwork.IsMasterClient) && ((currentScene == "Map0") || (currentScene == "Map1")))
+            if (!RMAPI.Actions.modsSentThisScene && !EventSent && (!PhotonNetwork.IsMasterClient) && ((currentScene == "Map0") || (currentScene == "Map1")))
             {
                 EventSent = true;
+                RMAPI.Actions.modsSentThisScene = true;
                 PhotonNetwork.RaiseEvent(myEventCode, myModString, eventOptions, SendOptions.SendReliable);
+            }
+            else if (RMAPI.Actions.modsSentThisScene)
+            {
+                RumbleModdingAPI.Log("Prevented Multiple Mods Sent", true);
+                return;
             }
         }
 
@@ -344,9 +352,15 @@ namespace RumbleModdingAPI
         {
             if (eventData.Code == myEventCode)
             {
-                if (PhotonNetwork.IsMasterClient)
+                if (!RMAPI.Actions.modsRecievedThisScene && PhotonNetwork.IsMasterClient)
                 {
+                    RMAPI.Actions.modsRecievedThisScene = true;
                     PhotonNetwork.RaiseEvent(myEventCode, myModString, eventOptions, SendOptions.SendReliable);
+                }
+                else if (RMAPI.Actions.modsRecievedThisScene)
+                {
+                    RumbleModdingAPI.Log("Prevented Multiple Mods Recieved", true);
+                    return;
                 }
                 opponentMods.Clear();
                 string recievedString = eventData.CustomData.ToString();
@@ -359,7 +373,6 @@ namespace RumbleModdingAPI
                 }
                 Log($"Player: {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PublicUsername} / {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PlayFabMasterId}");
                 Log($"Mods: {recievedString}");
-                //Log("onModStringRecieved Running");
                 RMAPI.Actions.TriggerOnModStringRecieved();
             }
         }

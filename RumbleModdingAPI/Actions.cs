@@ -186,6 +186,8 @@ namespace RumbleModdingAPI.RMAPI
         private static bool waitForMatchStart = false;
         internal static int sceneCount = 0;
         internal static bool matchStarted = false;
+        internal static bool modsSentThisScene = false;
+        internal static bool modsRecievedThisScene = false;
 
         internal static IEnumerator StartActionWatcher()
         {
@@ -215,10 +217,11 @@ namespace RumbleModdingAPI.RMAPI
                         RumbleModdingAPI.Log("onMapInitialized Running: " + RumbleModdingAPI.currentScene, true);
                         TriggerOnMapInitialized();
                         RumbleModdingAPI.Log("onMapInitialized Complete", true);
-                        RumbleModdingAPI.GetMods();
+                        //from here
                         if (PlayerManager.instance.AllPlayers.Count > 1)
                         {
                             RumbleModdingAPI.Log("More than 1 Player", true);
+                            RumbleModdingAPI.GetMods();//to here
                             if (RumbleModdingAPI.currentScene == "Map0")
                             {
                                 RumbleModdingAPI.Log("Grabbing SlabOne MatchFormCanvas", true);
