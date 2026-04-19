@@ -22,10 +22,12 @@ namespace RumbleModdingAPI.RMAPI
             return LoadWavFromBytes(fileBytes, Path.GetFileNameWithoutExtension(filePath));
         }
 
+
         private static AudioClip LoadWavFromBytes(byte[] fileBytes, string name)
         {
-            // Find the "data" chunk
+            // Walk chunks to find "fmt " and "data"
             int headerOffset = 12; // Start after RIFF header
+            int fmtOffset = -1;
             int dataOffset = -1;
             int dataSize = 0;
 
@@ -34,26 +36,31 @@ namespace RumbleModdingAPI.RMAPI
                 string chunkName = System.Text.Encoding.ASCII.GetString(fileBytes, headerOffset, 4);
                 int chunkSize = BitConverter.ToInt32(fileBytes, headerOffset + 4);
 
-                if (chunkName == "data")
+                if (chunkName == "fmt ")
+                {
+                    fmtOffset = headerOffset + 8;
+                }
+                else if (chunkName == "data")
                 {
                     dataOffset = headerOffset + 8;
                     dataSize = chunkSize;
-                    break;
                 }
 
                 headerOffset += 8 + chunkSize;
             }
 
-            if (dataOffset == -1)
+            if (fmtOffset == -1 || dataOffset == -1)
             {
                 return null;
             }
 
-            // Get format info from "fmt " chunk
-            int channels = fileBytes[22];
-            int sampleRate = BitConverter.ToInt32(fileBytes, 24);
+            // Read format info relative to the fmt chunk
+            int channels = BitConverter.ToInt16(fileBytes, fmtOffset + 2);
+            int sampleRate = BitConverter.ToInt32(fileBytes, fmtOffset + 4);
 
-            int sampleCount = (channels == 0 ? 0 : dataSize / 2 / channels);
+            if (channels <= 0) return null;
+
+            int sampleCount = dataSize / 2 / channels;
             float[] samples = new float[sampleCount * channels];
 
             for (int i = 0; i < sampleCount * channels; i++)

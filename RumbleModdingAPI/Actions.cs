@@ -14,7 +14,12 @@ namespace RumbleModdingAPI.RMAPI
         /// <summary>
         /// Runs when Mod String is recieved from another player
         /// </summary>
+        [Obsolete("Spelling Error, will remove later. use onModStringRecieved")]
         public static event Action onModStringRecieved;
+        /// <summary>
+        /// Runs when Mod String is recieved from another player
+        /// </summary>
+        public static event Action onModStringReceived;
         /// <summary>
         /// Runs when clients Mods are stored
         /// </summary>
@@ -139,6 +144,7 @@ namespace RumbleModdingAPI.RMAPI
         internal static void TriggerOnModStringRecieved()
         {
             TriggerAction(onModStringRecieved);
+            TriggerAction(onModStringReceived);
         }
 
         internal static void TriggerOnMyModsGathered()

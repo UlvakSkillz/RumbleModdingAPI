@@ -71,6 +71,7 @@
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy &quot;C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\RumbleModdingAPI.dll&quot; &quot;F:\SteamLibrary\steamapps\common\RUMBLE\Mods&quot; /Y" />
+    <Exec Command="xcopy &quot;C:\Users\austi\source\repos\RumbleModdingAPInew\RumbleModdingAPI\bin\Debug\net6.0\RumbleModdingAPI.xml&quot; &quot;F:\SteamLibrary\steamapps\common\RUMBLE\Mods&quot; /Y" />
   </Target>
 
 </Project>

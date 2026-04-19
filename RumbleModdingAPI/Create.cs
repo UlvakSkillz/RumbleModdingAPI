@@ -39,8 +39,8 @@ namespace RumbleModdingAPI.RMAPI
             tmp.fontSize = textSize;
             tmp.color = textColor;
             tmp.autoSizeTextContainer = true;
-            newTextGameObject.transform.position = textPosition;
-            newTextGameObject.transform.rotation = textRotation;
+            newTextGO.transform.position = textPosition;
+            newTextGO.transform.rotation = textRotation;
             return newTextGO;
         }
 

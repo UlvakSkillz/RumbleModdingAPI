@@ -14,6 +14,11 @@
             Runs when Mod String is recieved from another player
             </summary>
         </member>
+        <member name="E:RumbleModdingAPI.RMAPI.Actions.onModStringReceived">
+            <summary>
+            Runs when Mod String is recieved from another player
+            </summary>
+        </member>
         <member name="E:RumbleModdingAPI.RMAPI.Actions.onMyModsGathered">
             <summary>
             Runs when clients Mods are stored
