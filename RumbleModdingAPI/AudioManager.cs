@@ -40,7 +40,7 @@ namespace RumbleModdingAPI.RMAPI
         private static short DecodeULaw(byte ulawByte)
         {
             ulawByte = (byte)~ulawByte;
-            int sign = (ulawByte & 0x80) is not 0 ? -1 : 1;
+            int sign = (ulawByte & 0x80) != 0 ? -1 : 1;
             int exponent = (ulawByte >> 4) & 0x07;
             int mantissa = ulawByte & 0x0F;
             int sample = (mantissa << 3) + 0x84;
@@ -54,11 +54,11 @@ namespace RumbleModdingAPI.RMAPI
         private static short DecodeALaw(byte alawByte)
         {
             alawByte ^= 0x55;
-            int sign = (alawByte & 0x80) is not 0 ? -1 : 1;
+            int sign = (alawByte & 0x80) != 0 ? -1 : 1;
             int exponent = (alawByte >> 4) & 0x07;
             int mantissa = alawByte & 0x0F;
             int sample;
-            if (exponent is 0)
+            if (exponent == 0)
                 sample = (mantissa << 4) + 8;
             else
                 sample = ((mantissa << 4) + 0x108) << (exponent - 1);
@@ -135,14 +135,14 @@ namespace RumbleModdingAPI.RMAPI
                 {
                     for (int nibbleIdx = 0; nibbleIdx < 2; nibbleIdx++)
                     {
-                        int nibble = nibbleIdx is 0 ? (data[pos] & 0x0F) : ((data[pos] >> 4) & 0x0F);
+                        int nibble = nibbleIdx == 0 ? (data[pos] & 0x0F) : ((data[pos] >> 4) & 0x0F);
 
                         int step = ImaStepTable[stepIndex[ch_idx]];
                         int diff = step >> 3;
-                        if ((nibble & 1) is not 0) diff += step >> 2;
-                        if ((nibble & 2) is not 0) diff += step >> 1;
-                        if ((nibble & 4) is not 0) diff += step;
-                        if ((nibble & 8) is not 0) diff = -diff;
+                        if ((nibble & 1) != 0) diff += step >> 2;
+                        if ((nibble & 2) != 0) diff += step >> 1;
+                        if ((nibble & 4) != 0) diff += step;
+                        if ((nibble & 8) != 0) diff = -diff;
 
                         predictor[ch_idx] = Math.Clamp(predictor[ch_idx] + diff, -32768, 32767);
                         stepIndex[ch_idx] = Math.Clamp(stepIndex[ch_idx] + ImaIndexTable[nibble], 0, 88);
@@ -258,7 +258,7 @@ namespace RumbleModdingAPI.RMAPI
                     // High nibble first, then low nibble
                     for (int nibbleIdx = 0; nibbleIdx < 2 && samples.Count < numBlocks * samplesPerBlock * channels; nibbleIdx++)
                     {
-                        int nibble = nibbleIdx is 0 ? ((nibbleByte >> 4) & 0x0F) : (nibbleByte & 0x0F);
+                        int nibble = nibbleIdx == 0 ? ((nibbleByte >> 4) & 0x0F) : (nibbleByte & 0x0F);
                         // Sign-extend the 4-bit nibble
                         if (nibble >= 8) nibble -= 16;
 
@@ -303,9 +303,9 @@ namespace RumbleModdingAPI.RMAPI
             if (BytesMatch(bytes, 0, "fLaC")) return "FLAC";
             if (BytesMatch(bytes, 0, "FORM") && BytesMatch(bytes, 8, "AIFF")) return "AIFF";
             if (BytesMatch(bytes, 0, "ID3")) return "MP3";
-            if (bytes[0] is 0xFF && bytes[1] is 0xFB or 0xF3 or 0xF2) return "MP3";
+            if (bytes[0] == 0xFF && (bytes[1] == 0xFB || bytes[1] == 0xF3 || bytes[1] == 0xF2)) return "MP3";
             if (BytesMatch(bytes, 4, "ftyp")) return "AAC/M4A";
-            if (bytes[0] is 0x30 && bytes[1] is 0x26 && bytes[2] is 0xB2 && bytes[3] is 0x75) return "WMA";
+            if (bytes[0] == 0x30 && bytes[1] == 0x26 && bytes[2] == 0xB2 && bytes[3] == 0x75) return "WMA";
 
             return null;
         }
@@ -320,12 +320,12 @@ namespace RumbleModdingAPI.RMAPI
 
             // Identify the file format
             string detectedFormat = DetectAudioFormat(fileBytes);
-            if (detectedFormat is not "WAV")
+            if (detectedFormat != "WAV")
             {
-                if (detectedFormat is not null)
-                    MelonLoader.MelonLogger.Error($"[AudioManager] File '{name}' is not a WAV file, it's a renamed {detectedFormat} file. Please convert it to WAV first");
+                if (detectedFormat != null)
+                    MelonLoader.MelonLogger.Error($"[AudioManager] File '{name}' != a WAV file, it's a renamed {detectedFormat} file. Please convert it to WAV first");
                 else
-                    MelonLoader.MelonLogger.Error($"[AudioManager] File '{name}' is not a valid WAV file. It may be a renamed audio file of an uncommon unsupported type. Please convert it to WAV first");
+                    MelonLoader.MelonLogger.Error($"[AudioManager] File '{name}' != a valid WAV file. It may be a renamed audio file of an uncommon unsupported type. Please convert it to WAV first");
                 return null;
             }
 
@@ -349,12 +349,12 @@ namespace RumbleModdingAPI.RMAPI
                     return null;
                 }
 
-                if (chunkName is "fmt ")
+                if (chunkName == "fmt ")
                 {
                     fmtOffset = headerOffset + 8;
                     fmtSize = chunkSize;
                 }
-                else if (chunkName is "data")
+                else if (chunkName == "data")
                 {
                     dataOffset = headerOffset + 8;
                     dataSize = chunkSize;
@@ -364,7 +364,7 @@ namespace RumbleModdingAPI.RMAPI
                 headerOffset += 8 + chunkSize + (chunkSize & 1);
             }
 
-            if (fmtOffset is -1 || dataOffset is -1)
+            if (fmtOffset == -1 || dataOffset == -1)
             {
                 MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' is probably corrupted: missing {(fmtOffset == -1 ? "'fmt '" : "'data'")} chunk");
                 return null;
@@ -398,7 +398,7 @@ namespace RumbleModdingAPI.RMAPI
 
             // Some audio tools write a 40-byte "EXTENSIBLE" format instead of the simple 16-byte one,
             // even for normal audio. The real format (PCM or float) is in a GUID at the end.
-            if (formatTag is 0xFFFE)
+            if (formatTag == 0xFFFE)
             {
                 if (fmtSize < 40)
                 {
@@ -421,7 +421,7 @@ namespace RumbleModdingAPI.RMAPI
             }
 
             // Supported format tags: PCM, MS ADPCM, IEEE float, A-law, μ-law, IMA ADPCM
-            if (formatTag is not 0x0001 and not 0x0002 and not 0x0003 and not 0x0006 and not 0x0007 and not 0x0011)
+            if ((formatTag != 0x0001) && (formatTag != 0x0002) && (formatTag != 0x0003) && (formatTag != 0x0006) && (formatTag != 0x0007) && (formatTag != 0x0011))
             {
                 MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' uses unsupported format tag 0x{formatTag:X4}. Supported: PCM, ADPCM, IEEE float, A-law, \u03BC-law");
                 return null;
@@ -431,7 +431,7 @@ namespace RumbleModdingAPI.RMAPI
             // All other formats are sample-based (one value per sample, fixed size).
             float[] samples;
 
-            if (formatTag is 0x0002 or 0x0011) // MS ADPCM or IMA ADPCM
+            if (formatTag == 0x0002 || formatTag == 0x0011) // MS ADPCM or IMA ADPCM
             {
                 // Block align from the fmt chunk tells us how many bytes per block
                 int blockAlign = BitConverter.ToInt16(fileBytes, fmtOffset + 12) & 0xFFFF;
@@ -442,12 +442,12 @@ namespace RumbleModdingAPI.RMAPI
                 }
 
                 string adpcmError;
-                if (formatTag is 0x0011)
+                if (formatTag == 0x0011)
                     samples = DecodeImaAdpcm(fileBytes, dataOffset, dataSize, channels, blockAlign, out adpcmError);
                 else
                     samples = DecodeMsAdpcm(fileBytes, dataOffset, dataSize, channels, blockAlign, fmtOffset, fmtSize, out adpcmError);
 
-                if (samples is null)
+                if (samples == null)
                 {
                     MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' failed to decode ADPCM audio: {adpcmError}");
                     return null;
@@ -460,13 +460,13 @@ namespace RumbleModdingAPI.RMAPI
             }
 
             // Non-ADPCM: validate bits/bytes per sample
-            if (bitsPerSample % 8 is not 0)
+            if (bitsPerSample % 8 != 0)
             {
                 MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' has unsupported bits per sample ({bitsPerSample}), must be a multiple of 8");
                 return null;
             }
             int bytesPerSample = bitsPerSample / 8;
-            if (bytesPerSample is not 1 or 2 or 3 or 4 or 8)
+            if ((bytesPerSample != 1) && (bytesPerSample != 2) && (bytesPerSample != 3) && (bytesPerSample != 4) && (bytesPerSample != 8))
             {
                 MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' has unsupported bytes per sample ({bytesPerSample}). Supported: 1, 2, 3, 4, 8");
                 return null;
@@ -481,24 +481,24 @@ namespace RumbleModdingAPI.RMAPI
             // PCM stores samples as integers that we divide to normalize.
             // IEEE float samples are already in the right range, just read them directly.
             // μ-law/A-law decode each byte into a 16-bit sample, then normalize.
-            if (formatTag is 0x0006 or 0x0007) // μ-law or A-law
+            if (formatTag == 0x0006 || formatTag == 0x0007) // μ-law or A-law
             {
                 for (int i = 0; i < totalSamples; i++)
                 {
-                    short decoded = formatTag is 0x0006 ?
+                    short decoded = formatTag == 0x0006 ?
                         DecodeALaw(fileBytes[dataOffset + i]) :
                         DecodeULaw(fileBytes[dataOffset + i]);
                     samples[i] = decoded / 32768f;
                 }
             }
-            else if (formatTag is 0x0003) // IEEE float
+            else if (formatTag == 0x0003) // IEEE float
             {
                 for (int i = 0; i < totalSamples; i++)
                 {
                     int offset = dataOffset + i * bytesPerSample;
-                    if (bytesPerSample is 4) // 32-bit float
+                    if (bytesPerSample == 4) // 32-bit float
                         samples[i] = BitConverter.ToSingle(fileBytes, offset);
-                    else if (bytesPerSample is 8) // 64-bit double, downconvert to float
+                    else if (bytesPerSample == 8) // 64-bit double, downconvert to float
                         samples[i] = (float)BitConverter.ToDouble(fileBytes, offset);
                 }
             }
@@ -568,7 +568,7 @@ namespace RumbleModdingAPI.RMAPI
                 AudioCall.WeightedClip weightedClip = new AudioCall.WeightedClip();
                 AudioClip clip = AudioManager.LoadWavFile(filePath);
 
-                if (clip is null)
+                if (clip == null)
                 {
                     fileExists = false;
                     return null;
@@ -626,7 +626,7 @@ namespace RumbleModdingAPI.RMAPI
                     AudioCall.WeightedClip weightedClip = new AudioCall.WeightedClip();
                     AudioClip clip = AudioManager.LoadWavFile(filePaths[i]);
 
-                    if (clip is null)
+                    if (clip == null)
                     {
                         results[i] = null;
                         continue;
