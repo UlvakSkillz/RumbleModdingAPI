@@ -65,6 +65,225 @@ namespace RumbleModdingAPI.RMAPI
             return (short)(sign * sample);
         }
 
+        // IMA ADPCM: a simple compression format (~4:1 ratio). Common in older games and embedded audio.
+        // Step size table: maps step index (0–88) to the quantization step size.
+        // Each 4-bit nibble in the compressed data is multiplied by this step to reconstruct the sample.
+        private static readonly int[] ImaStepTable = {
+            7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31,
+            34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, 107, 118, 130, 143,
+            157, 173, 190, 209, 230, 253, 279, 307, 337, 371, 408, 449, 494, 544, 598, 658,
+            724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499,
+            2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630,
+            9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767
+        };
+
+        // IMA ADPCM index adjustment: after decoding a nibble, the step index moves by this amount.
+        // Larger nibble values (louder changes) increase the step size for the next sample.
+        private static readonly int[] ImaIndexTable = {
+            -1, -1, -1, -1, 2, 4, 6, 8,
+            -1, -1, -1, -1, 2, 4, 6, 8
+        };
+
+        // IMA ADPCM: audio is split into blocks. Each block has a 4-byte header per channel
+        // (initial sample + step index), then 4-bit nibbles. Each nibble decodes to one sample.
+        private static float[] DecodeImaAdpcm(byte[] data, int dataOffset, int dataSize, int channels, int blockAlign, out string error)
+        {
+            error = null;
+            // Each block: 4 bytes header per channel, then 4-bit nibbles for the rest
+            int headerSize = 4 * channels;
+            if (blockAlign <= headerSize)
+            {
+                error = $"block align ({blockAlign}) is too small for {channels} channel(s)";
+                return null;
+            }
+
+            int nibbleBytes = blockAlign - headerSize;
+            // Each byte has 2 nibbles = 2 samples, plus 1 sample from each channel's header
+            int samplesPerBlock = nibbleBytes * 2 / channels + 1;
+
+            int numBlocks = dataSize / blockAlign;
+            var samples = new System.Collections.Generic.List<float>(numBlocks * samplesPerBlock * channels);
+
+            int[] predictor = new int[channels];
+            int[] stepIndex = new int[channels];
+
+            for (int block = 0; block < numBlocks; block++)
+            {
+                int blockStart = dataOffset + block * blockAlign;
+
+                // Read block header for each channel: 2-byte initial sample, 1-byte step index, 1 reserved
+                for (int ch = 0; ch < channels; ch++)
+                {
+                    int hdrOffset = blockStart + ch * 4;
+                    predictor[ch] = BitConverter.ToInt16(data, hdrOffset);
+                    stepIndex[ch] = data[hdrOffset + 2];
+                    if (stepIndex[ch] > 88) stepIndex[ch] = 88;
+                }
+
+                // First sample of each channel comes from the header
+                for (int ch = 0; ch < channels; ch++)
+                    samples.Add(predictor[ch] / 32768f);
+
+                // Decode nibbles, which are interleaved for stereo: 8 nibbles (4 bytes) per channel, alternating
+                int nibbleStart = blockStart + headerSize;
+                int nibbleEnd = blockStart + blockAlign;
+                int samplesPerChunkPerChannel = channels > 1 ? 8 : nibbleBytes * 2;
+                int ch_idx = 0;
+                int chunkSampleCount = 0;
+
+                for (int pos = nibbleStart; pos < nibbleEnd; pos++)
+                {
+                    for (int nibbleIdx = 0; nibbleIdx < 2; nibbleIdx++)
+                    {
+                        int nibble = nibbleIdx is 0 ? (data[pos] & 0x0F) : ((data[pos] >> 4) & 0x0F);
+
+                        int step = ImaStepTable[stepIndex[ch_idx]];
+                        int diff = step >> 3;
+                        if ((nibble & 1) is not 0) diff += step >> 2;
+                        if ((nibble & 2) is not 0) diff += step >> 1;
+                        if ((nibble & 4) is not 0) diff += step;
+                        if ((nibble & 8) is not 0) diff = -diff;
+
+                        predictor[ch_idx] = Math.Clamp(predictor[ch_idx] + diff, -32768, 32767);
+                        stepIndex[ch_idx] = Math.Clamp(stepIndex[ch_idx] + ImaIndexTable[nibble], 0, 88);
+
+                        samples.Add(predictor[ch_idx] / 32768f);
+                        chunkSampleCount++;
+
+                        // For multi-channel: after 8 samples, switch to next channel
+                        if (channels > 1 && chunkSampleCount >= samplesPerChunkPerChannel)
+                        {
+                            chunkSampleCount = 0;
+                            ch_idx = (ch_idx + 1) % channels;
+                        }
+                    }
+                }
+            }
+
+            return samples.ToArray();
+        }
+
+        // MS ADPCM: Microsoft's ADPCM variant (~4:1 ratio). Found in older Windows tools and some game engines.
+        // Coefficient pairs: used to predict the next sample from the previous two.
+        // Standard WAV defines 7 built-in pairs; files can define more in the fmt chunk.
+        private static readonly int[][] MsAdpcmDefaultCoefficients = {
+            new[] { 256, 0 },
+            new[] { 512, -256 },
+            new[] { 0, 0 },
+            new[] { 192, 64 },
+            new[] { 240, 0 },
+            new[] { 460, -208 },
+            new[] { 392, -232 }
+        };
+
+        // MS ADPCM: each block has a header per channel (predictor index, delta, two initial samples),
+        // then pairs of 4-bit nibbles. Each nibble adjusts a prediction based on coefficient pairs.
+        private static float[] DecodeMsAdpcm(byte[] data, int dataOffset, int dataSize, int channels, int blockAlign, int fmtOffset, int fmtSize, out string error)
+        {
+            error = null;
+
+            // Read coefficients from fmt chunk if available (after the standard 18 bytes + 2-byte cbSize)
+            int[][] coefficients = MsAdpcmDefaultCoefficients;
+            if (fmtSize >= 22)
+            {
+                int cbSize = BitConverter.ToInt16(data, fmtOffset + 16) & 0xFFFF;
+                // cbSize should contain: 2 bytes (numCoefficients) + 4 bytes per coefficient pair
+                if (cbSize >= 6 && fmtOffset + 20 + cbSize <= data.Length)
+                {
+                    int numCoef = BitConverter.ToInt16(data, fmtOffset + 20) & 0xFFFF;
+                    if (numCoef > 0 && numCoef <= 32 && fmtOffset + 22 + numCoef * 4 <= data.Length)
+                    {
+                        coefficients = new int[numCoef][];
+                        for (int i = 0; i < numCoef; i++)
+                        {
+                            int coefOffset = fmtOffset + 22 + i * 4;
+                            coefficients[i] = new[] {
+                                BitConverter.ToInt16(data, coefOffset),
+                                BitConverter.ToInt16(data, coefOffset + 2)
+                            };
+                        }
+                    }
+                }
+            }
+
+            int headerSize = 7 * channels; // 1 predictor + 2 delta + 2 sample1 + 2 sample2, per channel
+            if (blockAlign <= headerSize)
+            {
+                error = $"block align ({blockAlign}) is too small for {channels} channel(s)";
+                return null;
+            }
+
+            int nibbleBytes = blockAlign - headerSize;
+            // 2 samples from header per channel + 2 nibbles per byte
+            int samplesPerBlock = 2 + nibbleBytes * 2 / channels;
+
+            int numBlocks = dataSize / blockAlign;
+            var samples = new System.Collections.Generic.List<float>(numBlocks * samplesPerBlock * channels);
+
+            for (int block = 0; block < numBlocks; block++)
+            {
+                int blockStart = dataOffset + block * blockAlign;
+
+                int[] predIdx = new int[channels];
+                int[] delta = new int[channels];
+                int[] sample1 = new int[channels];
+                int[] sample2 = new int[channels];
+
+                int pos = blockStart;
+                // Read predictor index for each channel
+                for (int ch = 0; ch < channels; ch++)
+                    predIdx[ch] = Math.Clamp(data[pos++], 0, coefficients.Length - 1);
+                // Read delta for each channel
+                for (int ch = 0; ch < channels; ch++)
+                    { delta[ch] = BitConverter.ToInt16(data, pos); pos += 2; }
+                // Read first sample for each channel
+                for (int ch = 0; ch < channels; ch++)
+                    { sample1[ch] = BitConverter.ToInt16(data, pos); pos += 2; }
+                // Read second sample for each channel
+                for (int ch = 0; ch < channels; ch++)
+                    { sample2[ch] = BitConverter.ToInt16(data, pos); pos += 2; }
+
+                // Output initial samples (sample2 first, then sample1: they're in reverse order)
+                for (int ch = 0; ch < channels; ch++)
+                    samples.Add(sample2[ch] / 32768f);
+                for (int ch = 0; ch < channels; ch++)
+                    samples.Add(sample1[ch] / 32768f);
+
+                // Decode nibble pairs
+                int ch_idx = 0;
+                int blockEnd = blockStart + blockAlign;
+                while (pos < blockEnd)
+                {
+                    byte nibbleByte = data[pos++];
+                    // High nibble first, then low nibble
+                    for (int nibbleIdx = 0; nibbleIdx < 2 && samples.Count < numBlocks * samplesPerBlock * channels; nibbleIdx++)
+                    {
+                        int nibble = nibbleIdx is 0 ? ((nibbleByte >> 4) & 0x0F) : (nibbleByte & 0x0F);
+                        // Sign-extend the 4-bit nibble
+                        if (nibble >= 8) nibble -= 16;
+
+                        int coef1 = coefficients[predIdx[ch_idx]][0];
+                        int coef2 = coefficients[predIdx[ch_idx]][1];
+
+                        int predicted = (sample1[ch_idx] * coef1 + sample2[ch_idx] * coef2) / 256;
+                        int newSample = Math.Clamp(predicted + nibble * delta[ch_idx], -32768, 32767);
+
+                        sample2[ch_idx] = sample1[ch_idx];
+                        sample1[ch_idx] = newSample;
+
+                        // Adaptive delta update
+                        int[] adaptTable = { 230, 230, 230, 230, 307, 409, 512, 614 };
+                        delta[ch_idx] = Math.Max(16, adaptTable[nibble < 0 ? nibble + 8 : nibble] * delta[ch_idx] / 256);
+
+                        samples.Add(newSample / 32768f);
+                        ch_idx = (ch_idx + 1) % channels;
+                    }
+                }
+            }
+
+            return samples.ToArray();
+        }
+
         // Check if bytes at a given offset match an ASCII string (used for file format magic bytes)
         private static bool BytesMatch(byte[] bytes, int offset, string magic)
         {
@@ -201,13 +420,46 @@ namespace RumbleModdingAPI.RMAPI
                 }
             }
 
-            // Supported format tags: PCM, IEEE float, A-law, μ-law
-            if (formatTag is not 0x0001 and not 0x0003 and not 0x0006 and not 0x0007)
+            // Supported format tags: PCM, MS ADPCM, IEEE float, A-law, μ-law, IMA ADPCM
+            if (formatTag is not 0x0001 and not 0x0002 and not 0x0003 and not 0x0006 and not 0x0007 and not 0x0011)
             {
-                MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' uses unsupported format tag 0x{formatTag:X4}. Supported: PCM, IEEE float, A-law, \u03BC-law");
+                MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' uses unsupported format tag 0x{formatTag:X4}. Supported: PCM, ADPCM, IEEE float, A-law, \u03BC-law");
                 return null;
             }
 
+            // ADPCM formats are block-based (compressed). They have their own decoding path.
+            // All other formats are sample-based (one value per sample, fixed size).
+            float[] samples;
+
+            if (formatTag is 0x0002 or 0x0011) // MS ADPCM or IMA ADPCM
+            {
+                // Block align from the fmt chunk tells us how many bytes per block
+                int blockAlign = BitConverter.ToInt16(fileBytes, fmtOffset + 12) & 0xFFFF;
+                if (blockAlign <= 0)
+                {
+                    MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' is probably corrupted: ADPCM block align is {blockAlign}");
+                    return null;
+                }
+
+                string adpcmError;
+                if (formatTag is 0x0011)
+                    samples = DecodeImaAdpcm(fileBytes, dataOffset, dataSize, channels, blockAlign, out adpcmError);
+                else
+                    samples = DecodeMsAdpcm(fileBytes, dataOffset, dataSize, channels, blockAlign, fmtOffset, fmtSize, out adpcmError);
+
+                if (samples is null)
+                {
+                    MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' failed to decode ADPCM audio: {adpcmError}");
+                    return null;
+                }
+
+                int sampleCount = samples.Length / channels;
+                AudioClip clip = AudioClip.Create(name, sampleCount, channels, sampleRate, false);
+                clip.SetData(samples, 0);
+                return clip;
+            }
+
+            // Non-ADPCM: validate bits/bytes per sample
             if (bitsPerSample % 8 is not 0)
             {
                 MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' has unsupported bits per sample ({bitsPerSample}), must be a multiple of 8");
@@ -220,10 +472,10 @@ namespace RumbleModdingAPI.RMAPI
                 return null;
             }
 
-            int blockAlign = bytesPerSample * channels;
-            int sampleCount = dataSize / blockAlign;
-            int totalSamples = sampleCount * channels;
-            float[] samples = new float[totalSamples];
+            int sampleBlockAlign = bytesPerSample * channels;
+            int totalFrames = dataSize / sampleBlockAlign;
+            int totalSamples = totalFrames * channels;
+            samples = new float[totalSamples];
 
             // Convert raw bytes to float samples (-1.0 to 1.0) that Unity expects.
             // PCM stores samples as integers that we divide to normalize.
@@ -316,7 +568,7 @@ namespace RumbleModdingAPI.RMAPI
                 AudioCall.WeightedClip weightedClip = new AudioCall.WeightedClip();
                 AudioClip clip = AudioManager.LoadWavFile(filePath);
 
-                if (clip == null)
+                if (clip is null)
                 {
                     fileExists = false;
                     return null;
@@ -374,7 +626,7 @@ namespace RumbleModdingAPI.RMAPI
                     AudioCall.WeightedClip weightedClip = new AudioCall.WeightedClip();
                     AudioClip clip = AudioManager.LoadWavFile(filePaths[i]);
 
-                    if (clip == null)
+                    if (clip is null)
                     {
                         results[i] = null;
                         continue;
