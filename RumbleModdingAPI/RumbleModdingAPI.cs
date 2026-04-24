@@ -17,7 +17,7 @@ namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "5.1.4";
+        public const string Version = "5.1.5";
     }
 
     public class ModInfo
@@ -140,7 +140,7 @@ namespace RumbleModdingAPI
             mapInit = false;
             EventSent = false;
             RMAPI.Actions.modsSentThisScene = false;
-            RMAPI.Actions.modsRecievedThisScene = false;
+            RMAPI.Actions.modsReceivedThisScene = false;
             RMAPI.Actions.sceneCount++;
             try
             {
@@ -352,28 +352,28 @@ namespace RumbleModdingAPI
         {
             if (eventData.Code == myEventCode)
             {
-                if (!RMAPI.Actions.modsRecievedThisScene && PhotonNetwork.IsMasterClient)
+                if (!RMAPI.Actions.modsReceivedThisScene && PhotonNetwork.IsMasterClient)
                 {
-                    RMAPI.Actions.modsRecievedThisScene = true;
+                    RMAPI.Actions.modsReceivedThisScene = true;
                     PhotonNetwork.RaiseEvent(myEventCode, myModString, eventOptions, SendOptions.SendReliable);
                 }
-                else if (RMAPI.Actions.modsRecievedThisScene)
+                else if (RMAPI.Actions.modsReceivedThisScene)
                 {
-                    RumbleModdingAPI.Log("Prevented Multiple Mods Recieved", true);
+                    RumbleModdingAPI.Log("Prevented Multiple Mods Received", true);
                     return;
                 }
                 opponentMods.Clear();
-                string recievedString = eventData.CustomData.ToString();
-                opponentModString = recievedString;
-                string[] processedString = recievedString.Split('|');
+                string receivedString = eventData.CustomData.ToString();
+                opponentModString = receivedString;
+                string[] processedString = receivedString.Split('|');
                 for (int i = 0; i < processedString.Length; i += 2)
                 {
                     ModInfo mod = new ModInfo(processedString[i], processedString[i + 1]);
                     opponentMods.Add(mod);
                 }
                 Log($"Player: {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PublicUsername} / {PlayerManager.instance.AllPlayers[1].Data.GeneralData.PlayFabMasterId}");
-                Log($"Mods: {recievedString}");
-                RMAPI.Actions.TriggerOnModStringRecieved();
+                Log($"Mods: {receivedString}");
+                RMAPI.Actions.TriggerOnModStringReceived();
             }
         }
 

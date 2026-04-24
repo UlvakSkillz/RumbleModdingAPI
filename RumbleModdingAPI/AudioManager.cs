@@ -45,8 +45,7 @@ namespace RumbleModdingAPI.RMAPI
                     dataOffset = headerOffset + 8;
                     dataSize = chunkSize;
                 }
-
-                headerOffset += 8 + chunkSize;
+                headerOffset += 8 + chunkSize + (chunkSize & 1);
             }
 
             if (fmtOffset == -1 || dataOffset == -1)
