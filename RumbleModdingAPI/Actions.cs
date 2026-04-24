@@ -12,12 +12,12 @@ namespace RumbleModdingAPI.RMAPI
     public class Actions
     {
         /// <summary>
-        /// Runs when Mod String is recieved from another player
+        /// Runs when Mod String `is received from another player
         /// </summary>
-        [Obsolete("Spelling Error, will remove later. use onModStringRecieved")]
+        [Obsolete("Spelling Error, will remove later. use onModStringReceived")]
         public static event Action onModStringRecieved;
         /// <summary>
-        /// Runs when Mod String is recieved from another player
+        /// Runs when Mod String is received from another player
         /// </summary>
         public static event Action onModStringReceived;
         /// <summary>
@@ -141,7 +141,7 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
-        internal static void TriggerOnModStringRecieved()
+        internal static void TriggerOnModStringReceived()
         {
             TriggerAction(onModStringRecieved);
             TriggerAction(onModStringReceived);
@@ -193,7 +193,7 @@ namespace RumbleModdingAPI.RMAPI
         internal static int sceneCount = 0;
         internal static bool matchStarted = false;
         internal static bool modsSentThisScene = false;
-        internal static bool modsRecievedThisScene = false;
+        internal static bool modsReceivedThisScene = false;
 
         internal static IEnumerator StartActionWatcher()
         {

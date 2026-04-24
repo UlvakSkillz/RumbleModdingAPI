@@ -197,7 +197,7 @@ namespace RumbleModdingAPI.RMAPI
                         for (int i = 0; i < numCoef; i++)
                         {
                             int coefOffset = fmtOffset + 22 + i * 4;
-                            coefficients[i] = new[] {
+                            coefficients[i] = new int[] {
                                 BitConverter.ToInt16(data, coefOffset),
                                 BitConverter.ToInt16(data, coefOffset + 2)
                             };
@@ -454,9 +454,9 @@ namespace RumbleModdingAPI.RMAPI
                 }
 
                 int sampleCount = samples.Length / channels;
-                AudioClip clip = AudioClip.Create(name, sampleCount, channels, sampleRate, false);
-                clip.SetData(samples, 0);
-                return clip;
+                AudioClip newClip = AudioClip.Create(name, sampleCount, channels, sampleRate, false);
+                newClip.SetData(samples, 0);
+                return newClip;
             }
 
             // Non-ADPCM: validate bits/bytes per sample
@@ -526,7 +526,7 @@ namespace RumbleModdingAPI.RMAPI
                 }
             }
 
-            AudioClip clip = AudioClip.Create(name, sampleCount, channels, sampleRate, false);
+            AudioClip clip = AudioClip.Create(name, totalSamples, channels, sampleRate, false);
             clip.SetData(samples, 0);
 
             return clip;
