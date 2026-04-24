@@ -35,6 +35,36 @@ namespace RumbleModdingAPI.RMAPI
             0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71
         };
 
+        // μ-law decoding: 1 byte → 16-bit signed sample.
+        // Used in North American/Japanese telephony. Each byte encodes a logarithmic sample.
+        private static short DecodeULaw(byte ulawByte)
+        {
+            ulawByte = (byte)~ulawByte;
+            int sign = (ulawByte & 0x80) is not 0 ? -1 : 1;
+            int exponent = (ulawByte >> 4) & 0x07;
+            int mantissa = ulawByte & 0x0F;
+            int sample = (mantissa << 3) + 0x84;
+            sample <<= exponent;
+            sample -= 0x84;
+            return (short)(sign * sample);
+        }
+
+        // A-law decoding: 1 byte → 16-bit signed sample.
+        // Used in European telephony. Similar to μ-law but slightly different curve.
+        private static short DecodeALaw(byte alawByte)
+        {
+            alawByte ^= 0x55;
+            int sign = (alawByte & 0x80) is not 0 ? -1 : 1;
+            int exponent = (alawByte >> 4) & 0x07;
+            int mantissa = alawByte & 0x0F;
+            int sample;
+            if (exponent is 0)
+                sample = (mantissa << 4) + 8;
+            else
+                sample = ((mantissa << 4) + 0x108) << (exponent - 1);
+            return (short)(sign * sample);
+        }
+
         // Check if bytes at a given offset match an ASCII string (used for file format magic bytes)
         private static bool BytesMatch(byte[] bytes, int offset, string magic)
         {
@@ -171,10 +201,10 @@ namespace RumbleModdingAPI.RMAPI
                 }
             }
 
-            // Only PCM and IEEE float are supported
-            if (formatTag is not 0x0001 and not 0x0003)
+            // Supported format tags: PCM, IEEE float, A-law, μ-law
+            if (formatTag is not 0x0001 and not 0x0003 and not 0x0006 and not 0x0007)
             {
-                MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' uses unsupported format tag 0x{formatTag:X4}. Only PCM (0x0001) and IEEE float (0x0003) WAV files are supported");
+                MelonLoader.MelonLogger.Error($"[AudioManager] WAV file '{name}' uses unsupported format tag 0x{formatTag:X4}. Supported: PCM, IEEE float, A-law, \u03BC-law");
                 return null;
             }
 
@@ -198,7 +228,18 @@ namespace RumbleModdingAPI.RMAPI
             // Convert raw bytes to float samples (-1.0 to 1.0) that Unity expects.
             // PCM stores samples as integers that we divide to normalize.
             // IEEE float samples are already in the right range, just read them directly.
-            if (formatTag is 0x0003) // IEEE float
+            // μ-law/A-law decode each byte into a 16-bit sample, then normalize.
+            if (formatTag is 0x0006 or 0x0007) // μ-law or A-law
+            {
+                for (int i = 0; i < totalSamples; i++)
+                {
+                    short decoded = formatTag is 0x0006 ?
+                        DecodeALaw(fileBytes[dataOffset + i]) :
+                        DecodeULaw(fileBytes[dataOffset + i]);
+                    samples[i] = decoded / 32768f;
+                }
+            }
+            else if (formatTag is 0x0003) // IEEE float
             {
                 for (int i = 0; i < totalSamples; i++)
                 {
