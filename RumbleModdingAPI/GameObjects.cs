@@ -12408,9 +12408,124 @@ namespace RumbleModdingAPI.RMAPI
                                 }
                             }
 
-                            public class FoveatedRenderingSetting
+                            public class LevelTextureQualitySetting
                             {
                                 public static GameObject GetGameObject() { return Visuals.GetGameObject().transform.GetChild(6).gameObject; }
+
+                                public class Text
+                                {
+                                    public static GameObject GetGameObject() { return LevelTextureQualitySetting.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class SettingTitle
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Option1Text
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Option2Text
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class Mesh
+                                {
+                                    public static GameObject GetGameObject() { return LevelTextureQualitySetting.GetGameObject().transform.GetChild(1).gameObject; }
+                                }
+
+                                public class Slider
+                                {
+                                    public static GameObject GetGameObject() { return LevelTextureQualitySetting.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class One23
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Step
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Interactionslider
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+
+                                    public class Interactionslidercap
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(3).gameObject; }
+                                    }
+
+                                    public class Interactionslidersegment
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(4).gameObject; }
+                                    }
+
+                                    public class ONOFF
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(5).gameObject; }
+                                    }
+
+                                    public class StartPoint
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(6).gameObject; }
+                                    }
+
+                                    public class EndPoint
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(7).gameObject; }
+                                    }
+
+                                    public class Sliderhandle
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(8).gameObject; }
+
+                                        public class HandleParent
+                                        {
+                                            public static GameObject GetGameObject() { return Sliderhandle.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class RightHandle
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class LeftHandle
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class AttentionPoint
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class Interactionslidersegment1
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(9).gameObject; }
+                                    }
+
+                                    public class Step1
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(10).gameObject; }
+                                    }
+
+                                    public class Interactionslidersegment3
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(11).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class FoveatedRenderingSetting
+                            {
+                                public static GameObject GetGameObject() { return Visuals.GetGameObject().transform.GetChild(7).gameObject; }
 
                                 public class Text
                                 {
@@ -12525,7 +12640,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class DynamicResolutionSetting
                             {
-                                public static GameObject GetGameObject() { return Visuals.GetGameObject().transform.GetChild(7).gameObject; }
+                                public static GameObject GetGameObject() { return Visuals.GetGameObject().transform.GetChild(8).gameObject; }
 
                                 public class Text
                                 {
@@ -13808,13 +13923,13 @@ namespace RumbleModdingAPI.RMAPI
                                 }
                             }
 
-                            public class LCkVisiblitySetting
+                            public class LCKVisiblitySetting
                             {
                                 public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(2).gameObject; }
 
                                 public class Text
                                 {
-                                    public static GameObject GetGameObject() { return LCkVisiblitySetting.GetGameObject().transform.GetChild(0).gameObject; }
+                                    public static GameObject GetGameObject() { return LCKVisiblitySetting.GetGameObject().transform.GetChild(0).gameObject; }
 
                                     public class SettingTitle
                                     {
@@ -13839,12 +13954,127 @@ namespace RumbleModdingAPI.RMAPI
 
                                 public class Mesh
                                 {
-                                    public static GameObject GetGameObject() { return LCkVisiblitySetting.GetGameObject().transform.GetChild(1).gameObject; }
+                                    public static GameObject GetGameObject() { return LCKVisiblitySetting.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
 
                                 public class Slider
                                 {
-                                    public static GameObject GetGameObject() { return LCkVisiblitySetting.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return LCKVisiblitySetting.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class One23
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Step
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Interactionslider
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+
+                                    public class Interactionslidercap
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(3).gameObject; }
+                                    }
+
+                                    public class Interactionslidersegment
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(4).gameObject; }
+                                    }
+
+                                    public class ONOFF
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(5).gameObject; }
+                                    }
+
+                                    public class StartPoint
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(6).gameObject; }
+                                    }
+
+                                    public class EndPoint
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(7).gameObject; }
+                                    }
+
+                                    public class Sliderhandle
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(8).gameObject; }
+
+                                        public class HandleParent
+                                        {
+                                            public static GameObject GetGameObject() { return Sliderhandle.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class RightHandle
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class LeftHandle
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class AttentionPoint
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class Interactionslidersegment1
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(9).gameObject; }
+                                    }
+
+                                    public class Step1
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(10).gameObject; }
+                                    }
+
+                                    public class Interactionslidersegment3
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(11).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class OnlineStatusSetting
+                            {
+                                public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                public class Text
+                                {
+                                    public static GameObject GetGameObject() { return OnlineStatusSetting.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class SettingTitle
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Option1Text
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Option2Text
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class Mesh
+                                {
+                                    public static GameObject GetGameObject() { return OnlineStatusSetting.GetGameObject().transform.GetChild(1).gameObject; }
+                                }
+
+                                public class Slider
+                                {
+                                    public static GameObject GetGameObject() { return OnlineStatusSetting.GetGameObject().transform.GetChild(2).gameObject; }
 
                                     public class One23
                                     {
@@ -16015,214 +16245,9 @@ namespace RumbleModdingAPI.RMAPI
                         public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(2).gameObject; }
                     }
 
-                    public class Radio
-                    {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(3).gameObject; }
-
-                        public class Glass
-                        {
-                            public static GameObject GetGameObject() { return Radio.GetGameObject().transform.GetChild(0).gameObject; }
-                        }
-
-                        public class Rotator
-                        {
-                            public static GameObject GetGameObject() { return Radio.GetGameObject().transform.GetChild(1).gameObject; }
-
-                            public class Antennebase
-                            {
-                                public static GameObject GetGameObject() { return Rotator.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                public class Antenne
-                                {
-                                    public static GameObject GetGameObject() { return Antennebase.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Rock
-                                    {
-                                        public static GameObject GetGameObject() { return Antenne.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Spring
-                                    {
-                                        public static GameObject GetGameObject() { return Antenne.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-                            }
-                        }
-
-                        public class RIG
-                        {
-                            public static GameObject GetGameObject() { return Radio.GetGameObject().transform.GetChild(2).gameObject; }
-
-                            public class Ancor
-                            {
-                                public static GameObject GetGameObject() { return RIG.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                public class Empty007
-                                {
-                                    public static GameObject GetGameObject() { return Ancor.GetGameObject().transform.GetChild(0).gameObject; }
-                                }
-
-                                public class Empty008
-                                {
-                                    public static GameObject GetGameObject() { return Ancor.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
-                                public class Empty009
-                                {
-                                    public static GameObject GetGameObject() { return Ancor.GetGameObject().transform.GetChild(2).gameObject; }
-                                }
-
-                                public class Empty010
-                                {
-                                    public static GameObject GetGameObject() { return Ancor.GetGameObject().transform.GetChild(3).gameObject; }
-                                }
-
-                                public class Empty011
-                                {
-                                    public static GameObject GetGameObject() { return Ancor.GetGameObject().transform.GetChild(4).gameObject; }
-                                }
-
-                                public class SliderLP001
-                                {
-                                    public static GameObject GetGameObject() { return Ancor.GetGameObject().transform.GetChild(5).gameObject; }
-                                }
-                            }
-
-                            public class Bone002
-                            {
-                                public static GameObject GetGameObject() { return RIG.GetGameObject().transform.GetChild(1).gameObject; }
-
-                                public class Bone003
-                                {
-                                    public static GameObject GetGameObject() { return Bone002.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Bone001
-                                    {
-                                        public static GameObject GetGameObject() { return Bone003.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Spoke
-                                    {
-                                        public static GameObject GetGameObject() { return Bone003.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-
-                                public class Spoke001
-                                {
-                                    public static GameObject GetGameObject() { return Bone002.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-
-                            public class Bone005
-                            {
-                                public static GameObject GetGameObject() { return RIG.GetGameObject().transform.GetChild(2).gameObject; }
-
-                                public class Bone006
-                                {
-                                    public static GameObject GetGameObject() { return Bone005.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Bone004
-                                    {
-                                        public static GameObject GetGameObject() { return Bone006.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Spoke002
-                                    {
-                                        public static GameObject GetGameObject() { return Bone006.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-
-                                public class Spoke003
-                                {
-                                    public static GameObject GetGameObject() { return Bone005.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-
-                            public class Bone008
-                            {
-                                public static GameObject GetGameObject() { return RIG.GetGameObject().transform.GetChild(3).gameObject; }
-
-                                public class Bone009
-                                {
-                                    public static GameObject GetGameObject() { return Bone008.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Bone007
-                                    {
-                                        public static GameObject GetGameObject() { return Bone009.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Spoke004
-                                    {
-                                        public static GameObject GetGameObject() { return Bone009.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-
-                                public class Spoke005
-                                {
-                                    public static GameObject GetGameObject() { return Bone008.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-
-                            public class Bone011
-                            {
-                                public static GameObject GetGameObject() { return RIG.GetGameObject().transform.GetChild(4).gameObject; }
-
-                                public class Bone012
-                                {
-                                    public static GameObject GetGameObject() { return Bone011.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Bone010
-                                    {
-                                        public static GameObject GetGameObject() { return Bone012.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Spoke006
-                                    {
-                                        public static GameObject GetGameObject() { return Bone012.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-
-                                public class Spoke007
-                                {
-                                    public static GameObject GetGameObject() { return Bone011.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-
-                            public class Bone014
-                            {
-                                public static GameObject GetGameObject() { return RIG.GetGameObject().transform.GetChild(5).gameObject; }
-
-                                public class Bone015
-                                {
-                                    public static GameObject GetGameObject() { return Bone014.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Bone013
-                                    {
-                                        public static GameObject GetGameObject() { return Bone015.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Spoke008
-                                    {
-                                        public static GameObject GetGameObject() { return Bone015.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-
-                                public class Spoke009
-                                {
-                                    public static GameObject GetGameObject() { return Bone014.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-                        }
-
-                        public class Umbrella
-                        {
-                            public static GameObject GetGameObject() { return Radio.GetGameObject().transform.GetChild(3).gameObject; }
-                        }
-                    }
-
                     public class Lights
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(4).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(3).gameObject; }
 
                         public class Interactionlight
                         {
@@ -16287,7 +16312,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Consolecables
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(5).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(4).gameObject; }
 
                         public class BezierCurve006
                         {
@@ -16322,12 +16347,12 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Consuledangersign
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(6).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(5).gameObject; }
                     }
 
                     public class InteractionLeverconsole
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(7).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(6).gameObject; }
 
                         public class Audio
                         {
@@ -16382,7 +16407,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class MatchmakingSettings
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(8).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(7).gameObject; }
 
                         public class InteractionSliderHorizontalGrip
                         {
@@ -16507,7 +16532,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class ConsoleTape
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(9).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(8).gameObject; }
 
                         public class Piceoftape001
                         {
@@ -16532,7 +16557,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Bell
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(10).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(9).gameObject; }
 
                         public class Bell_
                         {
@@ -16557,7 +16582,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Matchconsolecoliders
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(11).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(10).gameObject; }
 
                         public class Consolebody
                         {
@@ -16587,7 +16612,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Screen
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(12).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(11).gameObject; }
 
                         public class MatchmakingText
                         {
@@ -16597,7 +16622,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class TutorialChecklist
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(13).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(12).gameObject; }
 
                         public class TutorialChecklist_
                         {
@@ -17105,22 +17130,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -17205,22 +17240,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -17305,22 +17350,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -17405,22 +17460,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -17505,22 +17570,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -17605,22 +17680,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -17900,22 +17985,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -18535,22 +18630,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19120,22 +19225,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19220,22 +19335,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19320,22 +19445,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19420,22 +19555,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19520,22 +19665,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19620,22 +19775,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -19794,22 +19959,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -19934,22 +20109,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -21542,12 +21727,12 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class RingOrigin
                     {
-                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(0).gameObject; }
+                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(0).gameObject; }
                     }
 
                     public class PlayerDetection
                     {
-                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(1).gameObject; }
+                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(1).gameObject; }
 
                         public class Origin
                         {
@@ -21562,7 +21747,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class DummyRoot
                     {
-                        public static GameObject GetGameObject() { return Gym.INTERACTABLES.Howard.GetGameObject().transform.GetChild(2).gameObject; }
+                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(2).gameObject; }
 
                         public class Howard
                         {
@@ -21570,7 +21755,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class Armature
                             {
-                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class Stand
                                 {
@@ -21745,17 +21930,17 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class Dummy
                             {
-                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(1).gameObject; }
+                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
                             public class Howardfoot
                             {
-                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(2).gameObject; }
+                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
                             public class HowardHPBar
                             {
-                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(3).gameObject; }
+                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class Mesh
                                 {
@@ -23860,22 +24045,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -23975,22 +24170,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -24090,22 +24295,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -24205,22 +24420,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -24320,22 +24545,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -24435,22 +24670,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -30612,9 +30857,14 @@ namespace RumbleModdingAPI.RMAPI
         public class Map1
         {
             public static GameObject[] GetBaseMap1GameObjects() { return RumbleModdingAPI.allBaseMap1GameObjects; }
-            public class LightingEffects
+            public class ftraceLightmaps
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
+
+            }
+            public class LightingEffects
+            {
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
 
 
                 public class DirectionalLight
@@ -30639,7 +30889,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Logic
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
 
 
                 public class SpawnPointHandler
@@ -32439,7 +32689,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Scene
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[3]; }
 
 
                 public class MAP1
@@ -35534,22 +35784,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -35634,22 +35894,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -35734,22 +36004,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -35834,22 +36114,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -35934,22 +36224,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -36034,22 +36334,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -36329,22 +36639,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -36964,22 +37284,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -37549,22 +37879,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -37649,22 +37989,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -37749,22 +38099,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -37849,22 +38209,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -37949,22 +38319,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -38049,22 +38429,32 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
 
-                                        public class UnusedIcon
+                                        public class FriendStatusIconBackground
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
 
-                                        public class FriendStatusIconBackground
+                                        public class FriendStatusIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
 
-                                        public class IgnoreIcon
+                                        public class RegionIndicator
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                            public class RegionIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RegionText
+                                            {
+                                                public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class FriendStatusIcon
+                                        public class IgnoreIcon
                                         {
                                             public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                         }
@@ -38223,22 +38613,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -38363,22 +38763,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -39953,22 +40363,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -40053,22 +40473,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -40153,22 +40583,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -40253,22 +40693,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -40353,22 +40803,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }
@@ -40453,22 +40913,32 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
 
-                                            public class UnusedIcon
+                                            public class FriendStatusIconBackground
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
                                             }
 
-                                            public class FriendStatusIconBackground
+                                            public class FriendStatusIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
                                             }
 
-                                            public class IgnoreIcon
+                                            public class RegionIndicator
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
                                             }
 
-                                            public class FriendStatusIcon
+                                            public class IgnoreIcon
                                             {
                                                 public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                             }

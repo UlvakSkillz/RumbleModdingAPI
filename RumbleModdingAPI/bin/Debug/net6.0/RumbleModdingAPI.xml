@@ -11,7 +11,7 @@
         </member>
         <member name="E:RumbleModdingAPI.RMAPI.Actions.onModStringRecieved">
             <summary>
-            Runs when Mod String `is received from another player
+            Runs when Mod String is received from another player
             </summary>
         </member>
         <member name="E:RumbleModdingAPI.RMAPI.Actions.onModStringReceived">

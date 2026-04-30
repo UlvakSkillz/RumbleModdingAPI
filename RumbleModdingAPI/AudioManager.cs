@@ -526,7 +526,7 @@ namespace RumbleModdingAPI.RMAPI
                 }
             }
 
-            AudioClip clip = AudioClip.Create(name, totalSamples, channels, sampleRate, false);
+            AudioClip clip = AudioClip.Create(name, totalFrames, channels, sampleRate, false);
             clip.SetData(samples, 0);
 
             return clip;

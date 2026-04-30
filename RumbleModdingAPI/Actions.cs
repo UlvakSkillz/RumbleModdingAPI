@@ -12,7 +12,7 @@ namespace RumbleModdingAPI.RMAPI
     public class Actions
     {
         /// <summary>
-        /// Runs when Mod String `is received from another player
+        /// Runs when Mod String is received from another player
         /// </summary>
         [Obsolete("Spelling Error, will remove later. use onModStringReceived")]
         public static event Action onModStringRecieved;
