@@ -61,6 +61,9 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\Il2CppAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Il2CppAssetBundleManager">
       <HintPath>F:\SteamLibrary\steamapps\common\RUMBLE\MelonLoader\net6\UnityEngine.Il2CppAssetBundleManager.dll</HintPath>
     </Reference>
