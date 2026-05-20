@@ -142,6 +142,7 @@ namespace RumbleModdingAPI
             RMAPI.Actions.modsSentThisScene = false;
             RMAPI.Actions.modsReceivedThisScene = false;
             RMAPI.Actions.sceneCount++;
+            Lighting.OnSceneWasLoaded();
             try
             {
                 if (currentScene == "Loader")
