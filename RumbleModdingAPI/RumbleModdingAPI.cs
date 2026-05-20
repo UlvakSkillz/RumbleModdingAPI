@@ -12,12 +12,13 @@ using MelonLoader;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.CrashReportHandler;
 
 namespace RumbleModdingAPI
 {
     public static class ModBuildInfo
     {
-        public const string Version = "5.2.1";
+        public const string Version = "5.3.0";
     }
 
     public class ModInfo
@@ -93,6 +94,7 @@ namespace RumbleModdingAPI
         public override void OnLateInitializeMelon()
         {
             instance = this;
+            CrashReportHandler.enableCaptureExceptions = false;
             rightTrigger.AddBinding("<XRController>{RightHand}/trigger");
             rightPrimary.AddBinding("<XRController>{RightHand}/primaryButton");
             rightSecondary.AddBinding("<XRController>{RightHand}/secondaryButton");
