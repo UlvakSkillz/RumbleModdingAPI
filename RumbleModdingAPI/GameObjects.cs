@@ -9,7 +9,7 @@ namespace RumbleModdingAPI.RMAPI
     {
         /// <summary>
         /// Contains access to almost every GameObject in DontDestroyOnLoad
-        /// </summary>
+        /// </summary
         public class DDOL
         {
             public static GameObject[] GetBaseDDOLGameObjects() { return RumbleModdingAPI.allBaseDDOLGameObjects; }
@@ -476,6 +476,11 @@ namespace RumbleModdingAPI.RMAPI
                     {
                         public static GameObject GetGameObject() { return Initializable.GetGameObject().transform.GetChild(11).gameObject; }
                     }
+
+                    public class PartyHandler
+                    {
+                        public static GameObject GetGameObject() { return Initializable.GetGameObject().transform.GetChild(12).gameObject; }
+                    }
                 }
 
                 public class Other
@@ -810,6 +815,7 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+
         /// <summary>
         /// Contains access to almost every GameObject in Gym Map
         /// </summary>
@@ -1135,6 +1141,11 @@ namespace RumbleModdingAPI.RMAPI
                 {
                     public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(4).gameObject; }
                 }
+
+                public class StationRootOclusionPortal
+                {
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(5).gameObject; }
+                }
             }
             public class INTERACTABLES
             {
@@ -1181,11 +1192,6 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                 }
-                            }
-
-                            public class AttentionPoint
-                            {
-                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                             }
                         }
 
@@ -1236,11 +1242,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return OpenRecordingsFolderButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class ChangeRecordingsFolderButton
@@ -1265,11 +1266,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ChangeRecordingsFolderButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -1413,11 +1409,6 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
-                                        }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
                                     }
 
@@ -10427,36 +10418,1121 @@ namespace RumbleModdingAPI.RMAPI
                         public class SmallRockSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class SmallRockSpawnerInstant3
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant3.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class SmallRockSpawnerInstant4
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(2).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant4.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class SmallRockSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(3).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class SmallRockSpawnerInstant2
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(4).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant2.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class SmallRockSpawnerInstant5
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(5).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant5.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class SmallRockSpawnerInstant6
                         {
                             public static GameObject GetGameObject() { return SmallRockSpawns.GetGameObject().transform.GetChild(6).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return SmallRockSpawnerInstant6.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
                     }
 
@@ -10467,56 +11543,1761 @@ namespace RumbleModdingAPI.RMAPI
                         public class LargeRockSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant_
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(2).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant__
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(3).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant__.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant___
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(4).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant___.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant____
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(5).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant____.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant2
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(6).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant2.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant4
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(7).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant4.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant3
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(8).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant3.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant_____
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(9).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant_____.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class LargeRockSpawnerInstant______
                         {
                             public static GameObject GetGameObject() { return LargeRockSpawns.GetGameObject().transform.GetChild(10).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return LargeRockSpawnerInstant______.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
                     }
 
@@ -10527,71 +13308,2241 @@ namespace RumbleModdingAPI.RMAPI
                         public class TargetSpawnerStatic
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic_
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic__
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(2).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic___
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(3).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic___.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic____
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(4).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic____.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic_____
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(5).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_____.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic______
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(6).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic______.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic_______
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(7).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_______.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic________
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(8).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic________.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic_________
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(9).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic_________.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerStatic__________
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(10).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerStatic__________.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerMovingA
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(11).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingA.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerMovingB
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(12).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingB.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class TargetSpawnerMovingC
                         {
                             public static GameObject GetGameObject() { return StructureTargetSpawns.GetGameObject().transform.GetChild(13).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return TargetSpawnerMovingC.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
                     }
 
@@ -10602,76 +15553,2401 @@ namespace RumbleModdingAPI.RMAPI
                         public class WrappedWallSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class CageCubeSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class CageCubeSpawnerInstant3
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(2).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant3.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class WrappedWallSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(3).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class WrappedWallSpawnerInstant2
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(4).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return WrappedWallSpawnerInstant2.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class BoulderBallSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(5).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class PrisonedPillarSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(6).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class PrisonedPillarSpawnerInstant2
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(7).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant2.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class PrisonedPillarSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(8).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return PrisonedPillarSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class DockedDiskSpawnerInstant
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(9).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class DockedDiskSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(10).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class DockedDiskSpawnerInstant2
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(11).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return DockedDiskSpawnerInstant2.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class CageCubeSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(12).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class CageCubeSpawnerInstant2
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(13).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return CageCubeSpawnerInstant2.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
 
                         public class BoulderBallSpawnerInstant1
                         {
                             public static GameObject GetGameObject() { return Indistruicteblestructures.GetGameObject().transform.GetChild(14).gameObject; }
+
+                            public class SceneProcessorColliderShouldnotbesaved
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(9).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(12).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(13).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(14).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(15).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(16).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(17).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(18).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(19).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(20).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(21).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(22).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_______________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(23).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(24).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(25).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved__________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(26).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved___________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(27).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved____________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(28).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved_____________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(29).gameObject; }
+                            }
+
+                            public class SceneProcessorColliderShouldnotbesaved______________________________
+                            {
+                                public static GameObject GetGameObject() { return BoulderBallSpawnerInstant1.GetGameObject().transform.GetChild(30).gameObject; }
+                            }
                         }
                     }
                 }
@@ -10791,11 +18067,6 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                 }
-                            }
-
-                            public class AttentionPoint
-                            {
-                                public static GameObject GetGameObject() { return ResetButton.GetGameObject().transform.GetChild(1).gameObject; }
                             }
                         }
 
@@ -14235,11 +21506,6 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
                                     }
-
-                                    public class AttentionPoint
-                                    {
-                                        public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
                                 }
 
                                 public class PlayerLocation
@@ -14301,11 +21567,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
+                            }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButtonToggleVariant.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
+                            public class ShiftstoneButtonVFX
+                            {
+                                public static GameObject GetGameObject() { return FloatingButton.GetGameObject().transform.GetChild(3).gameObject; }
                             }
                         }
 
@@ -14417,11 +21683,6 @@ namespace RumbleModdingAPI.RMAPI
                             {
                                 public static GameObject GetGameObject() { return RighthandTooltip.GetGameObject().transform.GetChild(4).gameObject; }
                             }
-                        }
-
-                        public class ShiftstoneButtonVFX
-                        {
-                            public static GameObject GetGameObject() { return ShiftstoneQuickswapper.GetGameObject().transform.GetChild(5).gameObject; }
                         }
                     }
 
@@ -16192,11 +23453,6 @@ namespace RumbleModdingAPI.RMAPI
                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                 }
                             }
-
-                            public class AttentionPoint
-                            {
-                                public static GameObject GetGameObject() { return AutoConnectButton.GetGameObject().transform.GetChild(1).gameObject; }
-                            }
                         }
 
                         public class UI
@@ -16220,9 +23476,19 @@ namespace RumbleModdingAPI.RMAPI
                         }
                     }
 
-                    public class Pedistal
+                    public class PartyMemberSlab
                     {
                         public static GameObject GetGameObject() { return RegionSelector.GetGameObject().transform.GetChild(1).gameObject; }
+
+                        public class InfoText
+                        {
+                            public static GameObject GetGameObject() { return PartyMemberSlab.GetGameObject().transform.GetChild(0).gameObject; }
+                        }
+                    }
+
+                    public class Pedistal
+                    {
+                        public static GameObject GetGameObject() { return RegionSelector.GetGameObject().transform.GetChild(2).gameObject; }
                     }
                 }
 
@@ -16826,19 +24092,9 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return GraphicsSlab.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                    public class Floatrock1
-                                    {
-                                        public static GameObject GetGameObject() { return Mesh.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
                                     public class MeshGraphicsslab
                                     {
-                                        public static GameObject GetGameObject() { return Mesh.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-
-                                    public class Floatrock11
-                                    {
-                                        public static GameObject GetGameObject() { return Mesh.GetGameObject().transform.GetChild(2).gameObject; }
+                                        public static GameObject GetGameObject() { return Mesh.GetGameObject().transform.GetChild(0).gameObject; }
                                     }
                                 }
                             }
@@ -17008,6 +24264,16 @@ namespace RumbleModdingAPI.RMAPI
                                 }
                             }
                         }
+
+                        public class Floatrock1
+                        {
+                            public static GameObject GetGameObject() { return RankStatusSlab.GetGameObject().transform.GetChild(1).gameObject; }
+                        }
+
+                        public class Floatrock11
+                        {
+                            public static GameObject GetGameObject() { return RankStatusSlab.GetGameObject().transform.GetChild(2).gameObject; }
+                        }
                     }
 
                     public class Text
@@ -17108,6 +24374,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -17219,6 +24490,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -17328,6 +24604,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -17439,6 +24720,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -17549,6 +24835,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -17658,6 +24949,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -17771,11 +25067,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class ScrollDownButton
@@ -17805,11 +25096,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -17841,11 +25127,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class PageDownButton
@@ -17875,11 +25156,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -17963,6 +25239,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -18062,14 +25343,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return Category0Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return Category0Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Category0Button.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18107,14 +25383,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return Category1Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return Category1Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Category1Button.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18152,14 +25423,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return Category2Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return Category2Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Category2Button.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18202,14 +25468,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18302,24 +25563,19 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
+                                public class RockButtonBase
                                 {
                                     public static GameObject GetGameObject() { return FriendRequestButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
-
-                                public class RockButtonBase
-                                {
-                                    public static GameObject GetGameObject() { return FriendRequestButton.GetGameObject().transform.GetChild(2).gameObject; }
-                                }
                             }
 
-                            public class ParkInviteButton
+                            public class InviteButton
                             {
                                 public static GameObject GetGameObject() { return PreReportSection.GetGameObject().transform.GetChild(1).gameObject; }
 
                                 public class Button
                                 {
-                                    public static GameObject GetGameObject() { return ParkInviteButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                    public static GameObject GetGameObject() { return InviteButton.GetGameObject().transform.GetChild(0).gameObject; }
 
                                     public class LeftHandle
                                     {
@@ -18352,14 +25608,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ParkInviteButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return ParkInviteButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return InviteButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18402,14 +25653,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return NotificationToggleButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return NotificationToggleButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return NotificationToggleButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18452,14 +25698,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18609,6 +25850,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -18731,11 +25977,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButtonBack.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton0
@@ -18770,11 +26011,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton0.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18811,11 +26047,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton1.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton2
@@ -18850,11 +26081,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton2.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18891,11 +26117,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton3.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton4
@@ -18930,11 +26151,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton4.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -18971,11 +26187,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton5.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton6
@@ -19010,11 +26221,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton6.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -19051,11 +26257,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton7.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton8
@@ -19091,11 +26292,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton8.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton9
@@ -19130,11 +26326,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton9.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -19203,6 +26394,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -19314,6 +26510,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -19423,6 +26624,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -19534,6 +26740,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -19643,6 +26854,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -19754,6 +26970,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -19856,34 +27077,74 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Notification.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                    public class InteractionButton
+                                    public class AcceptDeclineContent
                                     {
                                         public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                        public class DeleteBlock
+                                        public class Accept
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class AcceptBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class CheckIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class KickIcon
+                                        public class Decline
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class DismissContent
+                                    {
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class InteractionButton
+                                        {
+                                            public static GameObject GetGameObject() { return DismissContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
                                     }
 
                                     public class TypeBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
 
                                     public class BackgroundBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
 
                                     public class NotificationTitle
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
 
@@ -19937,6 +27198,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -20006,34 +27272,74 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Notification1.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                    public class InteractionButton
+                                    public class AcceptDeclineContent
                                     {
                                         public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                        public class DeleteBlock
+                                        public class Accept
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class AcceptBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class CheckIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class KickIcon
+                                        public class Decline
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class DismissContent
+                                    {
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class InteractionButton
+                                        {
+                                            public static GameObject GetGameObject() { return DismissContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
                                     }
 
                                     public class TypeBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
 
                                     public class BackgroundBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
 
                                     public class NotificationTitle
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
 
@@ -20087,6 +27393,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -20211,11 +27522,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class ScrollDownButton
@@ -20245,11 +27551,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -20281,11 +27582,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class PageDownButton
@@ -20315,11 +27611,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -20504,44 +27795,9 @@ namespace RumbleModdingAPI.RMAPI
                     {
                         public static GameObject GetGameObject() { return Telephone20REDUXspecialedition.GetGameObject().transform.GetChild(9).gameObject; }
 
-                        public class ShowHideIDButton
-                        {
-                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(0).gameObject; }
-
-                            public class InteractionButton3
-                            {
-                                public static GameObject GetGameObject() { return ShowHideIDButton.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                public class Button
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class LeftHandle
-                                    {
-                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class RightHandle
-                                    {
-                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-
-                                    public class Spring
-                                    {
-                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
-                                    }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-                        }
-
                         public class CopyIDButton
                         {
-                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(1).gameObject; }
+                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(0).gameObject; }
 
                             public class InteractionButton3
                             {
@@ -20566,10 +27822,35 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
+                            }
+                        }
 
-                                public class AttentionPoint
+                        public class ShowHideIDButton
+                        {
+                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class InteractionButton3
+                            {
+                                public static GameObject GetGameObject() { return ShowHideIDButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class Button
                                 {
-                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(1).gameObject; }
+                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class LeftHandle
+                                    {
+                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class RightHandle
+                                    {
+                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Spring
+                                    {
+                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
                                 }
                             }
                         }
@@ -21170,11 +28451,6 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
                                     }
-
-                                    public class AttentionPoint
-                                    {
-                                        public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
                                 }
 
                                 public class InteractionButton1
@@ -21199,11 +28475,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
-                                    }
-
-                                    public class AttentionPoint
-                                    {
-                                        public static GameObject GetGameObject() { return InteractionButton1.GetGameObject().transform.GetChild(1).gameObject; }
                                     }
                                 }
                             }
@@ -21727,12 +28998,12 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class RingOrigin
                     {
-                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(0).gameObject; }
+                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(0).gameObject; }
                     }
 
                     public class PlayerDetection
                     {
-                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(1).gameObject; }
+                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(1).gameObject; }
 
                         public class Origin
                         {
@@ -21755,7 +29026,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class Armature
                             {
-                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class Stand
                                 {
@@ -24024,6 +31295,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -24148,6 +31424,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -24274,6 +31555,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -24398,6 +31684,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -24524,6 +31815,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -24648,6 +31944,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -26101,11 +33402,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return FollowButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class Holder
@@ -26490,6 +33786,1131 @@ namespace RumbleModdingAPI.RMAPI
                         public static GameObject GetGameObject() { return Bag.GetGameObject().transform.GetChild(1).gameObject; }
                     }
                 }
+
+                public class PartyBoard
+                {
+                    public static GameObject GetGameObject() { return INTERACTABLES.GetGameObject().transform.GetChild(20).gameObject; }
+
+                    public class OfflineModeSlab
+                    {
+                        public static GameObject GetGameObject() { return PartyBoard.GetGameObject().transform.GetChild(0).gameObject; }
+
+                        public class InfoText
+                        {
+                            public static GameObject GetGameObject() { return OfflineModeSlab.GetGameObject().transform.GetChild(0).gameObject; }
+                        }
+                    }
+
+                    public class PartyBoard_
+                    {
+                        public static GameObject GetGameObject() { return PartyBoard.GetGameObject().transform.GetChild(1).gameObject; }
+
+                        public class ExitPartyButton
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class Button
+                            {
+                                public static GameObject GetGameObject() { return ExitPartyButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class AttentionPoint
+                                {
+                                    public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(0).gameObject; }
+                                }
+
+                                public class LeftHandle
+                                {
+                                    public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(1).gameObject; }
+                                }
+
+                                public class RightHandle
+                                {
+                                    public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                }
+                            }
+                        }
+
+                        public class ExitPartyButtonspring
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(1).gameObject; }
+                        }
+
+                        public class Floatrock
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(2).gameObject; }
+                        }
+
+                        public class PartyBell
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(3).gameObject; }
+                        }
+
+                        public class PartySlider
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(4).gameObject; }
+
+                            public class Slider
+                            {
+                                public static GameObject GetGameObject() { return PartySlider.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class HandleRotationParent
+                                {
+                                    public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class HandleParent
+                                    {
+                                        public static GameObject GetGameObject() { return HandleRotationParent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+                            }
+
+                            public class StartPoint
+                            {
+                                public static GameObject GetGameObject() { return PartySlider.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class EndPoint
+                            {
+                                public static GameObject GetGameObject() { return PartySlider.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+                        }
+
+                        public class PartySliderDial
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(5).gameObject; }
+                        }
+
+                        public class Partyboard
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(6).gameObject; }
+                        }
+
+                        public class PartyFan
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(7).gameObject; }
+                        }
+
+                        public class PartyActionText
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(8).gameObject; }
+                        }
+
+                        public class PartySizetext
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(9).gameObject; }
+                        }
+
+                        public class PartyIconQuad
+                        {
+                            public static GameObject GetGameObject() { return PartyBoard_.GetGameObject().transform.GetChild(10).gameObject; }
+                        }
+                    }
+
+                    public class FUNCTIONS
+                    {
+                        public static GameObject GetGameObject() { return PartyBoard.GetGameObject().transform.GetChild(2).gameObject; }
+
+                        public class PlayerList
+                        {
+                            public static GameObject GetGameObject() { return FUNCTIONS.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class PlayerTags
+                            {
+                                public static GameObject GetGameObject() { return PlayerList.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class PlayerTag20
+                                {
+                                    public static GameObject GetGameObject() { return PlayerTags.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class InteractionButton
+                                    {
+                                        public static GameObject GetGameObject() { return PlayerTag20.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class Meshes
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class StatusBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class BackgroundBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class FriendBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class NameBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class RankBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class IgnoreBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(5).gameObject; }
+                                            }
+
+                                            public class PointBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+
+                                            public class HighlightBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
+                                        }
+
+                                        public class TextandIcons
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class NameCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RankCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class PointCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class FriendStatusIconBackground
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class FriendStatusIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class RegionIndicator
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
+                                            }
+
+                                            public class IgnoreIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class PlayerTag201
+                                {
+                                    public static GameObject GetGameObject() { return PlayerTags.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                    public class InteractionButton
+                                    {
+                                        public static GameObject GetGameObject() { return PlayerTag201.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class Meshes
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class StatusBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class BackgroundBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class FriendBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class NameBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class RankBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class IgnoreBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(5).gameObject; }
+                                            }
+
+                                            public class PointBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+
+                                            public class HighlightBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
+                                        }
+
+                                        public class TextandIcons
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class NameCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RankCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class PointCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class FriendStatusIconBackground
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class FriendStatusIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class RegionIndicator
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
+                                            }
+
+                                            public class IgnoreIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class PlayerTag202
+                                {
+                                    public static GameObject GetGameObject() { return PlayerTags.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class InteractionButton
+                                    {
+                                        public static GameObject GetGameObject() { return PlayerTag202.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class Meshes
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class StatusBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class BackgroundBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class FriendBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class NameBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class RankBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class IgnoreBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(5).gameObject; }
+                                            }
+
+                                            public class PointBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+
+                                            public class HighlightBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
+                                        }
+
+                                        public class TextandIcons
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class NameCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RankCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class PointCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class FriendStatusIconBackground
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class FriendStatusIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class RegionIndicator
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
+                                            }
+
+                                            public class IgnoreIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class PlayerTag203
+                                {
+                                    public static GameObject GetGameObject() { return PlayerTags.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                    public class InteractionButton
+                                    {
+                                        public static GameObject GetGameObject() { return PlayerTag203.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class Meshes
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class StatusBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class BackgroundBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class FriendBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class NameBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class RankBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class IgnoreBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(5).gameObject; }
+                                            }
+
+                                            public class PointBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+
+                                            public class HighlightBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
+                                        }
+
+                                        public class TextandIcons
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class NameCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RankCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class PointCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class FriendStatusIconBackground
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class FriendStatusIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class RegionIndicator
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
+                                            }
+
+                                            public class IgnoreIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class PlayerTag204
+                                {
+                                    public static GameObject GetGameObject() { return PlayerTags.GetGameObject().transform.GetChild(4).gameObject; }
+
+                                    public class InteractionButton
+                                    {
+                                        public static GameObject GetGameObject() { return PlayerTag204.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class Meshes
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class StatusBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class BackgroundBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class FriendBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class NameBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class RankBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class IgnoreBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(5).gameObject; }
+                                            }
+
+                                            public class PointBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+
+                                            public class HighlightBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
+                                        }
+
+                                        public class TextandIcons
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class NameCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RankCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class PointCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class FriendStatusIconBackground
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class FriendStatusIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class RegionIndicator
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
+                                            }
+
+                                            public class IgnoreIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+
+                                public class PlayerTag205
+                                {
+                                    public static GameObject GetGameObject() { return PlayerTags.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                    public class InteractionButton
+                                    {
+                                        public static GameObject GetGameObject() { return PlayerTag205.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class Meshes
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class StatusBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class BackgroundBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class FriendBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class NameBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class RankBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class IgnoreBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(5).gameObject; }
+                                            }
+
+                                            public class PointBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+
+                                            public class HighlightBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
+                                        }
+
+                                        public class TextandIcons
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class NameCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class RankCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class PointCanvas
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+
+                                            public class FriendStatusIconBackground
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(3).gameObject; }
+                                            }
+
+                                            public class FriendStatusIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(4).gameObject; }
+                                            }
+
+                                            public class RegionIndicator
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                                public class RegionIcon
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(0).gameObject; }
+                                                }
+
+                                                public class RegionText
+                                                {
+                                                    public static GameObject GetGameObject() { return RegionIndicator.GetGameObject().transform.GetChild(1).gameObject; }
+                                                }
+                                            }
+
+                                            public class IgnoreIcon
+                                            {
+                                                public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
+                                            }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+                            }
+
+                            public class KickButtons
+                            {
+                                public static GameObject GetGameObject() { return PlayerList.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                public class Addition
+                                {
+                                    public static GameObject GetGameObject() { return KickButtons.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class Host
+                                    {
+                                        public static GameObject GetGameObject() { return Addition.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class HostIcon
+                                        {
+                                            public static GameObject GetGameObject() { return Host.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+                                    }
+
+                                    public class KickButton
+                                    {
+                                        public static GameObject GetGameObject() { return Addition.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class Spring
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+
+                                        public class RockButton
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RockButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                public class Addition1
+                                {
+                                    public static GameObject GetGameObject() { return KickButtons.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                    public class Host
+                                    {
+                                        public static GameObject GetGameObject() { return Addition1.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class HostIcon
+                                        {
+                                            public static GameObject GetGameObject() { return Host.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+                                    }
+
+                                    public class KickButton1
+                                    {
+                                        public static GameObject GetGameObject() { return Addition1.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton1.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton1.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class Spring
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton1.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+
+                                        public class RockButton
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton1.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RockButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                public class Addition2
+                                {
+                                    public static GameObject GetGameObject() { return KickButtons.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class Host
+                                    {
+                                        public static GameObject GetGameObject() { return Addition2.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class HostIcon
+                                        {
+                                            public static GameObject GetGameObject() { return Host.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+                                    }
+
+                                    public class KickButton2
+                                    {
+                                        public static GameObject GetGameObject() { return Addition2.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton2.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton2.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class Spring
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton2.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+
+                                        public class RockButton
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton2.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RockButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                public class Addition3
+                                {
+                                    public static GameObject GetGameObject() { return KickButtons.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                    public class Host
+                                    {
+                                        public static GameObject GetGameObject() { return Addition3.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class HostIcon
+                                        {
+                                            public static GameObject GetGameObject() { return Host.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+                                    }
+
+                                    public class KickButton3
+                                    {
+                                        public static GameObject GetGameObject() { return Addition3.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton3.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton3.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class Spring
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton3.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+
+                                        public class RockButton
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton3.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RockButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                public class Addition4
+                                {
+                                    public static GameObject GetGameObject() { return KickButtons.GetGameObject().transform.GetChild(4).gameObject; }
+
+                                    public class Host
+                                    {
+                                        public static GameObject GetGameObject() { return Addition4.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class HostIcon
+                                        {
+                                            public static GameObject GetGameObject() { return Host.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+                                    }
+
+                                    public class KickButton4
+                                    {
+                                        public static GameObject GetGameObject() { return Addition4.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton4.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton4.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class Spring
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton4.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+
+                                        public class RockButton
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton4.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RockButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                public class Addition5
+                                {
+                                    public static GameObject GetGameObject() { return KickButtons.GetGameObject().transform.GetChild(5).gameObject; }
+
+                                    public class Host
+                                    {
+                                        public static GameObject GetGameObject() { return Addition5.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class HostIcon
+                                        {
+                                            public static GameObject GetGameObject() { return Host.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+                                    }
+
+                                    public class KickButton5
+                                    {
+                                        public static GameObject GetGameObject() { return Addition5.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton5.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton5.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class Spring
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton5.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+
+                                        public class RockButton
+                                        {
+                                            public static GameObject GetGameObject() { return KickButton5.GetGameObject().transform.GetChild(3).gameObject; }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return RockButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        public class NoParty
+                        {
+                            public static GameObject GetGameObject() { return FUNCTIONS.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class PartyInfo
+                            {
+                                public static GameObject GetGameObject() { return NoParty.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+                        }
+                    }
+                }
             }
             public class TUTORIAL
             {
@@ -26774,9 +35195,39 @@ namespace RumbleModdingAPI.RMAPI
                             }
                         }
 
-                        public class TooltipMatchmaker
+                        public class TooltipPartyBoard
                         {
                             public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(9).gameObject; }
+
+                            public class ContentAnchor
+                            {
+                                public static GameObject GetGameObject() { return TooltipPartyBoard.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class Content
+                                {
+                                    public static GameObject GetGameObject() { return ContentAnchor.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class Backdrop
+                                    {
+                                        public static GameObject GetGameObject() { return Content.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Text
+                                    {
+                                        public static GameObject GetGameObject() { return Content.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class Tooltip
+                            {
+                                public static GameObject GetGameObject() { return TooltipPartyBoard.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+                        }
+
+                        public class TooltipMatchmaker
+                        {
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(10).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -26911,7 +35362,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipRegionBoard
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(10).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(11).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -26941,7 +35392,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipHowardControlPanel
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(11).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(12).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -26971,7 +35422,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipOptionsSlab
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(12).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(13).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27001,7 +35452,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipRank
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(13).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(14).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27031,7 +35482,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCStructures
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(14).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(15).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27061,7 +35512,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCModifiers
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(15).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(16).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27091,7 +35542,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCHits
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(16).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(17).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27121,7 +35572,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCCombos
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(17).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(18).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27151,7 +35602,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCPose
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(18).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(19).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27181,7 +35632,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCMoves
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(19).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(20).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27211,7 +35662,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCPosture
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(20).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(21).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27241,7 +35692,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCCollisions
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(21).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(22).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27271,7 +35722,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCRicochets
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(22).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(23).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27301,7 +35752,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCStates
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(23).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(24).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27331,7 +35782,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCLaunches
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(24).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(25).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27361,7 +35812,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipCCExplosions
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(25).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(26).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27391,7 +35842,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipShiftstones
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(26).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(27).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -27421,7 +35872,7 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class TooltipRockCam
                         {
-                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(27).gameObject; }
+                            public static GameObject GetGameObject() { return ToolTips.GetGameObject().transform.GetChild(28).gameObject; }
 
                             public class ContentAnchor
                             {
@@ -28666,11 +37117,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButton1.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
                         }
 
@@ -28710,11 +37156,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
                         }
@@ -29292,11 +37733,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Replaytext
@@ -29377,11 +37813,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Requeuetext
@@ -29421,11 +37852,6 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
-                                        }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
                                     }
 
@@ -29476,11 +37902,11 @@ namespace RumbleModdingAPI.RMAPI
                                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                                 }
                                             }
+                                        }
 
-                                            public class AttentionPoint
-                                            {
-                                                public static GameObject GetGameObject() { return InteractionButtonToggleVariant.GetGameObject().transform.GetChild(1).gameObject; }
-                                            }
+                                        public class ShiftstoneButtonVFX
+                                        {
+                                            public static GameObject GetGameObject() { return FloatingButton.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
                                     }
 
@@ -29592,11 +38018,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return RighthandTooltip.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
-                                    }
-
-                                    public class ShiftstoneButtonVFX
-                                    {
-                                        public static GameObject GetGameObject() { return ShiftstoneQuickswapper.GetGameObject().transform.GetChild(5).gameObject; }
                                     }
                                 }
 
@@ -30097,11 +38518,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Replaytext
@@ -30182,11 +38598,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Requeuetext
@@ -30226,11 +38637,6 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
-                                        }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
                                     }
 
@@ -30281,11 +38687,11 @@ namespace RumbleModdingAPI.RMAPI
                                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                                 }
                                             }
+                                        }
 
-                                            public class AttentionPoint
-                                            {
-                                                public static GameObject GetGameObject() { return InteractionButtonToggleVariant.GetGameObject().transform.GetChild(1).gameObject; }
-                                            }
+                                        public class ShiftstoneButtonVFX
+                                        {
+                                            public static GameObject GetGameObject() { return FloatingButton.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
                                     }
 
@@ -30397,11 +38803,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return RighthandTooltip.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
-                                    }
-
-                                    public class ShiftstoneButtonVFX
-                                    {
-                                        public static GameObject GetGameObject() { return ShiftstoneQuickswapper.GetGameObject().transform.GetChild(5).gameObject; }
                                     }
                                 }
 
@@ -30851,12 +39252,18 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+
         /// <summary>
         /// Contains access to almost every GameObject in Map1/Pit Map
         /// </summary>
         public class Map1
         {
             public static GameObject[] GetBaseMap1GameObjects() { return RumbleModdingAPI.allBaseMap1GameObjects; }
+            public class ftraceLightmaps
+            {
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
+
+            }
             public class LightingEffects
             {
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
@@ -31295,11 +39702,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Replaytext
@@ -31380,11 +39782,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Requeuetext
@@ -31424,11 +39821,6 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
-                                        }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
                                     }
 
@@ -31479,11 +39871,11 @@ namespace RumbleModdingAPI.RMAPI
                                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                                 }
                                             }
+                                        }
 
-                                            public class AttentionPoint
-                                            {
-                                                public static GameObject GetGameObject() { return InteractionButtonToggleVariant.GetGameObject().transform.GetChild(1).gameObject; }
-                                            }
+                                        public class ShiftstoneButtonVFX
+                                        {
+                                            public static GameObject GetGameObject() { return FloatingButton.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
                                     }
 
@@ -31595,11 +39987,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return RighthandTooltip.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
-                                    }
-
-                                    public class ShiftstoneButtonVFX
-                                    {
-                                        public static GameObject GetGameObject() { return ShiftstoneQuickswapper.GetGameObject().transform.GetChild(5).gameObject; }
                                     }
                                 }
 
@@ -32100,11 +40487,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Replaytext
@@ -32185,11 +40567,6 @@ namespace RumbleModdingAPI.RMAPI
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
                                         }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                        }
                                     }
 
                                     public class Requeuetext
@@ -32229,11 +40606,6 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                             }
-                                        }
-
-                                        public class AttentionPoint
-                                        {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
                                     }
 
@@ -32284,11 +40656,11 @@ namespace RumbleModdingAPI.RMAPI
                                                     public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                                 }
                                             }
+                                        }
 
-                                            public class AttentionPoint
-                                            {
-                                                public static GameObject GetGameObject() { return InteractionButtonToggleVariant.GetGameObject().transform.GetChild(1).gameObject; }
-                                            }
+                                        public class ShiftstoneButtonVFX
+                                        {
+                                            public static GameObject GetGameObject() { return FloatingButton.GetGameObject().transform.GetChild(3).gameObject; }
                                         }
                                     }
 
@@ -32400,11 +40772,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return RighthandTooltip.GetGameObject().transform.GetChild(4).gameObject; }
                                         }
-                                    }
-
-                                    public class ShiftstoneButtonVFX
-                                    {
-                                        public static GameObject GetGameObject() { return ShiftstoneQuickswapper.GetGameObject().transform.GetChild(5).gameObject; }
                                     }
                                 }
 
@@ -32756,7 +41123,7 @@ namespace RumbleModdingAPI.RMAPI
 
         /// <summary>
         /// Contains access to almost every GameObject in Park Map
-        /// </summary>
+        /// </summary
         public class Park
         {
             public static GameObject[] GetBaseParkGameObjects() { return RumbleModdingAPI.allBaseParkGameObjects; }
@@ -33855,11 +42222,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ResetButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class ResetScoreBoard
@@ -34305,11 +42667,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
+                            }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButtonToggleVariant.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
+                            public class ShiftstoneButtonVFX
+                            {
+                                public static GameObject GetGameObject() { return FloatingButton.GetGameObject().transform.GetChild(3).gameObject; }
                             }
                         }
 
@@ -34421,11 +42783,6 @@ namespace RumbleModdingAPI.RMAPI
                             {
                                 public static GameObject GetGameObject() { return RighthandTooltip.GetGameObject().transform.GetChild(4).gameObject; }
                             }
-                        }
-
-                        public class ShiftstoneButtonVFX
-                        {
-                            public static GameObject GetGameObject() { return ShiftstoneQuickswapper.GetGameObject().transform.GetChild(5).gameObject; }
                         }
                     }
 
@@ -35758,6 +44115,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -35867,6 +44229,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -35978,6 +44345,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -36087,6 +44459,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -36198,6 +44575,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -36307,6 +44689,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -36420,11 +44807,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class ScrollDownButton
@@ -36454,11 +44836,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -36490,11 +44867,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class PageDownButton
@@ -36524,11 +44896,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -36612,6 +44979,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -36711,14 +45083,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return Category0Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return Category0Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Category0Button.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -36756,14 +45123,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return Category1Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return Category1Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Category1Button.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -36801,14 +45163,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return Category2Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return Category2Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Category2Button.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -36851,14 +45208,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -36951,24 +45303,19 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
+                                public class RockButtonBase
                                 {
                                     public static GameObject GetGameObject() { return FriendRequestButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
-
-                                public class RockButtonBase
-                                {
-                                    public static GameObject GetGameObject() { return FriendRequestButton.GetGameObject().transform.GetChild(2).gameObject; }
-                                }
                             }
 
-                            public class ParkInviteButton
+                            public class InviteButton
                             {
                                 public static GameObject GetGameObject() { return PreReportSection.GetGameObject().transform.GetChild(1).gameObject; }
 
                                 public class Button
                                 {
-                                    public static GameObject GetGameObject() { return ParkInviteButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                    public static GameObject GetGameObject() { return InviteButton.GetGameObject().transform.GetChild(0).gameObject; }
 
                                     public class LeftHandle
                                     {
@@ -37001,14 +45348,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ParkInviteButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return ParkInviteButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return InviteButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37051,14 +45393,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return NotificationToggleButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return NotificationToggleButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return NotificationToggleButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37101,14 +45438,9 @@ namespace RumbleModdingAPI.RMAPI
                                     }
                                 }
 
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-
                                 public class RockButtonBase
                                 {
-                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return ReportPlayerButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37258,6 +45590,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -37380,11 +45717,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButtonBack.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton0
@@ -37419,11 +45751,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton0.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37460,11 +45787,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton1.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton2
@@ -37499,11 +45821,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton2.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37540,11 +45857,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton3.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton4
@@ -37579,11 +45891,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton4.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37620,11 +45927,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton5.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton6
@@ -37659,11 +45961,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton6.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37700,11 +45997,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton7.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton8
@@ -37740,11 +46032,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton8.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class DPButton9
@@ -37779,11 +46066,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return DPButton9.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -37852,6 +46134,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -37963,6 +46250,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -38072,6 +46364,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -38183,6 +46480,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -38292,6 +46594,11 @@ namespace RumbleModdingAPI.RMAPI
                                         public class HighlightBlock
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                        }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                         }
                                     }
 
@@ -38403,6 +46710,11 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                         }
+
+                                        public class PartyBlock
+                                        {
+                                            public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                        }
                                     }
 
                                     public class TextandIcons
@@ -38505,34 +46817,74 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Notification.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                    public class InteractionButton
+                                    public class AcceptDeclineContent
                                     {
                                         public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                        public class DeleteBlock
+                                        public class Accept
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class AcceptBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class CheckIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class KickIcon
+                                        public class Decline
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class DismissContent
+                                    {
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class InteractionButton
+                                        {
+                                            public static GameObject GetGameObject() { return DismissContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
                                     }
 
                                     public class TypeBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
 
                                     public class BackgroundBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
 
                                     public class NotificationTitle
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
 
@@ -38586,6 +46938,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -38655,34 +47012,74 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Notification1.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                    public class InteractionButton
+                                    public class AcceptDeclineContent
                                     {
                                         public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                        public class DeleteBlock
+                                        public class Accept
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class AcceptBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class CheckIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Accept.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
 
-                                        public class KickIcon
+                                        public class Decline
                                         {
-                                            public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            public static GameObject GetGameObject() { return AcceptDeclineContent.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return Decline.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class DismissContent
+                                    {
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                        public class InteractionButton
+                                        {
+                                            public static GameObject GetGameObject() { return DismissContent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class DeleteBlock
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class KickIcon
+                                            {
+                                                public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
                                         }
                                     }
 
                                     public class TypeBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(1).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
 
                                     public class BackgroundBlock
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(2).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
 
                                     public class NotificationTitle
                                     {
-                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(3).gameObject; }
+                                        public static GameObject GetGameObject() { return Frame.GetGameObject().transform.GetChild(4).gameObject; }
                                     }
                                 }
 
@@ -38736,6 +47133,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -38860,11 +47262,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class ScrollDownButton
@@ -38894,11 +47291,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return ScrollDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -38930,11 +47322,6 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
                                 }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageUpButton.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
                             }
 
                             public class PageDownButton
@@ -38964,11 +47351,6 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(3).gameObject; }
                                     }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return PageDownButton.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
                             }
 
@@ -39153,44 +47535,9 @@ namespace RumbleModdingAPI.RMAPI
                     {
                         public static GameObject GetGameObject() { return Telephone20REDUXspecialedition.GetGameObject().transform.GetChild(9).gameObject; }
 
-                        public class ShowHideIDButton
-                        {
-                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(0).gameObject; }
-
-                            public class InteractionButton3
-                            {
-                                public static GameObject GetGameObject() { return ShowHideIDButton.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                public class Button
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class LeftHandle
-                                    {
-                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class RightHandle
-                                    {
-                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-
-                                    public class Spring
-                                    {
-                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
-                                    }
-                                }
-
-                                public class AttentionPoint
-                                {
-                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(1).gameObject; }
-                                }
-                            }
-                        }
-
                         public class CopyIDButton
                         {
-                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(1).gameObject; }
+                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(0).gameObject; }
 
                             public class InteractionButton3
                             {
@@ -39215,10 +47562,35 @@ namespace RumbleModdingAPI.RMAPI
                                         public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                     }
                                 }
+                            }
+                        }
 
-                                public class AttentionPoint
+                        public class ShowHideIDButton
+                        {
+                            public static GameObject GetGameObject() { return FriendCodeDisplay.GetGameObject().transform.GetChild(1).gameObject; }
+
+                            public class InteractionButton3
+                            {
+                                public static GameObject GetGameObject() { return ShowHideIDButton.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                public class Button
                                 {
-                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(1).gameObject; }
+                                    public static GameObject GetGameObject() { return InteractionButton3.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class LeftHandle
+                                    {
+                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class RightHandle
+                                    {
+                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Spring
+                                    {
+                                        public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
                                 }
                             }
                         }
@@ -39553,11 +47925,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
-                                    }
-
-                                    public class AttentionPoint
-                                    {
-                                        public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                     }
                                 }
                             }
@@ -40337,6 +48704,11 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                             }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
                                         }
 
                                         public class TextandIcons
@@ -40446,6 +48818,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -40557,6 +48934,11 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                             }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
                                         }
 
                                         public class TextandIcons
@@ -40666,6 +49048,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -40777,6 +49164,11 @@ namespace RumbleModdingAPI.RMAPI
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
                                             }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
+                                            }
                                         }
 
                                         public class TextandIcons
@@ -40886,6 +49278,11 @@ namespace RumbleModdingAPI.RMAPI
                                             public class HighlightBlock
                                             {
                                                 public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(7).gameObject; }
+                                            }
+
+                                            public class PartyBlock
+                                            {
+                                                public static GameObject GetGameObject() { return Meshes.GetGameObject().transform.GetChild(8).gameObject; }
                                             }
                                         }
 
@@ -41369,20 +49766,10 @@ namespace RumbleModdingAPI.RMAPI
                                     {
                                         public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(6).gameObject; }
                                     }
-                                }
 
-                                public class Canvas
-                                {
-                                    public static GameObject GetGameObject() { return SessionDetails.GetGameObject().transform.GetChild(2).gameObject; }
-
-                                    public class OpenParkSprite
+                                    public class ParkAccessIcon
                                     {
-                                        public static GameObject GetGameObject() { return Canvas.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class ClosedParkSprite
-                                    {
-                                        public static GameObject GetGameObject() { return Canvas.GetGameObject().transform.GetChild(1).gameObject; }
+                                        public static GameObject GetGameObject() { return TextandIcons.GetGameObject().transform.GetChild(7).gameObject; }
                                     }
                                 }
                             }
@@ -41578,11 +49965,6 @@ namespace RumbleModdingAPI.RMAPI
                                         {
                                             public static GameObject GetGameObject() { return Button.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
-                                    }
-
-                                    public class AttentionPoint
-                                    {
-                                        public static GameObject GetGameObject() { return InteractionButton.GetGameObject().transform.GetChild(1).gameObject; }
                                     }
                                 }
                             }
@@ -42301,5 +50683,6 @@ namespace RumbleModdingAPI.RMAPI
                 }
             }
         }
+
     }
 }

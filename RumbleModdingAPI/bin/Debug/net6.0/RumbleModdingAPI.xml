@@ -422,11 +422,7 @@
             Contains access to almost every GameObject in Rumble Maps
             </summary>
         </member>
-        <member name="T:RumbleModdingAPI.RMAPI.GameObjects.DDOL">
-            <summary>
-            Contains access to almost every GameObject in DontDestroyOnLoad
-            </summary>
-        </member>
+        <!-- Badly formed XML comment ignored for member "T:RumbleModdingAPI.RMAPI.GameObjects.DDOL" -->
         <member name="T:RumbleModdingAPI.RMAPI.GameObjects.Gym">
             <summary>
             Contains access to almost every GameObject in Gym Map
@@ -442,10 +438,49 @@
             Contains access to almost every GameObject in Map1/Pit Map
             </summary>
         </member>
-        <member name="T:RumbleModdingAPI.RMAPI.GameObjects.Park">
+        <!-- Badly formed XML comment ignored for member "T:RumbleModdingAPI.RMAPI.GameObjects.Park" -->
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.Lock(System.Int32)">
             <summary>
-            Contains access to almost every GameObject in Park Map
+            Locks all lighting settings so they cannot be changed by other mods.
+            If a mod attempts to unlock lighting with a lower lock priority, it will be ignored.
             </summary>
+            <param name="lockPriority">Use reasonable judgement when setting lock priority, your mod isn't the main character, and you likely don't need it.</param>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.Unlock(System.Int32)">
+            <summary>
+            Attempts to unlock lighting settings so they can be changed again.
+            If a mod attempts to unlock lighting with a lower lock priority, it will be ignored.
+            </summary>
+            <param name="lockPriority">Use reasonable judgement when unlocking settings. your mod isn't the main character, and if someone's locked with high priority, it should probably stay that way.</param>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.OnSceneWasLoaded">
+            <summary>
+            Reloads lighting settings on scene load, since RenderSettings is a per-scene object.
+            </summary>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.UseBounceLighting(System.Boolean)">
+            <summary>
+            Sets the current scene's lighting mode. Node: RUMBLE's Loader scene uses trilight by default.
+            </summary>
+            <param name="useBounce">If true, sets lighting mode to Trilight. If false, sets it back to skybox.</param>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.SetSkyLightColor(System.Nullable{UnityEngine.Color})">
+            <summary>
+            Sets the color of the light applied to the top of all dynamically lit surfaces in the scene.
+            </summary>
+            <param name="color">The color to set. Leave null for default settings.</param>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.SetHorizonLightColor(System.Nullable{UnityEngine.Color})">
+            <summary>
+            Sets the color of the light applied to the sides of all dynamically lit surfaces in the scene.
+            </summary>
+            <param name="color">The color to set. Leave null for default settings.</param>
+        </member>
+        <member name="M:RumbleModdingAPI.RMAPI.Lighting.SetGroundLightColor(System.Nullable{UnityEngine.Color})">
+            <summary>
+            Sets the color of the light applied to the bottom of all dynamically lit surfaces in the scene.
+            </summary>
+            <param name="color">The color to set. Leave null for default settings.</param>
         </member>
         <member name="T:RumbleModdingAPI.RMAPI.Utilities.RumbleMod">
             <summary>
@@ -461,49 +496,6 @@
             <summary>
             add this attribute to a method inside of a MonoBehaviourPun component to use Photon's RPCs
             </summary>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.Lock(System.Int32)">
-            <summary>
-            Locks all lighting settings so they cannot be changed by other mods.
-            If a mod attempts to unlock lighting with a lower lock priority, it will be ignored.
-            </summary>
-            <param name="lockPriority">Use reasonable judgement when setting lock priority, your mod isn't the main character, and you likely don't need it.</param>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.Unlock(System.Int32)">
-            <summary>
-            Attempts to unlock lighting settings so they can be changed again.
-            If a mod attempts to unlock lighting with a lower lock priority, it will be ignored.
-            </summary>
-            <param name="lockPriority">Use reasonable judgement when unlocking settings. your mod isn't the main character, and if someone's locked with high priority, it should probably stay that way.</param>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.OnSceneWasLoaded">
-            <summary>
-            Reloads lighting settings on scene load, since RenderSettings is a per-scene object.
-            </summary>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.UseBounceLighting(System.Boolean)">
-            <summary>
-            Sets the current scene's lighting mode. Node: RUMBLE's Loader scene uses trilight by default.
-            </summary>
-            <param name="useBounce">If true, sets lighting mode to Trilight. If false, sets it back to skybox.</param>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.SetSkyLightColor(System.Nullable{UnityEngine.Color})">
-            <summary>
-            Sets the color of the light applied to the top of all dynamically lit surfaces in the scene.
-            </summary>
-            <param name="color">The color to set. Leave null for default settings.</param>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.SetHorizonLightColor(System.Nullable{UnityEngine.Color})">
-            <summary>
-            Sets the color of the light applied to the sides of all dynamically lit surfaces in the scene.
-            </summary>
-            <param name="color">The color to set. Leave null for default settings.</param>
-        </member>
-        <member name="M:RumbleModdingAPI.Lighting.SetGroundLightColor(System.Nullable{UnityEngine.Color})">
-            <summary>
-            Sets the color of the light applied to the bottom of all dynamically lit surfaces in the scene.
-            </summary>
-            <param name="color">The color to set. Leave null for default settings.</param>
         </member>
         <member name="T:RumbleModdingAPI.RumbleModdingAPI">
             <summary>
