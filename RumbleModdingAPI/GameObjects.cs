@@ -9,7 +9,7 @@ namespace RumbleModdingAPI.RMAPI
     {
         /// <summary>
         /// Contains access to almost every GameObject in DontDestroyOnLoad
-        /// </summary
+        /// </summary>
         public class DDOL
         {
             public static GameObject[] GetBaseDDOLGameObjects() { return RumbleModdingAPI.allBaseDDOLGameObjects; }
@@ -937,9 +937,24 @@ namespace RumbleModdingAPI.RMAPI
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseGymGameObjects[3]; }
 
 
-                public class GYM
+                public class Description
                 {
                     public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(0).gameObject; }
+
+                    public class Textbackgroundsprite
+                    {
+                        public static GameObject GetGameObject() { return Description.GetGameObject().transform.GetChild(0).gameObject; }
+                    }
+
+                    public class Descriptiontext
+                    {
+                        public static GameObject GetGameObject() { return Description.GetGameObject().transform.GetChild(1).gameObject; }
+                    }
+                }
+
+                public class GYM
+                {
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(1).gameObject; }
 
                     public class GYMPatch000x00y00z00
                     {
@@ -1109,7 +1124,7 @@ namespace RumbleModdingAPI.RMAPI
 
                 public class GYMCollission
                 {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(1).gameObject; }
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(2).gameObject; }
 
                     public class Collissioncombatfloor
                     {
@@ -1129,15 +1144,10 @@ namespace RumbleModdingAPI.RMAPI
 
                 public class GYMMoss
                 {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(2).gameObject; }
-                }
-
-                public class GYMVista
-                {
                     public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(3).gameObject; }
                 }
 
-                public class GYMWater
+                public class GYMVista
                 {
                     public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(4).gameObject; }
                 }
@@ -8953,24 +8963,9 @@ namespace RumbleModdingAPI.RMAPI
                             {
                                 public static GameObject GetGameObject() { return Controls.GetGameObject().transform.GetChild(0).gameObject; }
 
-                                public class ExtraText
-                                {
-                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(0).gameObject; }
-
-                                    public class Textbackgroundsprite
-                                    {
-                                        public static GameObject GetGameObject() { return ExtraText.GetGameObject().transform.GetChild(0).gameObject; }
-                                    }
-
-                                    public class Extratexttext
-                                    {
-                                        public static GameObject GetGameObject() { return ExtraText.GetGameObject().transform.GetChild(1).gameObject; }
-                                    }
-                                }
-
                                 public class Viewoptions
                                 {
-                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(1).gameObject; }
+                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(0).gameObject; }
 
                                     public class ResetText
                                     {
@@ -9055,7 +9050,7 @@ namespace RumbleModdingAPI.RMAPI
 
                                 public class RotationOptions
                                 {
-                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(2).gameObject; }
+                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(1).gameObject; }
 
                                     public class ResetRotationButton
                                     {
@@ -9125,7 +9120,7 @@ namespace RumbleModdingAPI.RMAPI
 
                                 public class TryOutModePanel
                                 {
-                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(3).gameObject; }
+                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(2).gameObject; }
 
                                     public class TextFlapMesh
                                     {
@@ -9155,7 +9150,7 @@ namespace RumbleModdingAPI.RMAPI
 
                                 public class TryOutModeNotification
                                 {
-                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(4).gameObject; }
+                                    public static GameObject GetGameObject() { return Frameattachment.GetGameObject().transform.GetChild(3).gameObject; }
 
                                     public class AutoConnectText
                                     {
@@ -9296,14 +9291,9 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return SketchbookA.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
 
-                                        public class TouchTrigger
-                                        {
-                                            public static GameObject GetGameObject() { return SketchbookA.GetGameObject().transform.GetChild(2).gameObject; }
-                                        }
-
                                         public class PreTouchTrigger
                                         {
-                                            public static GameObject GetGameObject() { return SketchbookA.GetGameObject().transform.GetChild(3).gameObject; }
+                                            public static GameObject GetGameObject() { return SketchbookA.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
                                     }
 
@@ -9341,14 +9331,9 @@ namespace RumbleModdingAPI.RMAPI
                                             public static GameObject GetGameObject() { return SketchbookB.GetGameObject().transform.GetChild(1).gameObject; }
                                         }
 
-                                        public class TouchTrigger
-                                        {
-                                            public static GameObject GetGameObject() { return SketchbookB.GetGameObject().transform.GetChild(2).gameObject; }
-                                        }
-
                                         public class PreTouchTrigger
                                         {
-                                            public static GameObject GetGameObject() { return SketchbookB.GetGameObject().transform.GetChild(3).gameObject; }
+                                            public static GameObject GetGameObject() { return SketchbookB.GetGameObject().transform.GetChild(2).gameObject; }
                                         }
                                     }
 
@@ -23754,14 +23739,9 @@ namespace RumbleModdingAPI.RMAPI
                                 }
                             }
 
-                            public class Interactionslidersegment1
-                            {
-                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(10).gameObject; }
-                            }
-
                             public class Step1
                             {
-                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(11).gameObject; }
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(10).gameObject; }
                             }
                         }
 
@@ -23789,16 +23769,136 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return MatchmakingSettings.GetGameObject().transform.GetChild(5).gameObject; }
                         }
+                    }
 
-                        public class FriendsText
+                    public class MatchmakingSettings1
+                    {
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(8).gameObject; }
+
+                        public class InteractionSliderHorizontalGrip
                         {
-                            public static GameObject GetGameObject() { return MatchmakingSettings.GetGameObject().transform.GetChild(6).gameObject; }
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(0).gameObject; }
+
+                            public class One23
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(0).gameObject; }
+                            }
+
+                            public class Step
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(1).gameObject; }
+                            }
+
+                            public class Interactionslider
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(2).gameObject; }
+                            }
+
+                            public class Interactionslidercap
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(3).gameObject; }
+                            }
+
+                            public class Interactionslidersegment
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(4).gameObject; }
+                            }
+
+                            public class Interactionslidersegment2
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(5).gameObject; }
+                            }
+
+                            public class ONOFF
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(6).gameObject; }
+                            }
+
+                            public class StartPoint
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(7).gameObject; }
+                            }
+
+                            public class EndPoint
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(8).gameObject; }
+                            }
+
+                            public class Sliderhandle
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(9).gameObject; }
+
+                                public class HandleRotationParent
+                                {
+                                    public static GameObject GetGameObject() { return Sliderhandle.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class HandleParent
+                                    {
+                                        public static GameObject GetGameObject() { return HandleRotationParent.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                        public class RightHandle
+                                        {
+                                            public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(0).gameObject; }
+                                        }
+
+                                        public class LeftHandle
+                                        {
+                                            public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(1).gameObject; }
+                                        }
+
+                                        public class AttentionPoint
+                                        {
+                                            public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(2).gameObject; }
+                                        }
+                                    }
+                                }
+                            }
+
+                            public class Interactionslidersegment1
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(10).gameObject; }
+                            }
+
+                            public class Step1
+                            {
+                                public static GameObject GetGameObject() { return InteractionSliderHorizontalGrip.GetGameObject().transform.GetChild(11).gameObject; }
+                            }
+                        }
+
+                        public class TitleBar
+                        {
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(1).gameObject; }
+                        }
+
+                        public class BaseBar
+                        {
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(2).gameObject; }
+                        }
+
+                        public class TitleText
+                        {
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(3).gameObject; }
+                        }
+
+                        public class AnyArenatext
+                        {
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(4).gameObject; }
+                        }
+
+                        public class Arena1text
+                        {
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(5).gameObject; }
+                        }
+
+                        public class Arena2text
+                        {
+                            public static GameObject GetGameObject() { return MatchmakingSettings1.GetGameObject().transform.GetChild(6).gameObject; }
                         }
                     }
 
                     public class ConsoleTape
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(8).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(9).gameObject; }
 
                         public class Piceoftape001
                         {
@@ -23823,7 +23923,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Bell
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(9).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(10).gameObject; }
 
                         public class Bell_
                         {
@@ -23848,7 +23948,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Matchconsolecoliders
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(10).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(11).gameObject; }
 
                         public class Consolebody
                         {
@@ -23878,7 +23978,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class Screen
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(11).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(12).gameObject; }
 
                         public class MatchmakingText
                         {
@@ -23888,7 +23988,7 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class TutorialChecklist
                     {
-                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(12).gameObject; }
+                        public static GameObject GetGameObject() { return MatchConsole.GetGameObject().transform.GetChild(13).gameObject; }
 
                         public class TutorialChecklist_
                         {
@@ -28998,12 +29098,12 @@ namespace RumbleModdingAPI.RMAPI
 
                     public class RingOrigin
                     {
-                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(0).gameObject; }
+                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(0).gameObject; }
                     }
 
                     public class PlayerDetection
                     {
-                        public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(1).gameObject; }
+                        public static GameObject GetGameObject() { return INTERACTABLES.Howard.GetGameObject().transform.GetChild(1).gameObject; }
 
                         public class Origin
                         {
@@ -29026,7 +29126,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class Armature
                             {
-                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(0).gameObject; }
+                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(0).gameObject; }
 
                                 public class Stand
                                 {
@@ -29201,17 +29301,17 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class Dummy
                             {
-                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(1).gameObject; }
+                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
                             public class Howardfoot
                             {
-                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(2).gameObject; }
+                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
                             public class HowardHPBar
                             {
-                                public static GameObject GetGameObject() { return DummyRoot.Howard.GetGameObject().transform.GetChild(3).gameObject; }
+                                public static GameObject GetGameObject() { return Howard.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class Mesh
                                 {
@@ -29629,14 +29729,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return UnlockButton.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return UnlockButton.GetGameObject().transform.GetChild(2).gameObject; }
-                            }
-
                             public class ButtonUILayouts
                             {
-                                public static GameObject GetGameObject() { return UnlockButton.GetGameObject().transform.GetChild(3).gameObject; }
+                                public static GameObject GetGameObject() { return UnlockButton.GetGameObject().transform.GetChild(2).gameObject; }
 
                                 public class PurchaseLayout
                                 {
@@ -29746,7 +29841,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return UnlockButton.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return UnlockButton.GetGameObject().transform.GetChild(3).gameObject; }
                             }
                         }
 
@@ -29769,14 +29864,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return TrackButton.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return TrackButton.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return TrackButton.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return TrackButton.GetGameObject().transform.GetChild(3).gameObject; }
                             }
                         }
 
@@ -30004,14 +30094,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel1.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel1.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel1.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel1.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30051,7 +30136,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel1.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel1.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30074,14 +30159,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel2.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel2.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel2.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel2.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30121,7 +30201,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel2.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel2.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30144,14 +30224,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel3.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel3.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel3.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel3.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30191,7 +30266,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel3.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel3.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30214,14 +30289,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel4.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel4.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel4.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel4.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30261,7 +30331,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel4.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel4.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30284,14 +30354,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel5.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel5.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel5.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel5.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30331,7 +30396,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel5.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel5.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30354,14 +30419,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel6.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel6.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel6.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel6.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30401,7 +30461,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel6.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel6.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30424,14 +30484,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel7.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel7.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel7.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel7.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30471,7 +30526,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel7.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel7.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30494,14 +30549,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel8.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel8.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel8.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel8.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30541,7 +30591,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel8.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel8.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30564,14 +30614,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel9.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel9.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel9.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel9.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -30611,7 +30656,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel9.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel9.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
                     }
@@ -30624,34 +30669,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(0).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30659,34 +30699,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(1).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag1.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30694,34 +30729,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(2).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag2.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30729,34 +30759,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(3).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag3.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30764,34 +30789,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(4).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag4.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30799,34 +30819,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(5).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag5.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
 
@@ -30834,34 +30849,29 @@ namespace RumbleModdingAPI.RMAPI
                         {
                             public static GameObject GetGameObject() { return Tags.GetGameObject().transform.GetChild(6).gameObject; }
 
-                            public class TouchTrigger
+                            public class PreInteractionTouchTrigger
                             {
                                 public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(0).gameObject; }
                             }
 
-                            public class PreInteractionTouchTrigger
+                            public class LeftHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(1).gameObject; }
                             }
 
-                            public class LeftHandle
+                            public class RightHandle
                             {
                                 public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class RightHandle
+                            public class ItemTagName
                             {
                                 public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(3).gameObject; }
                             }
 
-                            public class ItemTagName
-                            {
-                                public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(4).gameObject; }
-                            }
-
                             public class ActiveCategoryIcon
                             {
-                                public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemTag6.GetGameObject().transform.GetChild(4).gameObject; }
                             }
                         }
                     }
@@ -31085,14 +31095,9 @@ namespace RumbleModdingAPI.RMAPI
                             public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(2).gameObject; }
                         }
 
-                        public class TouchTrigger
-                        {
-                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
-                        }
-
                         public class Content
                         {
-                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
+                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
 
                             public class ItemName
                             {
@@ -31132,12 +31137,12 @@ namespace RumbleModdingAPI.RMAPI
 
                         public class PreInteractionTouchTrigger
                         {
-                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
+                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
                         }
 
                         public class AttentionPoint
                         {
-                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(6).gameObject; }
+                            public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
                         }
                     }
 
@@ -33162,11 +33167,6 @@ namespace RumbleModdingAPI.RMAPI
                                 {
                                     public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
-
-                                public class GoofyText1
-                                {
-                                    public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(2).gameObject; }
-                                }
                             }
 
                             public class Paper
@@ -33278,7 +33278,7 @@ namespace RumbleModdingAPI.RMAPI
                                     public static GameObject GetGameObject() { return Paper.GetGameObject().transform.GetChild(0).gameObject; }
                                 }
 
-                                public class PageSelectorText
+                                public class AutoConnectText
                                 {
                                     public static GameObject GetGameObject() { return Paper.GetGameObject().transform.GetChild(1).gameObject; }
                                 }
@@ -37314,6 +37314,7 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+
         /// <summary>
         /// Contains access to almost every GameObject in Map0/Ring Map
         /// </summary>
@@ -38087,14 +38088,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -38134,12 +38130,12 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
                             }
 
                             public class AttentionPoint
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(6).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
                             }
                         }
 
@@ -38872,14 +38868,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -38919,12 +38910,12 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
                             }
 
                             public class AttentionPoint
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(6).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
                             }
                         }
 
@@ -39060,24 +39051,19 @@ namespace RumbleModdingAPI.RMAPI
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap0GameObjects[2]; }
 
 
-                public class GYMWater
+                public class RINGBanner
                 {
                     public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(0).gameObject; }
                 }
 
-                public class RINGBanner
+                public class Map0Vista
                 {
                     public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(1).gameObject; }
                 }
 
-                public class Map0Vista
-                {
-                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(2).gameObject; }
-                }
-
                 public class Map0
                 {
-                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(3).gameObject; }
+                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(2).gameObject; }
 
                     public class Patch000x00y00z00
                     {
@@ -39157,7 +39143,7 @@ namespace RumbleModdingAPI.RMAPI
 
                 public class Map0Collission
                 {
-                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(4).gameObject; }
+                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(3).gameObject; }
 
                     public class CollissionCombatfloor
                     {
@@ -39177,12 +39163,12 @@ namespace RumbleModdingAPI.RMAPI
 
                 public class Map0Leaves
                 {
-                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(5).gameObject; }
+                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(4).gameObject; }
                 }
 
                 public class Station
                 {
-                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(6).gameObject; }
+                    public static GameObject GetGameObject() { return Scene.GetGameObject().transform.GetChild(5).gameObject; }
 
                     public class Map0Cable
                     {
@@ -39266,7 +39252,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class LightingEffects
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
 
 
                 public class DirectionalLight
@@ -39291,7 +39277,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Logic
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
 
 
                 public class SpawnPointHandler
@@ -40056,14 +40042,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -40103,12 +40084,12 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
                             }
 
                             public class AttentionPoint
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(6).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
                             }
                         }
 
@@ -40841,14 +40822,9 @@ namespace RumbleModdingAPI.RMAPI
                                 public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(2).gameObject; }
                             }
 
-                            public class TouchTrigger
-                            {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
-                            }
-
                             public class Content
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class ItemName
                                 {
@@ -40888,12 +40864,12 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class PreInteractionTouchTrigger
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(4).gameObject; }
                             }
 
                             public class AttentionPoint
                             {
-                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(6).gameObject; }
+                                public static GameObject GetGameObject() { return ItemPanel.GetGameObject().transform.GetChild(5).gameObject; }
                             }
                         }
 
@@ -41051,7 +41027,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Scene
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[3]; }
 
 
                 public class MAP1
@@ -41121,9 +41097,10 @@ namespace RumbleModdingAPI.RMAPI
             }
         }
 
+
         /// <summary>
         /// Contains access to almost every GameObject in Park Map
-        /// </summary
+        /// </summary>
         public class Park
         {
             public static GameObject[] GetBaseParkGameObjects() { return RumbleModdingAPI.allBaseParkGameObjects; }
@@ -50452,9 +50429,19 @@ namespace RumbleModdingAPI.RMAPI
                     public static GameObject GetGameObject() { return SCENEVFXSFX.GetGameObject().transform.GetChild(1).gameObject; }
                 }
 
-                public class VisualEffects
+                public class WaterfallNorthwest
                 {
                     public static GameObject GetGameObject() { return SCENEVFXSFX.GetGameObject().transform.GetChild(2).gameObject; }
+                }
+
+                public class WaterfallSoutheast
+                {
+                    public static GameObject GetGameObject() { return SCENEVFXSFX.GetGameObject().transform.GetChild(3).gameObject; }
+                }
+
+                public class VisualEffects
+                {
+                    public static GameObject GetGameObject() { return SCENEVFXSFX.GetGameObject().transform.GetChild(4).gameObject; }
 
                     public class WindVelocitySource
                     {
@@ -50542,14 +50529,9 @@ namespace RumbleModdingAPI.RMAPI
                 public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseParkGameObjects[6]; }
 
 
-                public class GYMWater
-                {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(0).gameObject; }
-                }
-
                 public class PARK
                 {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(1).gameObject; }
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(0).gameObject; }
 
                     public class PARK000x00y00z00
                     {
@@ -50649,7 +50631,7 @@ namespace RumbleModdingAPI.RMAPI
 
                 public class PARKCollission
                 {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(2).gameObject; }
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(1).gameObject; }
 
                     public class CollissionCombatfloor
                     {
@@ -50674,15 +50656,14 @@ namespace RumbleModdingAPI.RMAPI
 
                 public class ParkVIsta
                 {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(3).gameObject; }
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(2).gameObject; }
                 }
 
                 public class PARKMos
                 {
-                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(4).gameObject; }
+                    public static GameObject GetGameObject() { return SCENE.GetGameObject().transform.GetChild(3).gameObject; }
                 }
             }
         }
-
     }
 }

@@ -422,7 +422,11 @@
             Contains access to almost every GameObject in Rumble Maps
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:RumbleModdingAPI.RMAPI.GameObjects.DDOL" -->
+        <member name="T:RumbleModdingAPI.RMAPI.GameObjects.DDOL">
+            <summary>
+            Contains access to almost every GameObject in DontDestroyOnLoad
+            </summary>
+        </member>
         <member name="T:RumbleModdingAPI.RMAPI.GameObjects.Gym">
             <summary>
             Contains access to almost every GameObject in Gym Map
@@ -438,7 +442,11 @@
             Contains access to almost every GameObject in Map1/Pit Map
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "T:RumbleModdingAPI.RMAPI.GameObjects.Park" -->
+        <member name="T:RumbleModdingAPI.RMAPI.GameObjects.Park">
+            <summary>
+            Contains access to almost every GameObject in Park Map
+            </summary>
+        </member>
         <member name="M:RumbleModdingAPI.RMAPI.Lighting.Lock(System.Int32)">
             <summary>
             Locks all lighting settings so they cannot be changed by other mods.
