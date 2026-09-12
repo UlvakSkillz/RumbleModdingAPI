@@ -21064,9 +21064,124 @@ namespace RumbleModdingAPI.RMAPI
                                 }
                             }
 
-                            public class AutoAcceptParkInviteSetting
+                            public class DisableClosedFistsSetting
                             {
                                 public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(1).gameObject; }
+
+                                public class Text
+                                {
+                                    public static GameObject GetGameObject() { return DisableClosedFistsSetting.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                    public class SettingTitle
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Option1Text
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Option2Text
+                                    {
+                                        public static GameObject GetGameObject() { return Text.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+                                }
+
+                                public class Mesh
+                                {
+                                    public static GameObject GetGameObject() { return DisableClosedFistsSetting.GetGameObject().transform.GetChild(1).gameObject; }
+                                }
+
+                                public class Slider
+                                {
+                                    public static GameObject GetGameObject() { return DisableClosedFistsSetting.GetGameObject().transform.GetChild(2).gameObject; }
+
+                                    public class One23
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(0).gameObject; }
+                                    }
+
+                                    public class Step
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(1).gameObject; }
+                                    }
+
+                                    public class Interactionslider
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(2).gameObject; }
+                                    }
+
+                                    public class Interactionslidercap
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(3).gameObject; }
+                                    }
+
+                                    public class Interactionslidersegment
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(4).gameObject; }
+                                    }
+
+                                    public class ONOFF
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(5).gameObject; }
+                                    }
+
+                                    public class StartPoint
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(6).gameObject; }
+                                    }
+
+                                    public class EndPoint
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(7).gameObject; }
+                                    }
+
+                                    public class Sliderhandle
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(8).gameObject; }
+
+                                        public class HandleParent
+                                        {
+                                            public static GameObject GetGameObject() { return Sliderhandle.GetGameObject().transform.GetChild(0).gameObject; }
+
+                                            public class RightHandle
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(0).gameObject; }
+                                            }
+
+                                            public class LeftHandle
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(1).gameObject; }
+                                            }
+
+                                            public class AttentionPoint
+                                            {
+                                                public static GameObject GetGameObject() { return HandleParent.GetGameObject().transform.GetChild(2).gameObject; }
+                                            }
+                                        }
+                                    }
+
+                                    public class Interactionslidersegment1
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(9).gameObject; }
+                                    }
+
+                                    public class Step1
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(10).gameObject; }
+                                    }
+
+                                    public class Interactionslidersegment3
+                                    {
+                                        public static GameObject GetGameObject() { return Slider.GetGameObject().transform.GetChild(11).gameObject; }
+                                    }
+                                }
+                            }
+
+                            public class AutoAcceptParkInviteSetting
+                            {
+                                public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(2).gameObject; }
 
                                 public class Text
                                 {
@@ -21181,7 +21296,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class LCKVisiblitySetting
                             {
-                                public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(2).gameObject; }
+                                public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(3).gameObject; }
 
                                 public class Text
                                 {
@@ -21301,7 +21416,7 @@ namespace RumbleModdingAPI.RMAPI
 
                             public class OnlineStatusSetting
                             {
-                                public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(3).gameObject; }
+                                public static GameObject GetGameObject() { return Social.GetGameObject().transform.GetChild(4).gameObject; }
 
                                 public class Text
                                 {
@@ -39245,14 +39360,9 @@ namespace RumbleModdingAPI.RMAPI
         public class Map1
         {
             public static GameObject[] GetBaseMap1GameObjects() { return RumbleModdingAPI.allBaseMap1GameObjects; }
-            public class ftraceLightmaps
-            {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
-
-            }
             public class LightingEffects
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[0]; }
 
 
                 public class DirectionalLight
@@ -39277,7 +39387,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Logic
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[1]; }
 
 
                 public class SpawnPointHandler
@@ -41027,7 +41137,7 @@ namespace RumbleModdingAPI.RMAPI
             }
             public class Scene
             {
-                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[3]; }
+                public static GameObject GetGameObject() { return RumbleModdingAPI.allBaseMap1GameObjects[2]; }
 
 
                 public class MAP1
